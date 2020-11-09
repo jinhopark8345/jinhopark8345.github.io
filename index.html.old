@@ -28,6 +28,9 @@
                 <a href="#about">About</a>
             </li>
             <li>
+                <a href="#experience">Experience</a>
+            </li>
+            <li>
                 <a href="#education">Education</a>
             </li>
             <li>
@@ -35,6 +38,9 @@
             </li>
             <li>
                 <a href="#skills">Skills</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
             </li>
         </ul>
     </header>
@@ -44,7 +50,7 @@
         <div id="lead-content">
             <h1>Jinho Park</h1>
             <h2>EE Student</h2>
-            <!-- <a href="#" class="btn-rounded-white">Download Resume</a> -->
+            <a href="#" class="btn-rounded-white">Download Resume</a>
         </div>
         <!-- End #lead-content -->
 
@@ -67,7 +73,9 @@
                 </div>
                 <div class="col-md-8">
                     <p>
-						프로그래밍을 사랑하는 개발자입니다. 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat. Donec
+                        eu vehicula neque. Donec viverra lorem nunc, tempus euismod eros sollicitudin ut. Quisque et tincidunt libero. Donec id pharetra justo. Proin euismod lacinia dolor, eu scelerisque justo tempus pharetra. Vivamus nunc justo, finibus
+                        ut nisl sed, euismod rhoncus nulla. Proin sed magna egestas, egestas ante et, congue eros. In consequat, mauris dapibus tincidunt suscipit, ex libero aliquet diam, at maximus risus enim non leo.
                     </p>
                 </div>
             </div>
@@ -108,33 +116,28 @@
     <div id="education">
         <h2 class="heading">Education</h2>
         <div class="education-block">
-            <h3>건국대학교</h3>
+            <h3>Konkuk University</h3>
             <span class="education-date">March 2015 - March 2022</span>
-            <h4>전기전자공학부</h4>
+            <h4>Bachelor of electrical engineering</h4>
             <p>
-				임베디드 시스템와 모듈 프로그래밍을 통해 전반적인 리눅스 OS에 대해 지식과 낮은 레벨의 프로그래밍에 대한 지식을 쌓았습니다.
-				알고리즘, 임베디드 시스템, 인공지능과 같은 수업들을 들었습니다.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
             </p>
         </div>
         <!-- End .education-block -->
 
         <div class="education-block">
-            <h3>University of Agder</h3>
-            <span class="education-date">Sep 2017 - Dec 2017</span>
-            <h4>Computer Science</h4>
-			<p>
-
-				아래의 수업들을 들었습니다.
-			</p>
+            <h3>University of Ottawa</h3>
+            <span class="education-date">Sept 2016 - Sept 2017</span>
+            <h4>Bachelor of Science in Computer Science</h4>
             <ul>
                 <li>
-                    Concepts of programming languages
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </li>
                 <li>
-                    Application development
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </li>
                 <li>
-                    Norwegian
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </li>
             </ul>
         </div>
@@ -148,13 +151,15 @@
             <div class="row">
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/icc.png" />
+                        <img src="images/project.jpg" />
                     </div>
                     <!-- End .project-image -->
-                    <div class="project-info" style="justify-content: center;">
-                        <h3>I can cook</h3>
-                        <p> 요리 보조앱입니다. 사용자가 가지고 있는 재료와 그 재료들의 유통기한을 바탕으로 레시피를 추천해주고, 레시피 또한 제공합니다. </p>
-                        <a href="https://github.com/jinhopark8345/ICC">View Project</a>
+                    <div class="project-info">
+                        <h3>Project Name Here</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+                        </p>
+                        <a href="#">View Project</a>
                     </div>
                     <!-- End .project-info -->
                 </div>
@@ -162,13 +167,15 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/temp.png" />
+                        <img src="images/project.jpg" />
                     </div>
                     <!-- End .project-image -->
-                    <div class="project-info" style="left: 9%;">
-                        <h3>Hitori Solver</h3>
-                        <p> Hitori라는 스도쿠보다 복잡도가 높은 퍼즐을 푸는 어플리케이션입니다. </p>
-                        <a href="https://github.com/jinhopark8345/HitoriSolver">View Project</a>
+                    <div class="project-info">
+                        <h3>Project Name Here</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur in iaculis ex. Etiam volutpat laoreet urna. Morbi ut tortor nec nulla commodo malesuada sit amet vel lacus. Fusce eget efficitur libero. Morbi dapibus porta quam laoreet placerat.
+                        </p>
+                        <a href="#">View Project</a>
                     </div>
                     <!-- End .project-info -->
                 </div>
@@ -183,21 +190,54 @@
         <ul>
             <li>JavaScript</li>
             <li>Python</li>
+            <li>Ruby</li>
+            <li>Go</li>
+            <li>Node.js</li>
+            <li>AngularJs</li>
+            <li>React</li>
+            <li>Elixir</li>
             <li>Java</li>
-            <li>Scala</li>
             <li>C</li>
+            <li>C#</li>
             <li>C++</li>
+            <li>Ruby on Rails</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Ruby</li>
+            <li>Go</li>
+            <li>Node.js</li>
+            <li>AngularJs</li>
+            <li>React</li>
+            <li>Elixir</li>
+            <li>Java</li>
+            <li>C</li>
+            <li>C#</li>
+            <li>C++</li>
+            <li>Ruby on Rails</li>
         </ul>
     </div>
     <!-- End #skills -->
 
-    
+    <div id="contact">
+        <h2>Get in Touch</h2>
+        <div id="contact-form">
+            <form method="POST" action="https://formspree.io/email@email.com">
+                <input type="hidden" name="_subject" value="Contact request from personal website" />
+                <input type="email" name="_replyto" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <!-- End #contact-form -->
+    </div>
+    <!-- End #contact -->
+
     <footer>
         <div class="container">
             <div class="row">
                 <div class="col-sm-5 copyright">
                     <p>
-                        Copyright &copy; 2020 Jinho Park
+                        Copyright &copy; 2020 YOUR NAME
                     </p>
                 </div>
                 <div class="col-sm-2 top">
@@ -211,7 +251,19 @@
                             <a href="https://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/jinho-park-9a511a1b9/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                 </div>
