@@ -37,51 +37,6 @@ from functools import lru_cache from itertools import permutations import math d
     </item>
     
     <item>
-      <title>Dynamic Programming</title>
-      <link>https://jinhopark8345.github.io/post/algorithms/dynamic-programming/</link>
-      <pubDate>Tue, 04 Jul 2023 01:10:47 +0900</pubDate>
-      
-      <guid>https://jinhopark8345.github.io/post/algorithms/dynamic-programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Greedy</title>
-      <link>https://jinhopark8345.github.io/post/algorithms/greedy/</link>
-      <pubDate>Tue, 04 Jul 2023 01:10:47 +0900</pubDate>
-      
-      <guid>https://jinhopark8345.github.io/post/algorithms/greedy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hash</title>
-      <link>https://jinhopark8345.github.io/post/algorithms/hash/</link>
-      <pubDate>Tue, 04 Jul 2023 01:10:47 +0900</pubDate>
-      
-      <guid>https://jinhopark8345.github.io/post/algorithms/hash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Sorting</title>
-      <link>https://jinhopark8345.github.io/post/algorithms/sorting/</link>
-      <pubDate>Tue, 04 Jul 2023 01:10:47 +0900</pubDate>
-      
-      <guid>https://jinhopark8345.github.io/post/algorithms/sorting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>networkx-tutorial</title>
-      <link>https://jinhopark8345.github.io/post/networkx-tutorial/</link>
-      <pubDate>Tue, 04 Jul 2023 01:10:01 +0900</pubDate>
-      
-      <guid>https://jinhopark8345.github.io/post/networkx-tutorial/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>encoder-decoder-transformers</title>
       <link>https://jinhopark8345.github.io/post/transformers/encoder-decoder-transformers/</link>
       <pubDate>Tue, 04 Jul 2023 00:57:49 +0900</pubDate>
