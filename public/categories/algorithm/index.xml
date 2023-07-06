@@ -27,5 +27,50 @@ from functools import lru_cache from itertools import permutations import math d
  BFS : Breadth-First Search DFS : Depth-First Search  # bfs solution to the above quiz def solution(numbers, target): answer = 0 def recur(cur_idx, cur_val): &amp;#34;&amp;#34;&amp;#34; recursion function need 1. return logic 2. recursive calls &amp;#34;&amp;#34;&amp;#34; if cur_idx == len(numbers): # return logic nonlocal answer if cur_val == target: answer += 1 return # recursive calls ## when next number is added recur(cur_idx + 1, cur_val + numbers[cur_idx]) ## when next number is subtracted recur(cur_idx + 1, cur_val - numbers[cur_idx]) # start with idx == 0, current value == 0 recur(0, 0) return answer  </description>
     </item>
     
+    <item>
+      <title>Dynamic Programming</title>
+      <link>https://jinhopark8345.github.io/post/algorithms/dynamic-programming/</link>
+      <pubDate>Tue, 04 Jul 2023 01:10:47 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/post/algorithms/dynamic-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Greedy</title>
+      <link>https://jinhopark8345.github.io/post/algorithms/greedy/</link>
+      <pubDate>Tue, 04 Jul 2023 01:10:47 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/post/algorithms/greedy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hash</title>
+      <link>https://jinhopark8345.github.io/post/algorithms/hash/</link>
+      <pubDate>Tue, 04 Jul 2023 01:10:47 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/post/algorithms/hash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sorting</title>
+      <link>https://jinhopark8345.github.io/post/algorithms/sorting/</link>
+      <pubDate>Tue, 04 Jul 2023 01:10:47 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/post/algorithms/sorting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>networkx-tutorial</title>
+      <link>https://jinhopark8345.github.io/post/networkx-tutorial/</link>
+      <pubDate>Tue, 04 Jul 2023 01:10:01 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/post/networkx-tutorial/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
