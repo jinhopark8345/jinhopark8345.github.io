@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CONFIG on Jinho&#39;s TIL</title>
+    <link>https://jinhopark8345.github.io/tags/config/</link>
+    <description>Recent content in CONFIG on Jinho&#39;s TIL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Dec 2022 13:05:21 +0900</lastBuildDate><atom:link href="https://jinhopark8345.github.io/tags/config/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to setup conda env with Emacs</title>
+      <link>https://jinhopark8345.github.io/post/conda-setup/</link>
+      <pubDate>Sun, 25 Dec 2022 13:05:21 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/post/conda-setup/</guid>
+      <description>How to set up conda python development environment with Emacs  Emacs conda package config  (use-package conda :ensure t :init (setq conda-env-home-directory (expand-file-name &amp;#34;~/miniconda3/&amp;#34;)) (setq conda-env-subdirectory &amp;#34;envs&amp;#34;) ;; if you want interactive shell support, include: (conda-env-initialize-interactive-shells) ;; activate py39, default env (conda-env-activate &amp;#34;py39&amp;#34;) ;; if you want auto-activation (see below for details), include: (conda-env-autoactivate-mode t) (setq-default mode-line-format (cons &amp;#39;(:exec conda-env-current-name) mode-line-format)) )    Set specific conda-env for project   go to project you want to set conda-env M-x projectile-edit-dir-locals type &amp;#34;conda-env-name-for-buffer&amp;#34; type &amp;lt;your-conda-env-name&amp;gt;  After the above commands, you should have below &amp;#34;.</description>
+    </item>
+    
+  </channel>
+</rss>

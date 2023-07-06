@@ -1,0 +1,47 @@
+#+TITLE: How to setup conda env with Emacs
+#+DATE: 2022-12-25T13:05:21+09:00
+#+PUBLISHDATE: 2022-12-25T13:05:21+09:00
+#+DRAFT: nil
+#+TAGS[]: EMACS, CONFIG
+#+DESCRIPTION: how to set up emacs & conda
+
+- How to set up conda python development environment with Emacs
+
+* Emacs conda package config
+#+begin_src emacs-lisp
+(use-package conda
+:ensure t
+:init
+    (setq conda-env-home-directory (expand-file-name "~/miniconda3/"))
+    (setq conda-env-subdirectory "envs")
+
+    ;; if you want interactive shell support, include:
+    (conda-env-initialize-interactive-shells)
+
+    ;; activate py39, default env
+    (conda-env-activate "py39")
+
+    ;; if you want auto-activation (see below for details), include:
+    (conda-env-autoactivate-mode t)
+
+    (setq-default mode-line-format (cons '(:exec conda-env-current-name) mode-line-format))
+)
+
+
+#+end_src
+
+* Set specific conda-env for project
+1. go to project you want to set conda-env
+2. M-x projectile-edit-dir-locals
+3. type "conda-env-name-for-buffer"
+4. type <your-conda-env-name>
+
+After the above commands, you should have below ".dir-locals.el" file like below
+#+begin_src bash
+# .dir-locals.el
+((nil . ((conda-env-name-for-buffer . py39))))
+#+end_src
+
+* References
+- [[https://github.com/necaris/conda.el][GitHub - necaris/conda.el]]
+- [[https://www.reddit.com/r/emacs/comments/hkshob/save_correct_condaenv_for_project/][Reddit: Save correct conda-env for project? ]]

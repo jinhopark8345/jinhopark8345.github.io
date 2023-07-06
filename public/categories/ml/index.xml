@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ML on Jinho&#39;s TIL</title>
+    <link>https://jinhopark8345.github.io/categories/ml/</link>
+    <description>Recent content in ML on Jinho&#39;s TIL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jinhopark8345.github.io/categories/ml/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ml-terms</title>
+      <link>https://jinhopark8345.github.io/post/ml-terms/</link>
+      <pubDate>Wed, 05 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/post/ml-terms/</guid>
+      <description>General Latent Space and Latent Vector latent : (of a quality or state) existing but not yet developed or manifest; hidden or concealed. represenations : encoded versions of the original input latent vectors (embeddings, embedding vector) : intermediate representations, embedding vectors are representations where similar items are close to each other. latent space (latent feature space, embedding space) : the space into which embedding vectors are mapped. semantic word has</description>
+    </item>
+    
+    <item>
+      <title>encoder-decoder-transformers</title>
+      <link>https://jinhopark8345.github.io/post/transformers/encoder-decoder-transformers/</link>
+      <pubDate>Tue, 04 Jul 2023 00:57:49 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/post/transformers/encoder-decoder-transformers/</guid>
+      <description>test</description>
+    </item>
+    
+  </channel>
+</rss>

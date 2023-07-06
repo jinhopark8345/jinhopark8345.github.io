@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nil on Jinho&#39;s TIL</title>
+    <link>https://jinhopark8345.github.io/tags/nil/</link>
+    <description>Recent content in nil on Jinho&#39;s TIL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Jul 2023 22:46:39 +0900</lastBuildDate><atom:link href="https://jinhopark8345.github.io/tags/nil/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brute-Force Search</title>
+      <link>https://jinhopark8345.github.io/post/algorithms/brute-force-search/</link>
+      <pubDate>Tue, 04 Jul 2023 22:46:39 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/post/algorithms/brute-force-search/</guid>
+      <description>quiz link: https://school.programmers.co.kr/learn/courses/30/lessons/42839
+from functools import lru_cache from itertools import permutations import math def solution(numbers): answer = 0 # cache the result of each call of this method @lru_cache(maxsize=100000) def is_prime_num(num): if num &amp;lt; 2: return False # we only need to check the range of [2, mat.sqrt(num)+1 ) max_num = int(math.sqrt(num)) for n in range(2, max_num+1): if num % n == 0 : return False return True # collect all numbers with permutation algorithm all_nums = set() l = len(numbers) for length in range(1, l+1): perm_list = list(permutations(numbers, r=length)) set_nums = set([int(&amp;#39;&amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>BFS-DFS</title>
+      <link>https://jinhopark8345.github.io/post/algorithms/bfs-dfs/</link>
+      <pubDate>Tue, 04 Jul 2023 01:10:47 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/post/algorithms/bfs-dfs/</guid>
+      <description> quiz link : https://school.programmers.co.kr/learn/courses/30/lessons/43165
+ BFS : Breadth-First Search DFS : Depth-First Search  # bfs solution to the above quiz def solution(numbers, target): answer = 0 def recur(cur_idx, cur_val): &amp;#34;&amp;#34;&amp;#34; recursion function need 1. return logic 2. recursive calls &amp;#34;&amp;#34;&amp;#34; if cur_idx == len(numbers): # return logic nonlocal answer if cur_val == target: answer += 1 return # recursive calls ## when next number is added recur(cur_idx + 1, cur_val + numbers[cur_idx]) ## when next number is subtracted recur(cur_idx + 1, cur_val - numbers[cur_idx]) # start with idx == 0, current value == 0 recur(0, 0) return answer  </description>
+    </item>
+    
+    <item>
+      <title>Dynamic Programming</title>
+      <link>https://jinhopark8345.github.io/post/algorithms/dynamic-programming/</link>
+      <pubDate>Tue, 04 Jul 2023 01:10:47 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/post/algorithms/dynamic-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Greedy</title>
+      <link>https://jinhopark8345.github.io/post/algorithms/greedy/</link>
+      <pubDate>Tue, 04 Jul 2023 01:10:47 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/post/algorithms/greedy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hash</title>
+      <link>https://jinhopark8345.github.io/post/algorithms/hash/</link>
+      <pubDate>Tue, 04 Jul 2023 01:10:47 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/post/algorithms/hash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sorting</title>
+      <link>https://jinhopark8345.github.io/post/algorithms/sorting/</link>
+      <pubDate>Tue, 04 Jul 2023 01:10:47 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/post/algorithms/sorting/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

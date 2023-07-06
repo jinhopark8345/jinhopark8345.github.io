@@ -1,0 +1,9 @@
+#+TITLE: encoder-decoder-transformers
+#+DATE: 2023-07-04T00:57:49+09:00
+#+PUBLISHDATE: 2023-07-04T00:57:49+09:00
+#+DRAFT: false
+#+CATEGORIES[]: ML
+#+TAGS[]: transformers, encoder-decoder
+#+DESCRIPTION: Short description
+
+test

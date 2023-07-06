@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Jinho&#39;s TIL</title>
+    <link>https://jinhopark8345.github.io/tags/</link>
+    <description>Recent content in Tags on Jinho&#39;s TIL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 05 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://jinhopark8345.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ml-general</title>
+      <link>https://jinhopark8345.github.io/tags/ml-general/</link>
+      <pubDate>Wed, 05 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/tags/ml-general/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nil</title>
+      <link>https://jinhopark8345.github.io/tags/nil/</link>
+      <pubDate>Tue, 04 Jul 2023 22:46:39 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/tags/nil/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Algorithm</title>
+      <link>https://jinhopark8345.github.io/tags/algorithm/</link>
+      <pubDate>Tue, 04 Jul 2023 01:10:01 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>NetworkX</title>
+      <link>https://jinhopark8345.github.io/tags/networkx/</link>
+      <pubDate>Tue, 04 Jul 2023 01:10:01 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/tags/networkx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>encoder-decoder</title>
+      <link>https://jinhopark8345.github.io/tags/encoder-decoder/</link>
+      <pubDate>Tue, 04 Jul 2023 00:57:49 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/tags/encoder-decoder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>transformers,</title>
+      <link>https://jinhopark8345.github.io/tags/transformers/</link>
+      <pubDate>Tue, 04 Jul 2023 00:57:49 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/tags/transformers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CONFIG</title>
+      <link>https://jinhopark8345.github.io/tags/config/</link>
+      <pubDate>Sun, 25 Dec 2022 13:05:21 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/tags/config/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>EMACS,</title>
+      <link>https://jinhopark8345.github.io/tags/emacs/</link>
+      <pubDate>Sun, 25 Dec 2022 13:05:21 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/tags/emacs/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
