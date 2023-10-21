@@ -1,0 +1,124 @@
+#+TITLE: Stack & Queue
+#+DATE: 2023-07-07T20:47:51+09:00
+#+PUBLISHDATE: 2023-07-07T20:47:51+09:00
+#+CATEGORIES[]: Algorithm
+#+DESCRIPTION: Short description
+
+
+* Queue example
+[[https://school.programmers.co.kr/learn/courses/30/lessons/42583][프로그래머스 스쿨 - 다리를 지나는 트럭]]
+
+{{<details  "Quiz and solution">}}
+#### Quiz
+![quiz-1](/img/posts/stack-queue-quiz-1.png)
+#### Solution
+```Python
+from collections import deque
+
+def solution(bridge_length, bridge_max_weight, truck_weights):
+    time_lapse = 0
+
+    # bridge is a deque
+    truck_weights = deque(truck_weights)
+    bridge= deque([0 for _ in range(bridge_length)])
+    bridge_cur_weight = 0
+
+    while bridge:
+
+        time_lapse += 1
+
+        # pop left
+        cur_weight = bridge.popleft()
+
+        # update total bridge weight
+        bridge_cur_weight -= cur_weight
+
+        if truck_weights:
+            if bridge_cur_weight + truck_weights[0] <= bridge_max_weight:
+                cur_truck_weight = truck_weights.popleft()
+                bridge.append(cur_truck_weight)
+                bridge_cur_weight += cur_truck_weight
+            else:
+                # add empty truck to bridge queue
+                bridge.append(0)
+
+
+    return time_lapse
+```
+{{</details>}}
+
+
+* Stack example
+[[https://school.programmers.co.kr/learn/courses/30/lessons/42584?language=python3][프로그래머스 스쿨 - 주식가격]]
+
+{{<details  "Quiz and solution">}}
+
+#### Quiz
+Link
+![quiz-1](/img/posts/stack-queue-quiz-2.png)
+
+#### brute-force solution
+
+- time complexity : O(N^2) -> two for loops
+- memory complexity : O(N) -> additional list answer
+``` python
+def solution(prices):
+
+    answer = []
+
+    for cur_idx, cur_price in enumerate(prices):
+
+        # every price start with 0 time
+        answer.append(0)
+
+        for future_idx, future_price in enumerate(prices[cur_idx+1:], start=cur_idx+1):
+            # every loop, we add (time) 1 to the answer list
+            answer[-1] += 1
+
+            if cur_price > future_price:
+                break
+    return answer
+
+result = solution([1,2,3,2,3])
+print(result)
+assert result == [4,3,1,1,0]
+```
+
+#### Stack solution
+- time complexity : O(N)
+- memory complexity : O(N)
+```Python
+def solution(prices):
+    answer = [0]*len(prices)
+
+    # keep idx of prices
+    stack = []
+
+    for cur_price_idx, cur_price in enumerate(prices):
+        # while cur_price is lower than stack head -> update
+        while stack and cur_price < prices[stack[-1]]:
+            # pop current(will be replaced) head idx
+            old_head_idx = stack.pop()
+
+            # since we found the answer for price for old_head_idx, we set value for that index
+            answer[old_head_idx] = cur_price_idx - old_head_idx
+
+        # keep all price idx in stack
+        stack.append(cur_price_idx)
+
+    # now we have
+    # stack : keep (the indices of) prices in non-decreasing order e.g. [1 2 2 3]
+    # answer : for the ones we know the answer has value in it other than zeros,
+    #           for the ones we haven't found out we will update in below while loop
+    while stack:
+        old_head_idx = stack.pop()
+        answer[old_head_idx] = len(prices) - 1 - old_head_idx
+
+    return answer
+
+result = solution([1,2,3,2,3])
+print(result)
+assert result == [4,3,1,1,0]
+```
+{{</details>}}
+

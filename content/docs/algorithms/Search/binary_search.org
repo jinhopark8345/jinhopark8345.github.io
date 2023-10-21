@@ -1,0 +1,43 @@
+#+TITLE: Binary Search
+#+DATE: 2023-07-04T01:10:47+09:00
+#+PUBLISHDATE: 2023-07-04T01:10:47+09:00
+#+CATEGORIES[]: Algorithm
+#+TAGS[]: algorithm
+#+DESCRIPTION: binary search example
+
+* Hash example
+[[https://school.programmers.co.kr/learn/courses/30/lessons/43238][프로그래머스 스쿨 - 입국심사]]
+
+{{<details  "Quiz and solution">}}
+#### Solution
+```Python
+
+def solution(n, times):
+    ans = 0
+
+    l, r = 0, min(times) * n
+
+    # calculate max finish time calc
+    get_max = lambda tot: sum([tot//t for t in times])
+
+    # we are finding the time by having min_finish time and max_finish time
+    # l,r -> current minimum time to finish, current maximum time to finish
+    # we want l to be bigger and r to be smaller so that they can meet at one point
+    while l <= r:
+        mid = l + (r - l) // 2
+        mid_max = get_max(mid)
+        if mid_max >= n:
+            ans = mid
+            r = mid - 1
+        else:
+            l = mid + 1
+
+    return ans
+
+```
+{{</details>}}
+
+
+
+
+

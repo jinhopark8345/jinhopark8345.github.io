@@ -1,0 +1,44 @@
+#+TITLE: Brute-Force Search
+#+DATE: 2023-07-04T22:46:39+09:00
+#+PUBLISHDATE: 2023-07-04T22:46:39+09:00
+#+CATEGORIES[]: Algorithm
+#+TAGS[]: Algorithm
+#+DESCRIPTION: Brute-force search quizs and solutions
+
+quiz link: https://school.programmers.co.kr/learn/courses/30/lessons/42839
+
+#+begin_src python :results output
+from functools import lru_cache
+from itertools import permutations
+import math
+
+def solution(numbers):
+    answer = 0
+
+    # cache the result of each call of this method
+    @lru_cache(maxsize=100000)
+    def is_prime_num(num):
+        if num < 2:
+            return False
+        # we only need to check the range of [2, mat.sqrt(num)+1 )
+        max_num =  int(math.sqrt(num))
+        for n in range(2, max_num+1):
+            if num % n == 0 :
+                return False
+        return True
+
+    # collect all numbers with permutation algorithm
+    all_nums = set()
+    l = len(numbers)
+    for length in range(1, l+1):
+        perm_list = list(permutations(numbers, r=length))
+        set_nums = set([int(''.join(t)) for t in tmp])
+        all_nums |= tmp
+
+    # find if collected numbers are prime numbers and count the number of them
+    answer = len([n for n in all_nums if is_prime_num(n)])
+
+    return answer
+
+#+end_src
+
