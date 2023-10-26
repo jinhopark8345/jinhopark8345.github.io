@@ -8,10 +8,9 @@
 * Hash example
 [[https://school.programmers.co.kr/learn/courses/30/lessons/43238][프로그래머스 스쿨 - 입국심사]]
 
-{{<details  "Quiz and solution">}}
-#### Solution
-```Python
+{{< expand code >}}
 
+```python
 def solution(n, times):
     ans = 0
 
@@ -33,11 +32,5 @@ def solution(n, times):
             l = mid + 1
 
     return ans
-
 ```
-{{</details>}}
-
-
-
-
-
+{{< /expand >}}

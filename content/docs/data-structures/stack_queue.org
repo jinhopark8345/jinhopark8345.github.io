@@ -51,11 +51,12 @@ def solution(bridge_length, bridge_max_weight, truck_weights):
 * Stack example
 [[https://school.programmers.co.kr/learn/courses/30/lessons/42584?language=python3][프로그래머스 스쿨 - 주식가격]]
 
-{{<details  "Quiz and solution">}}
+![quiz-1](/img/posts/stack-queue-quiz-2.png)
+
+{{< expand "Quiz and solution">}}
 
 #### Quiz
 Link
-![quiz-1](/img/posts/stack-queue-quiz-2.png)
 
 #### brute-force solution
 
@@ -120,5 +121,5 @@ result = solution([1,2,3,2,3])
 print(result)
 assert result == [4,3,1,1,0]
 ```
-{{</details>}}
 
+{{< /expand >}}

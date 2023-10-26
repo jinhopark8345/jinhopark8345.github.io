@@ -11,7 +11,7 @@
 [[https://school.programmers.co.kr/learn/courses/30/lessons/42627][프로그래머스 스쿨 - 디스크 컨트롤러]]
 
 {{<details  "Quiz and solution">}}
-#### Solution
+
 ```Python
 from pprint import pprint
 import heapq
