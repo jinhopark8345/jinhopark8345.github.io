@@ -16,7 +16,7 @@ disableKinds = ['taxonomy', 'taxonomyTerm']
 [params]
   # (Optional, default light) Sets color theme: light, dark or auto.
   # Theme 'auto' switches between dark and light modes based on browser/os preferences
-  BookTheme = 'dark'
+  BookTheme = 'light'
 
   # (Optional, default true) Controls table of contents visibility on right side of pages.
   # Start and end levels can be controlled with markup.tableOfContents setting.
@@ -77,3 +77,6 @@ disableKinds = ['taxonomy', 'taxonomyTerm']
   # /!\ This is an experimental feature, might be removed or changed at any time
   # (Optional, experimental, default false) Enables service worker that caches visited pages and resources for offline use.
   BookServiceWorker = true
+
+[markup.goldmark.renderer]
+  unsafe = true
