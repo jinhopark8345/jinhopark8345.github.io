@@ -1,0 +1,11 @@
+#+TITLE: Data Structure: Queue
+#+DATE: 2023-07-07T20:47:51+09:00
+#+PUBLISHDATE: 2023-07-07T20:47:51+09:00
+#+DRAFT: true
+#+CATEGORIES[]: Algorithm
+
+#+DESCRIPTION: Short description
+
+* Queue
+A queue is an ADT that follows the *First-In-First-Out* (FIFO) principle. It provides operations like enqueue (to add an item to the back of the queue) and dequeue (to remove and return the front item).
+[[file:/img/posts/queue-vis.png]]

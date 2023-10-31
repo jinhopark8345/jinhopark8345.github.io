@@ -1,0 +1,147 @@
+#+TITLE: Data Structure
+#+DRAFT: false
+#+CATEGORIES[]: Algorithm
+#+TAGS[]: nil
+#+weight: 1
+#+DESCRIPTION: Short description
+
+
+* Introduction
+- Data structures are a **way of organizing and storing data** so that
+  it can be accessed and modified efficiently.
+- A lot of the time, the data structures you use will be provided by
+  the language you are using but this doesn't mean you don't **need to
+  know how they work**.
+- Knowing how each data structure works and when to use them is a
+  fundamental skill for any programmer.
+
+* List of data structures
+** Data Types
+{{< mermaid >}}
+graph LR
+
+    A[Data types] --> B[Primitive Types]
+    A --> C[Composite Types, or Non-primitive]
+    A --> D[Abstract Data Types]
+
+    B --> E[boolean, character, float, integer, long, double, ...]
+
+    C --> F[Array, String, Union, ...]
+
+    D --> G[List, Tuple, Set, Stack, Queue, Graph, ...]
+
+
+{{< /mermaid >}}
+
+
+* Primitive types
+- Available primitive types can differ depends on languages. However,
+  **understanding how much information can be stored** in each type is
+  important and choice of primitive types can affect the performance
+  of the program.
+
+- For example, if you know that the value of a variable will never be
+  negative, and in range of 0 to 65535,
+    - use an unsigned integer instead of a signed integer to store the
+      value. This will **double the maximum value that can be stored**
+      in the variable.
+    - use an unsigned short instead of an unsigned integer to store
+      the value. This will **halve the memory required to store the
+      value.** With reduced memory usage, you'll not only save memory
+      space but also experience faster data retrieval due to **fewer
+      cache misses**.
+
+- Related topics
+    - Data type conversions
+    - Memory efficiency
+    - Quantization
+    - Overflow and Underflow
+    - Floating-point precision
+    - Hardware acceleration
+
+# Data Type Conversions: Discuss the implications and potential issues when converting between different data types, such as from float to int or vice versa.
+
+# Memory Efficiency: Explain how choosing the right data types can lead to more memory-efficient programs, which can be especially crucial in resource-constrained environments.
+
+# Overflow and Underflow: Describe the risks associated with exceeding the maximum value a data type can hold (overflow) or going below the minimum value (underflow), and how to avoid these issues.
+
+# Cross-Platform Compatibility: Highlight the importance of considering data type sizes when writing code that needs to run on multiple platforms with different architectures (e.g., 32-bit vs. 64-bit systems).
+
+# Endianness: Briefly touch upon endianness (byte order) and its relevance when dealing with data types that span multiple bytes, like integers and floating-point numbers.
+
+# Floating-Point Precision: Explain the limitations of floating-point data types in terms of precision and how choosing the right precision level can impact calculations.
+
+# Bit Manipulation: Discuss the use of bitwise operations for compactly storing and manipulating data, which can be highly efficient in some situations.
+
+# Data Type Size Constants: Mention any language-specific constants or libraries that provide information about the size of primitive data types (e.g., sizeof operator in C/C++).
+
+# Hardware Acceleration: Explore how knowledge of data type sizes can be crucial when optimizing code for hardware acceleration, such as SIMD (Single Instruction, Multiple Data) operations.
+
+* Composite types
+- Also called *aggregate data types*
+- *Group together multiple values of different data types into a single unit*
+- Often used to represent complex data structures or objects
+
+** Arrays
+- Arrays are collections of elements of the same data type, accessed by an index. They provide a way to **store multiple values of the same type** in a sequential order.
+** Structures
+- Structures, also known as "structs" in some programming languages, allow you to *create custom data types by combining different data types into a single unit. Each member of a structure can have its own data type*.
+** Records
+- Records are similar to structures but are typically used in database systems to represent a single entity or row of data. Each field in a record can have a different data type.
+** Classes and Objects
+- In object-oriented programming (OOP), *classes and objects are used
+  to create complex data types*. A class defines the blueprint for an
+  object, and objects are instances of a class. They can *contain both
+  data (attributes) and methods (functions).*
+** Tuples
+- Tuples are **ordered collections of elements that can have different
+  data types**. They are often used to represent a fixed set of
+  related values.
+** Lists
+- Lists are **dynamic collections of elements** in some programming
+  languages, such as Python. Unlike arrays, lists can grow or shrink
+  in size as needed and can contain elements of different data types.
+** Dictionaries
+- Dictionaries, also known as maps or associative arrays, are
+  **collections of key-value pairs**. They allow you to associate
+  values (data) with unique keys for efficient retrieval.
+
+* Abstract data types
+- Define what operations are possible on a data structure and what their behavior should be, but they don't specify how these operations are implemented
+- An abstract and logical representation of a data structure*, *allowing programmers to work with data at a higher level of abstraction, without needing to know the underlying implementation.*
+- Programmers can choose or implement the underlying data structure that best suits their needs while adhering to the ADT's contract or interface.
+
+Some common examples of abstract data types include:
+
+** Stacks
+  - A stack is an ADT that follows the *Last-In-First-Out* (LIFO)
+    principle. It provides operations like push (to add an item to
+    the top of the stack) and pop (to remove and return the top
+    item).
+** Queues
+  - A queue is an ADT that follows the *First-In-First-Out* (FIFO)
+    principle. It provides operations like enqueue (to add an item
+    to the back of the queue) and dequeue (to remove and return the
+    front item).
+** Lists
+  - Lists are a generic ADT that can take various forms, such as
+    singly linked lists, doubly linked lists, or arrays. They
+    provide operations for *adding, removing, and accessing elements
+    at specific positions.*
+** Sets
+  - A set is an ADT that represents a *collection of unique
+    elements.* It provides operations like *adding, removing, and
+    checking for the existence of elements.*
+** Maps
+  - A map is an ADT that represents a *collection of key-value
+    pairs*. It provides operations for *adding, retrieving, and
+    removing values associated with specific keys.*
+** Trees
+  - Trees are a hierarchical ADT with *nodes connected in a branching
+    structure*. They include various types like binary trees, binary
+    search trees, and balanced trees. Trees enable *efficient
+    searching, insertion, and deletion operations.*
+** Graphs
+ - Graphs are a versatile ADT for *representing relationships
+   between objects.* They consist of *nodes and edges* and can be used
+   to model various real-world scenarios.

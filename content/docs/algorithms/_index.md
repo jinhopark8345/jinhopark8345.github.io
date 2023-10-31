@@ -4,7 +4,6 @@ bookFlatSection: true
 title: "Algorithms"
 ---
 
-# Introduction
+# Algorithms
 
-## Hello
-World
+- [Data Structure](./Data-Structures/data-structure) 

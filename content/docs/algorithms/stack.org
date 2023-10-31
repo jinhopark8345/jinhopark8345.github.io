@@ -1,0 +1,119 @@
+#+TITLE: Data Structure: Stack
+#+DATE: 2023-07-07T20:47:51+09:00
+#+PUBLISHDATE: 2023-07-07T20:47:51+09:00
+#+CATEGORIES[]: Algorithm
+#+DESCRIPTION: Short description
+
+* Stack
+- A stack is an ADT that follows the *Last-In-First-Out* (LIFO)
+  principle. It provides operations like push (to add an item to
+  the top of the stack) and pop (to remove and return the top
+  item).
+
+[[file:/img/posts/stack-vis.png]]
+
+* Stack examples
+** [[https://school.programmers.co.kr/learn/courses/30/lessons/42584?language=python3][프로그래머스 스쿨 - 주식가격]]
+{{<details  "solution">}}
+*** brute-force solution
+
+- Time Complexity : O(N^2) -> two for loops
+- Memory Complexity : O(N) -> additional list answer
+
+#+begin_src python :results output
+def solution(prices):
+    answer = []
+    for cur_idx, cur_price in enumerate(prices):
+        # every price start with 0 time
+        answer.append(0)
+
+        for future_idx, future_price in enumerate(prices[cur_idx+1:], start=cur_idx+1):
+            # every loop, we add (time) 1 to the answer list
+            answer[-1] += 1
+            if cur_price > future_price:
+                break
+    return answer
+
+result = solution([1,2,3,2,3])
+print(result)
+assert result == [4,3,1,1,0]
+#+end_src
+*** Stack solution
+- Time Complexity : O(N)
+- Memory Complexity : O(N)
+#+begin_src python
+
+def solution(prices):
+    answer = [0]*len(prices)
+    stack = [] # in this stack, we keep the indices that didn't decrease from it's index to the end of the pirces list
+    for cur_price_idx, cur_price in enumerate(prices):
+
+        # price decreasing -> update answer : if current price is lower than last price (prices[stack[-1]])
+        while stack and cur_price < prices[stack[-1]]:
+
+            # pop current(will be replaced) head idx
+            old_head_idx = stack.pop()
+
+            # since we found the answer for price for old_head_idx, we set value for that index
+            answer[old_head_idx] = cur_price_idx - old_head_idx
+
+        # price increaseing or stay same -> add current idx to stack (this stack )
+        stack.append(cur_price_idx)
+    print(f"stack: {stack}")
+    print(f"answer: {answer}")
+    # now we have
+    # stack : keep (the indices of) prices in non-decreasing order e.g. [1 2 2 3]
+    # answer : for the ones we know the answer has value in it other than zeros,
+    #           for the ones we haven't found out we will update in below while loop
+    while stack:
+        old_head_idx = stack.pop()
+        answer[old_head_idx] = len(prices) - 1 - old_head_idx
+    print(f"stack: {stack}")
+    print(f"answer: {answer}")
+    return answer
+
+result = solution([1,2,3,2,3])
+print(result)
+assert result == [4,3,1,1,0]
+#+end_src
+
+#+RESULTS:
+
+{{</details>}}
+
+** [[https://leetcode.com/problems/valid-parentheses/description/?envType=study-plan-v2&envId=top-interview-150][Valid Parentheses - LeetCode]]
+{{<details  "solution">}}
+
+- Time Complexity : O(N)
+- Memory Complexity : O(N)
+  - worst case : all characters are opening characters then nothing will be popped until the end
+#+begin_src python :results output
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        close2open = {
+            ")": "(",
+            "}": "{",
+            "]": "[",
+        }
+        for char in s:
+            if char in close2open.values():
+                stack.append(char)
+            else:
+                if not stack:
+                    return False
+                pop_char = stack.pop()
+                if pop_char != close2open[char]:
+                    return False
+
+                continue
+
+        return len(stack) == 0
+
+assert Solution().isValid("()[]{}") == True #
+assert Solution().isValid("()") == True
+assert Solution().isValid("(]") == False
+#+end_src
+
+{{</details>}}
+

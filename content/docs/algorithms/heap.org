@@ -1,0 +1,61 @@
+#+TITLE: Data Structure: Heap
+#+DATE: 2023-07-04T01:10:47+09:00
+#+PUBLISHDATE: 2023-07-04T01:10:47+09:00
+#+DRAFT: true
+#+CATEGORIES[]: Algorithm
+#+TAGS[]: algorithm nil
+#+DESCRIPTION: Heap Explanation with example
+
+
+* Heap example
+[[https://school.programmers.co.kr/learn/courses/30/lessons/42627][프로그래머스 스쿨 - 디스크 컨트롤러]]
+
+{{<details  "Quiz and solution">}}
+
+```Python
+from pprint import pprint
+import heapq
+from collections import deque
+
+def solution(jobs):
+
+    cur_time = 0 # to check current time
+    time_waited = 0 # to count total time of disk-job waited
+
+    h = []
+    heapq.heapify(h)
+    jobs.sort(key=lambda e: (e[0], e[1]))
+
+    last_added = -1
+    handled_job_cnt = 0
+
+    while handled_job_cnt < len(jobs):
+
+        # add all jobs that's equal/under cur_time, add shortest job first
+        for job_idx in range(last_added+1, len(jobs)):
+            job = jobs[job_idx]
+            if job[0] <= cur_time:
+                heapq.heappush(h, (job[1], job[0]))
+                last_added = job_idx
+            else:
+                break
+        if h:
+            head = heapq.heappop(h)
+
+            head_require_time = head[0]
+            head_start_time = head[1]
+
+            cur_time += head_require_time
+            time_waited += (cur_time - head_start_time)
+            handled_job_cnt += 1
+        else:
+            cur_time += 1
+
+    return time_waited // len(jobs)
+
+rst = solution([[0, 3], [1, 9], [2, 6]])
+print(rst)
+```
+{{</details>}}
+
+
