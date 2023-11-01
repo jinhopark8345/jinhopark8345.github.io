@@ -14,46 +14,26 @@
 * When To Use Stack?
 It follows the Last-In-First-Out (LIFO) principle, which means that the last element added to the stack is the first one to be removed.
 
-They all have one characteristic in common which is that the last element inserted is the first one to be deleted.
+They all have one characteristic in *common* which is that *the last element inserted is the first one to be deleted*.
 
-** Function Call Stack
+** 1. Function Call Stack
 - In programming, function calls are often managed using a stack. *When a function is called, its local variables and execution context are pushed onto the stack, and when the function returns, they are popped off the stack.* This ensures that the program can return to the correct execution context after a function call.
 
-** Expression Evaluation
+** 2. Expression Evaluation
 - Stacks are useful for evaluating expressions, including arithmetic expressions and expressions with nested parentheses. You can use a stack to *keep track of operators and operands and apply operators in the correct order.*
-
-** Undo/Redo Functionality
-- Implementing undo and redo functionality in applications, such as text editors or drawing programs, can be done using a stack. Each action is pushed onto the stack, allowing users to undo and redo their actions by popping from and pushing onto the stack.
-** Parsing and Syntax Checking
-- When parsing and validating input, especially in programming
-  languages or markup languages, a stack can be used to ensure that
-  opening and closing symbols (e.g., parentheses, brackets, and tags)
-  are balanced and properly nested.
-** Backtracking Algorithms
-- Certain algorithms, like depth-first search (DFS) in graph traversal
-  or recursive algorithms, can benefit from using a stack to keep
-  track of the current state and backtrack when necessary.
-** Memory Management
-- In some memory management scenarios, a stack data structure is used
-  to allocate and deallocate memory for function call frames and local
-  variables, as in the case of the call stack in many programming
-  languages.
-** History Tracking
-- Stacks can be used to maintain a history of user actions, such as in
-  web browsers, allowing users to navigate backward and forward
+** 3. Undo/Redo Functionality
+- Implementing undo and redo functionality in applications, such as text editors or drawing programs, can be done using a stack. *Each action is pushed onto the stack, allowing users to undo and redo their actions by popping from and pushing onto the stack.*
+** 4. Parsing and Syntax Checking
+- When parsing and validating input, especially in programming languages or markup languages, a stack can be used to ensure that *opening and closing symbols (e.g., parentheses, brackets, and tags) are balanced and properly nested.*
+** 5. Backtracking Algorithms
+- Certain algorithms, like depth-first search (DFS) in graph traversal or recursive algorithms, can benefit from using a stack to keep track of the current state and backtrack when necessary.
+** 6. History Tracking
+- Stacks can be used to maintain a history of user actions, such as in web browsers, allowing users to navigate backward and forward
   through their browsing history.
-** Task Scheduling
-- In operating systems and multitasking environments, a stack can be
-  used to keep track of the execution context of various tasks or
-  threads.
-** Solving Problems with Constraints:
-- Certain problems, like the Tower of Hanoi puzzle or maze solving,
-  can be efficiently solved using a stack to keep track of
-  intermediate steps and decisions.
-** Postfix (Reverse Polish) Notation:
-- When working with postfix notation, which is a way to represent
-  mathematical expressions without parentheses, stacks are often used
-  to evaluate expressions efficiently.
+** 7. Solving Problems with Constraints:
+- Certain problems, like the Tower of Hanoi puzzle or maze solving, can be efficiently solved using a stack to keep track of intermediate steps and decisions.
+** 8. Postfix (Reverse Polish) Notation:
+- When working with postfix notation, which is a way to represent mathematical expressions without parentheses, stacks are often used to evaluate expressions efficiently.
 
 * Stack examples
 ** [[https://school.programmers.co.kr/learn/courses/30/lessons/42584?language=python3][프로그래머스 스쿨 - 주식가격]]
