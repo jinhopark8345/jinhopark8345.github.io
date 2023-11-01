@@ -1,5 +1,6 @@
 #+TITLE: Data Structure
-#+DRAFT: false
+#+bookCollapseSection: true
+#+bookComments: false
 #+weight: 1
 
 * Introduction
