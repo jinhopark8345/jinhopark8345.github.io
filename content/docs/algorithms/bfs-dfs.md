@@ -2,9 +2,6 @@
 #+DATE: 2023-07-04T01:10:47+09:00
 #+PUBLISHDATE: 2023-07-04T01:10:47+09:00
 #+DRAFT: true
-#+CATEGORIES[]: Algorithm
-#+TAGS[]: algorithm
-#+DESCRIPTION: BFS-DFS quizs and solutions
 
 quiz link : https://school.programmers.co.kr/learn/courses/30/lessons/43165
 

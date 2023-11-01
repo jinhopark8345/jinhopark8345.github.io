@@ -1,10 +1,7 @@
 #+TITLE: Binary Search
 #+DATE: 2023-07-04T01:10:47+09:00
 #+PUBLISHDATE: 2023-07-04T01:10:47+09:00
-#+CATEGORIES[]: Algorithm
-#+TAGS[]: algorithm
 #+DRAFT: true
-#+DESCRIPTION: binary search example
 
 * Hash example
 [[https://school.programmers.co.kr/learn/courses/30/lessons/43238][프로그래머스 스쿨 - 입국심사]]

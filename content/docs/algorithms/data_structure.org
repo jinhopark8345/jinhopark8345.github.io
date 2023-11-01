@@ -1,9 +1,6 @@
 #+TITLE: Data Structure
 #+DRAFT: false
-#+CATEGORIES[]: Algorithm
-#+TAGS[]: nil
 #+weight: 1
-#+DESCRIPTION: Short description
 
 * Introduction
 - Data structures are a **way of organizing and storing data** so that
