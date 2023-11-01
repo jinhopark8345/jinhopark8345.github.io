@@ -5,8 +5,6 @@
 #+weight: 1
 #+DESCRIPTION: Short description
 
-* small change
-
 * Introduction
 - Data structures are a **way of organizing and storing data** so that
   it can be accessed and modified efficiently.
