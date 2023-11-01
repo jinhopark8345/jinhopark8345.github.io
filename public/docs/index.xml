@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on Jinho&#39;s TIL</title>
+    <link>https://jinhopark8345.github.io/docs/</link>
+    <description>Recent content in Docs on Jinho&#39;s TIL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Oct 2023 01:43:48 +0900</lastBuildDate><atom:link href="https://jinhopark8345.github.io/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Basics</title>
+      <link>https://jinhopark8345.github.io/docs/python/basic_syntax/</link>
+      <pubDate>Fri, 07 Jul 2023 20:47:51 +0900</pubDate>
+      
+      <guid>https://jinhopark8345.github.io/docs/python/basic_syntax/</guid>
+      <description> Dictionary  initialization  d = dict(([1,2], [3,4], [5,6])) print(d) d = dict((&amp;#39;12&amp;#39;, &amp;#39;34&amp;#39;, &amp;#39;56&amp;#39;)) # length of sequence elements must be 2 print(d) d = {&amp;#34;1&amp;#34;: &amp;#34;2&amp;#34;, &amp;#34;3&amp;#34;: &amp;#34;4&amp;#34;, &amp;#34;5&amp;#34;: &amp;#34;6&amp;#34;} print(d) d = {a:b for a,b in zip([1,3,5], [2,4,6])} print(d)  {1: 2, 3: 4, 5: 6} {&amp;#39;1&amp;#39;: &amp;#39;2&amp;#39;, &amp;#39;3&amp;#39;: &amp;#39;4&amp;#39;, &amp;#39;5&amp;#39;: &amp;#39;6&amp;#39;} {&amp;#39;1&amp;#39;: &amp;#39;2&amp;#39;, &amp;#39;3&amp;#39;: &amp;#39;4&amp;#39;, &amp;#39;5&amp;#39;: &amp;#39;6&amp;#39;} {1: 2, 3: 4, 5: 6}      </description>
+    </item>
+    
+  </channel>
+</rss>
