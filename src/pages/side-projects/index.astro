@@ -57,6 +57,22 @@ const { sideProjects } = resume;
       </>
     )}
 
+    {sideProjects.dailyDrivers && sideProjects.dailyDrivers.length > 0 && (
+      <>
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-3">
+          Daily drivers
+        </h2>
+        <ul class="flex flex-wrap gap-2 mb-8">
+          {sideProjects.dailyDrivers.map((d) => (
+            <li class="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-sm text-slate-700 dark:text-slate-200">
+              {d.name}
+              {d.detail && <span class="text-slate-500 dark:text-slate-400"> · {d.detail}</span>}
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+
     {sideProjects.hobbies.length > 0 && (
       <>
         <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-3">

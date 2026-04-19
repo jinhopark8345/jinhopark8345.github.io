@@ -346,6 +346,11 @@ Both repos are private for now. I like making things that feel a little more pol
     ] as SideProject[],
     interests: [
       {
+        title: "Productivity and personal knowledge management",
+        content:
+          "How to get more done, and how to make the things I learn actually stick. It's the reason I got into Emacs years ago, and it turns out PrePrep scratches the same itch, I just didn't see the connection until I was already building it. Active learning beats reading-and-forgetting.",
+      },
+      {
         title: "Investment",
         content:
           "Markets, companies, how money and capital actually move. Feels like picking up a new school subject, and I like having one of those again.",
@@ -356,6 +361,11 @@ Both repos are private for now. I like making things that feel a little more pol
           "Running [OpenClaw](https://openclaw.ai/) locally against [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) on a single 3090, didn't know that was possible with decent inference speed. The reasoning isn't Gemini or Opus sharp, but it's close enough to be genuinely useful, which is wild for a local open-weights model.",
       },
     ] as Interest[],
+    dailyDrivers: [
+      { name: "Emacs" },
+      { name: "i3wm" },
+      { name: "Ubuntu" },
+    ] as Hobby[],
     hobbies: [
       { name: "Swimming" },
       { name: "Climbing", detail: "indoor mostly" },
