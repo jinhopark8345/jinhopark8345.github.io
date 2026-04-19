@@ -34,7 +34,7 @@ params:
 
   theme:
     disableThemeToggle: false
-    defaultTheme: "dark"
+    defaultTheme: "light"
 
   font:
     fontSize: 1rem

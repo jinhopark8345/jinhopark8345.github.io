@@ -3,41 +3,47 @@
 <section id="achievements" class="py-5">
     <div class="container">
         <h3 class="text-center">{{ $achievements.title | default .Site.Params.achievements.title | default (i18n "achievements") }}</h3>
-        <div class="px-0 px-md-5 px-lg-5">
-            <div class="row justify-content-center px-3 px-md-5 px-lg-5">
-                <div class="col-lg-8 col-md-10 col-12">
-                    {{ range $achievements.items | default .Site.Params.achievements.items }}
-                    {{ if .url }}
-                    <a class="card my-3 p-3 d-block text-decoration-none" href="{{ .url }}" title="{{ .title }}" target="_blank">
-                        <div class="d-flex align-items-start">
-                            {{if .image }}
-                                <img src="{{ .image }}" style="width: 64px; height: 64px; object-fit: cover; margin-right: 1rem; flex-shrink: 0;">
+        <div class="row justify-content-center py-4">
+            <div class="col-lg-8 col-md-10 col-12">
+                {{ range $index, $element := $achievements.items | default .Site.Params.achievements.items }}
+                    {{ $id := printf "ach-%d" $index }}
+                    {{ $hasBody := .content }}
+                    <div class="card my-2">
+                        <div
+                            class="card-header d-flex justify-content-between align-items-center{{ if $hasBody }} collapsed{{ end }}"
+                            {{ if $hasBody }}
+                                data-bs-toggle="collapse"
+                                data-bs-target="#{{ $id }}"
+                                role="button"
+                                aria-expanded="false"
+                                aria-controls="{{ $id }}"
+                                style="cursor: pointer;"
                             {{ end }}
-                            <div class="flex-grow-1">
-                                <h5 class="card-title mb-2">{{ .title }}</h5>
-                                <div class="card-text secondary-font">
-                                    {{ .content }}
-                                </div>
+                        >
+                            <div class="d-flex align-items-center">
+                                {{ if .image }}
+                                    <img src="{{ .image }}" style="width: 32px; height: 32px; object-fit: cover; margin-right: 0.75rem; flex-shrink: 0;">
+                                {{ end }}
+                                <span class="h5 mb-0">{{ .title }}</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                {{ if .url }}
+                                    <a href="{{ .url }}" target="_blank" class="me-3" title="Open link" onclick="event.stopPropagation();">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                {{ end }}
+                                {{ if $hasBody }}<i class="fas fa-chevron-down"></i>{{ end }}
                             </div>
                         </div>
-                    </a>
-                    {{ else }}
-                    <div class="card my-3 p-3" title="{{ .title }}">
-                        <div class="d-flex align-items-start">
-                            {{if .image }}
-                                <img src="{{ .image }}" style="width: 64px; height: 64px; object-fit: cover; margin-right: 1rem; flex-shrink: 0;">
-                            {{ end }}
-                            <div class="flex-grow-1">
-                                <h5 class="card-title mb-2">{{ .title }}</h5>
-                                <div class="card-text secondary-font">
-                                    {{ .content }}
-                                </div>
+                        {{ if $hasBody }}
+                        <div id="{{ $id }}" class="collapse">
+                            <div class="card-body secondary-font">
+                                {{ .content }}
                             </div>
                         </div>
+                        {{ end }}
                     </div>
-                    {{ end }}
-                    {{ end }}
-                </div>
+                {{ end }}
             </div>
         </div>
     </div>
