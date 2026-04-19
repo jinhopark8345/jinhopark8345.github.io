@@ -69,6 +69,9 @@ Then, from the repo root:
 npm run resume:pdf            # → writes public/resume.pdf
 ```
 
+Inter TTFs live in `resume/fonts/` and are passed to Typst via `--font-path`,
+so the build does not depend on fonts being installed system-wide.
+
 Commit the regenerated `public/resume.pdf` alongside the `.typ` change —
 the GitHub Pages workflow does not run Typst, so the committed PDF is what
 gets deployed.

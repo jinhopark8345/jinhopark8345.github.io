@@ -152,7 +152,7 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
 #section("Open Source")
 
 #bullet[
-  *Add BROS model to 🤗 Transformers* · #link("https://github.com/huggingface/transformers/pull/23190")[huggingface/transformers\#23190] — ported architecture, tokenization, and spatial pre-processing for document understanding.
+  *Add BROS model to Transformers* · #link("https://github.com/huggingface/transformers/pull/23190")[huggingface/transformers\#23190] — ported architecture, tokenization, and spatial pre-processing for document understanding.
 ]
 #bullet[
   *OpenVINO GPU fix: prepare_output* · #link("https://github.com/openvinotoolkit/openvino/pull/7783")[openvinotoolkit/openvino\#7783] — correctness fix on the Intel-integrated-GPU inference path.
