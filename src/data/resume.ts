@@ -64,6 +64,11 @@ export type SideProject = {
   content?: string;
 };
 
+export type Interest = {
+  title: string;
+  content: string;
+};
+
 export type Hobby = {
   name: string;
   detail?: string;
@@ -339,6 +344,18 @@ It's actually two repos:
 Both repos are private for now. I like making things that feel a little more polished than they need to be, and I like surprising people with what a side project can be.`,
       },
     ] as SideProject[],
+    interests: [
+      {
+        title: "Investment",
+        content:
+          "Markets, companies, how money and capital actually move. Feels like picking up a new school subject, and I like having one of those again.",
+      },
+      {
+        title: "New AI tooling",
+        content:
+          "Running OpenClaw locally against Qwen 27B on a single 3090, didn't know that was possible with decent inference speed. The reasoning isn't Gemini or Opus sharp, but it's close enough to be genuinely useful, which is wild for a local open-weights model.",
+      },
+    ] as Interest[],
     hobbies: [
       { name: "Swimming" },
       { name: "Climbing", detail: "indoor mostly" },

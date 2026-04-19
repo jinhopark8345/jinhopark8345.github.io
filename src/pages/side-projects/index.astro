@@ -26,6 +26,22 @@ const { sideProjects } = resume;
       ))}
     </div>
 
+    {sideProjects.interests && sideProjects.interests.length > 0 && (
+      <>
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-3">
+          Currently into
+        </h2>
+        <div class="space-y-3 mb-8">
+          {sideProjects.interests.map((i) => (
+            <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
+              <span class="font-semibold text-slate-900 dark:text-slate-100">{i.title}.</span>{" "}
+              {i.content}
+            </p>
+          ))}
+        </div>
+      </>
+    )}
+
     {sideProjects.hobbies.length > 0 && (
       <>
         <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-3">
