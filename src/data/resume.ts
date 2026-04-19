@@ -81,23 +81,45 @@ export const resume = {
 
   about: {
     paragraphs: [
-      "I'm an AI Application Engineer based in Seoul, focused on Information Retrieval and scalable backend systems. My day-to-day is building **Agentic RAG** systems, tuning **hybrid vector search**, squeezing latency out of retrieval pipelines, and automating ML workflows with **Prefect, Kubernetes, and GitOps**.",
-      "Currently a Machine Learning Engineer at **Boeing**, where I work on FAA-compliance RAG and Boeing's AI training framework. Before that, at **Lomin**, I optimized Transformer inference serving with NVIDIA Triton and built document-understanding systems for financial clients.",
+      "I'm an AI Application Engineer specializing in **Information Retrieval** and **scalable backend systems** — architecting production-grade vector search and Agentic RAG systems with a focus on latency optimization and retrieval precision.",
+      "I have a proven track record of automating the end-to-end ML lifecycle using **Prefect, Kubernetes, and GitOps**, and deep expertise in bridging the gap between complex IR research and high-availability **FastAPI** services.",
+      "Currently at **Boeing**, where I work on FAA-compliance RAG and the Boeing AI Factory training framework. Before that, at **Lomin**, I optimized Transformer inference serving with NVIDIA Triton and built document-understanding systems for financial clients.",
       "I graduated from Konkuk University in 2022 with a B.S. in Electrical and Electronics Engineering, and spent a semester on exchange at the University of Agder in Norway.",
     ],
     skillGroups: [
       { label: "Languages", items: ["Python", "C++"] },
       {
-        label: "ML & Deep Learning",
-        items: ["PyTorch", "Transformers", "ONNX", "OpenVINO", "NetworkX"],
+        label: "Retrieval & Vector DBs",
+        items: ["Qdrant", "Hybrid search", "Sparse/Dense embeddings", "Re-ranking"],
       },
       {
-        label: "Infrastructure & DevOps",
-        items: ["OpenShift", "Kubernetes", "Docker", "Git", "CMake", "Linux"],
+        label: "ML Frameworks",
+        items: ["PyTorch", "LangChain", "Transformers", "MLflow", "ClearML"],
       },
       {
-        label: "CS Foundations",
-        items: ["Data structures", "Graph algorithms"],
+        label: "Hardware Optimization",
+        items: ["NVIDIA Triton", "OpenVINO", "ONNX Runtime", "Quantization"],
+      },
+      {
+        label: "Backend & Application",
+        items: ["FastAPI", "Redis", "PostgreSQL", "Streamlit", "REST APIs"],
+      },
+      {
+        label: "Infrastructure & Automation",
+        items: [
+          "Prefect",
+          "Kubernetes (OpenShift)",
+          "Docker",
+          "Helm",
+          "GitLab CI/CD",
+          "ArgoCD",
+          "Git",
+          "Linux",
+        ],
+      },
+      {
+        label: "Observability & Metrics",
+        items: ["Grafana", "Prometheus", "Custom metric exporters", "KPI tracking"],
       },
     ] as SkillGroup[],
     spokenLanguages: [
@@ -118,17 +140,26 @@ export const resume = {
           name: "AI Application Engineer",
           date: "Jan 2024 – present",
           info: "ML Team · Seoul, South Korea",
-          content: `**Information Retrieval (IR) System for Boeing Problem Solving Model (BPSM)**
+          content: `**Advanced Information Retrieval** — *IR System for Boeing Problem Solving Model (BPSM)*
 
-- **Deployment & Infrastructure:** Deployed the solution on OpenShift, enhancing scalability and reliability.
-- **Backend & API Development:** Designed and implemented a FastAPI-based backend for efficient document retrieval and processing.
-- **Frontend Development:** Built a user-friendly interface using Streamlit and React, improving accessibility for Boeing CAP (Corrective Action Plan) owners in generating FAA-compliant reports.
+- Architected a high-precision **Agentic RAG** system for FAA compliance, using an agentic loop to cross-reference technical aviation reports against regulatory frameworks.
+- Built a **hybrid search** pipeline on **Qdrant** (sparse + dense), improving **MRR by 7%** on domain-specific technical terminology over a 500-query eval set.
+- Tuned Qdrant indexing and payload filtering to hold **p95 retrieval latency under 500 ms**.
+- Served the embedding model on **CPU-only infrastructure** with **BentoML** dynamic batching, combined with **ONNX Runtime / OpenVINO** and quantization, to sustain throughput without GPUs.
+- Stood up a **Prometheus & Grafana** monitoring stack for the retrieval service, plus a custom **Postgres-backed KPI tracker** (CTR, query quality, adoption, latency SLOs) visualized in Grafana.
+- Delivered a user-friendly interface with **Streamlit** and **React** for Boeing CAP (Corrective Action Plan) owners generating FAA-compliant reports.
+
+**MLOps & Backend Automation**
+
+- Implemented a **GitOps** deployment flow with **ArgoCD** and **OpenShift**, reducing deployment cycles from **1 hour to 10 minutes**.
+- Developed a fault-tolerant **Prefect** orchestration layer, automating data ingestion and inference pipelines for aircraft predictive maintenance.
+- Eliminated **~8 hours of manual weekly labor** by building an automated PDF-generation backend that converts raw telemetry into stakeholder-ready reports via FastAPI.
 
 **Boeing AI Factory**
 
-- Developed a scalable deep learning training framework, enabling efficient AI model development across classical ML, deep learning, and RL.
-- Reduced redundant model development efforts by designing a reusable framework for both AI and non-AI engineers.
-- Built on **Ray** & **PyTorch Lightning** and integrated with Boeing's MLOps stack (ClearML, model hub, dataset hub) for seamless deployment.`,
+- Developed a scalable deep-learning training framework enabling efficient AI model development across classical ML, deep learning, and RL.
+- Reduced redundant model-development effort by designing a reusable framework for both AI and non-AI engineers.
+- Built on **Ray** & **PyTorch Lightning**; integrated with Boeing's MLOps stack (ClearML, model hub, dataset hub) for seamless deployment.`,
         },
       ],
     },
@@ -142,11 +173,19 @@ export const resume = {
           name: "Machine Learning Engineer",
           date: "May 2022 – Aug 2023",
           info: "ML Team · Seoul, South Korea",
-          content: `- **Encoder–Decoder Model Optimization & Conversion:** Improved inference speed of encoder–decoder Transformer models by **20%** through caching and quantization, without memory trade-offs.
-- **Table Information Extraction System:** Designed and implemented a multi-modal ML framework that improved table information extraction F1 score by **15%**.
-- **Document Understanding Model Pre-training:** Developed a document understanding (DU) framework and curated datasets for DU model pre-training and graph-based augmentations.
-- **Key Clients:** Delivered ML solutions for Kyobo Life, Lina Life, Shinhan Asset Trust, and KIPO.
-- **Proof of Concept (PoC) Initiatives:** Led ML-driven PoC projects for Shinhan Asset Trust, Samsung Fire & Marine Insurance, Hanwha Life, Samsung Life, and KB Insurance.`,
+          content: `**Inference & Serving Optimization**
+
+- Architected a high-throughput serving layer using **NVIDIA Triton**, implementing KV-caching and quantization that accelerated Transformer inference by **20%**.
+- Engineered a multi-modal **Table Extraction** system for financial documents, improving **F1 by 15%** and deploying it for enterprise clients.
+
+**Retrieval & Fine-tuning**
+
+- Developed a **Document Understanding (DU)** framework, building specialized data pipelines for graph-based augmentation and efficient dataset curation.
+
+**Clients & Projects**
+
+- **Key clients:** Delivered ML solutions for Kyobo Life, Lina Life, Shinhan Asset Trust, and KIPO.
+- **PoC initiatives:** Led ML-driven PoC projects for Shinhan Asset Trust, Samsung Fire & Marine Insurance, Hanwha Life, Samsung Life, and KB Insurance.`,
         },
       ],
     },
