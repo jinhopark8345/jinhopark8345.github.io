@@ -348,23 +348,24 @@ Both repos are private for now. I like making things that feel a little more pol
       {
         title: "Productivity and personal knowledge management",
         content:
-          "How to get more done, and how to make the things I learn actually stick. It's the reason I got into Emacs years ago, and it turns out PrePrep scratches the same itch, I just didn't see the connection until I was already building it. Active learning beats reading-and-forgetting.",
+          "How to get more done, and how to make the things I learn actually stick. It's the reason I got into Emacs years ago, and it turns out PrePrep scratches the same itch, I just didn't see the connection until I was already building it. Active learning beats reading-and-forgetting. Honest caveat: I've spent more hours customizing Emacs than it's probably ever saved me, and I wouldn't recommend it to anyone who hasn't already fallen into that rabbit hole. No regrets though.",
       },
       {
         title: "Investment",
         content:
-          "Markets, companies, how money and capital actually move. Feels like picking up a new school subject, and I like having one of those again.",
+          "Markets, companies, how money and capital actually move. Feels like picking up a new school subject, and I like having one of those again. Real motivation underneath: you don't need to be rich, but not having money when you need it is brutal. I'd rather stay ahead of it.",
       },
       {
         title: "New AI tooling",
         content:
-          "Running [OpenClaw](https://openclaw.ai/) locally against [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) on a single 3090, didn't know that was possible with decent inference speed. The reasoning isn't Gemini or Opus sharp, but it's close enough to be genuinely useful, which is wild for a local open-weights model.",
+          "Running [OpenClaw](https://openclaw.ai/) locally against [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) on a single 3090, didn't know that was possible with decent inference speed. The reasoning isn't Gemini or Opus sharp, but it's close enough to be genuinely useful, which is wild for a local open-weights model. I've had a few conversations with it that genuinely surprised me, might share one here sometime. I love talking about AI and where it's headed, though my wife reminds me to check if the other person still wants to hear about it.",
       },
     ] as Interest[],
     dailyDrivers: [
       { name: "Emacs" },
       { name: "i3wm" },
-      { name: "Ubuntu" },
+      { name: "Ubuntu", detail: "desktop" },
+      { name: "MacBook Pro 16\" M3", detail: "personal laptop" },
     ] as Hobby[],
     hobbies: [
       { name: "Swimming" },
