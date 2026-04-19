@@ -45,6 +45,7 @@ params:
   navbar:
     align: ms-auto
     brandName: "Jinho Park"
+    showBrandLogo: false
     disableSearch: true
     stickyNavBar:
       enable: true
@@ -69,7 +70,7 @@ params:
       optimization, and retrieval precision. Currently at Boeing,
       previously at Lomin.
     bottomImage:
-      enable: true
+      enable: false
     button:
       enable: true
       name: "Resume"
@@ -236,7 +237,7 @@ params:
     enable: true
     content: "My inbox is always open. Whether you want to talk about retrieval systems, ML infra, or a role — I'll do my best to reply."
     btnName: "Email me"
-    btnLink: "mailto:jinhoparkseoul@gmail.com"
+    btnLink: "https://mail.google.com/mail/?view=cm&fs=1&to=jinhoparkseoul@gmail.com"
 
   footer:
     recentPosts:
