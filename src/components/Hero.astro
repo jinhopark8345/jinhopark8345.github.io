@@ -2,9 +2,10 @@
 import { resume } from "~/data/resume";
 const { hero, socials, name, role, location } = resume;
 
-// Display-friendly labels (strip scheme)
-const linkedinLabel = socials.linkedin.replace(/^https?:\/\//, "");
-const githubLabel = socials.github.replace(/^https?:\/\//, "");
+// Display-friendly labels (strip scheme, www, trailing slash)
+const prettify = (u: string) => u.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+const linkedinLabel = prettify(socials.linkedin);
+const githubLabel = prettify(socials.github);
 const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${socials.email}`;
 ---
 <section id="top" class="mx-auto max-w-3xl px-4 sm:px-6 pt-16 pb-10">

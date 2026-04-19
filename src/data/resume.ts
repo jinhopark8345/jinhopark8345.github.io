@@ -60,7 +60,7 @@ export const resume = {
 
   socials: {
     github: "https://github.com/jinhopark8345",
-    linkedin: "https://linkedin.com/in/jinhopark",
+    linkedin: "https://www.linkedin.com/in/jinho-park-9a511a1b9/",
     email: "jinhoparkseoul@gmail.com",
   } as Socials,
 
@@ -130,7 +130,7 @@ export const resume = {
     },
     {
       company: "Lomin",
-      companyUrl: "https://lomin.ai/",
+      companyUrl: "https://www.lomin.ai/",
       team: "ML Team",
       location: "Seoul, South Korea",
       jobs: [
@@ -148,7 +148,7 @@ export const resume = {
     },
     {
       company: "Intel",
-      companyUrl: "https://www.intel.com/",
+      companyUrl: "https://www.intel.com/content/www/us/en/homepage.htm",
       team: "OpenVINO Korea",
       location: "Seoul, South Korea",
       jobs: [
@@ -157,7 +157,7 @@ export const resume = {
           date: "Aug 2021 – Feb 2022",
           info: "OpenVINO Korea · Seoul, South Korea",
           content: `- Collaborated with local and international teams to analyze the performance of deep learning models on Intel hardware.
-- Optimized OpenVINO components for Intel integrated GPUs, resolving **5+ major performance issues** to enhance inference efficiency.`,
+- Optimized [OpenVINO](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html) components for Intel integrated GPUs, resolving **5+ major performance issues** to enhance inference efficiency.`,
         },
       ],
     },
@@ -167,7 +167,7 @@ export const resume = {
     {
       title: "B.S., Electrical and Electronics Engineering",
       school: "Konkuk University",
-      schoolUrl: "https://www.konkuk.ac.kr/do/Index.do",
+      schoolUrl: "https://english.kku.ac.kr/mbshome/mbs/wwwen/index.do",
       date: "Mar 2015 – Feb 2022",
       degree: "Bachelor",
       location: "Seoul, South Korea",
@@ -178,7 +178,7 @@ export const resume = {
     {
       title: "Exchange Student, Computer Science",
       school: "University of Agder",
-      schoolUrl: "https://www.uia.no/en",
+      schoolUrl: "https://www.uia.no/english/",
       date: "Aug 2017 – Jan 2018",
       degree: "Exchange Student, Bachelor",
       location: "Agder, Norway",
@@ -192,7 +192,7 @@ export const resume = {
       title: "Silver Medal — UBC Ovarian Cancer Subtype Classification",
       subtitle: "Kaggle",
       date: "Jan 2024",
-      url: "https://www.kaggle.com/competitions/UBC-OCEAN",
+      url: "https://www.kaggle.com/certification/competitions/jinho8345/UBC-OCEAN",
       content:
         "Ranked **28 of 1,724** participants (top 2%) in the UBC Ovarian Cancer Subtype Classification and Outlier Detection (UBC-OCEAN) competition.",
     },
@@ -201,52 +201,52 @@ export const resume = {
       subtitle: "Korean Institute of Broadcast and Media Engineers",
       date: "Nov 2021",
       content:
-        'Paper: *"Further Optimize MobileNetV2 with Channel-wise Squeeze and Excitation."*',
+        'Paper: [*"Further Optimize MobileNetV2 with Channel-wise Squeeze and Excitation."*](https://koreascience.kr/article/CFKO202115161202726.pdf)',
     },
     {
       title: "Certified Kubernetes Administrator (CKA)",
       subtitle: "Linux Foundation",
       date: "Dec 2024",
-      url: "https://www.cncf.io/certification/cka/",
+      url: "https://www.credly.com/badges/31ab4d72-86ce-46be-9f77-9cf25af5c133/linked_in_profile",
     },
     {
       title: "Build a Modern Computer from First Principles: Nand to Tetris",
       subtitle: "Coursera",
       date: "Jan 2021",
-      url: "https://www.coursera.org/learn/build-a-computer",
+      url: "https://www.coursera.org/account/accomplishments/certificate/SGZA3KSZJ4GJ",
     },
     {
       title: "Deep Learning Specialization",
       subtitle: "Coursera · deeplearning.ai",
       date: "May 2019",
-      url: "https://www.coursera.org/specializations/deep-learning",
+      url: "https://www.coursera.org/account/accomplishments/specialization/certificate/RN6NXSR9MXBH",
     },
     {
       title: "Machine Learning",
       subtitle: "Coursera · Stanford",
       date: "Feb 2019",
-      url: "https://www.coursera.org/learn/machine-learning",
+      url: "https://www.coursera.org/account/accomplishments/certificate/BH6FU4KSW4TS",
     },
   ] as CardEntry[],
 
   openSource: [
     {
       project: "Add BROS model to 🤗 Transformers",
-      subtitle: "huggingface/transformers",
-      url: "https://huggingface.co/docs/transformers/model_doc/bros",
+      subtitle: "huggingface/transformers#23190",
+      url: "https://github.com/huggingface/transformers/pull/23190",
       date: "Sep 2023",
-      content: `Added the **BROS** (BERT Relying On Spatiality) document-understanding model to the Hugging Face Transformers library.
+      content: `Added the **BROS** (BERT Relying On Spatiality) document-understanding model to the [Hugging Face Transformers](https://huggingface.co/docs/transformers/model_doc/bros) library.
 
 - Ported the model architecture, tokenization, and pre-processing for spatially-aware document inputs.
 - Shipped with docs, model card, and integration tests.`,
     },
     {
-      project: "Add test case — OpenVINO",
-      subtitle: "openvinotoolkit/openvino",
-      url: "https://github.com/openvinotoolkit/openvino",
+      project: "[GPU] Fix issue of prepare_output — OpenVINO",
+      subtitle: "openvinotoolkit/openvino#7783",
+      url: "https://github.com/openvinotoolkit/openvino/pull/7783",
       date: "Oct 2021",
       content:
-        "Added a test case to the OpenVINO project during my Software Engineer Internship at Intel, strengthening coverage for GPU-integrated inference paths.",
+        "Fixed a GPU-path issue in `prepare_output` during my Software Engineer Internship at Intel, strengthening correctness for Intel-integrated-GPU inference.",
     },
   ] as OpenSourceEntry[],
 };
