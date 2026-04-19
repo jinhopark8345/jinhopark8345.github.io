@@ -8,7 +8,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "resume:pdf": "typst compile resume/resume.typ public/resume.pdf"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
