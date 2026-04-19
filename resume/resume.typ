@@ -121,7 +121,7 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
   *Multi-modal Table Extraction:* Built a system for financial documents, improving F1 by 15%, and shipped a Document Understanding framework with graph-based augmentation pipelines.
 ]
 #bullet[
-  *Enterprise delivery:* Led ML solutions and PoCs for Kyobo Life, Lina Life, Shinhan Asset Trust, KIPO, Samsung Fire & Marine, Hanwha Life, Samsung Life, and KB Insurance.
+  *Enterprise delivery:* Delivered ML solutions for Kyobo Life, Lina Life, Shinhan Asset Trust, and KIPO; developed ML-driven PoCs for Samsung Fire & Marine, Hanwha Life, Samsung Life, and KB Insurance.
 ]
 
 #v(3pt)
