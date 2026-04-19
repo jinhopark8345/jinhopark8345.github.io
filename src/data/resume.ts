@@ -174,7 +174,7 @@ export const resume = {
 
 - Built an **internal code-review LLM bot** that lets engineers chat with an LLM directly on merge requests: code review, summarization, and Q&A inside the review flow.
 - Shipped an **MCP (Model Context Protocol) server** exposing in-house tools and data sources to LLM agents through a standard interface.
-- Built a **complex PDF parser** that extracts document layout via few-shot prompting over (v)LLM APIs; it now powers the data-ingestion pipeline for the compliance RAG system and other internal tools.
+- Built a **complex PDF parser** that extracts document layout via few-shot prompting over LLM APIs; it now powers the data-ingestion pipeline for the compliance RAG system and other internal tools.
 
 **MLOps & Backend Automation**
 
