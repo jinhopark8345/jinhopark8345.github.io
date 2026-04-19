@@ -318,26 +318,36 @@ export const resume = {
 
   sideProjects: {
     intro:
-      "Outside of work, I build small things for myself and spend time off-screen.",
+      "Less work, more me. The apps I'm building for fun, the things I do off-screen, and the people I share them with. Most of what's below I do with my wife, while the two cats supervise.",
     projects: [
       {
-        slug: "project-1",
-        title: "(stub) Project #1",
-        subtitle: "replace me",
-        content:
-          "A short description of what you're building, why, and where it lives.",
-      },
-      {
-        slug: "project-2",
-        title: "(stub) Project #2",
-        subtitle: "replace me",
-        content:
-          "A short description of what you're building, why, and where it lives.",
+        slug: "preprep",
+        title: "PrePrep",
+        subtitle: "an interview prep app I'm building",
+        date: "Started March 2026",
+        content: `In high school, my favorite subject was math, and the best part wasn't solving problems. It was explaining them to friends until they finally got it. For a while I wanted to be a math teacher.
+
+I didn't go that route, but the urge to help people learn never really left. PrePrep is where it landed.
+
+It's a tech interview training app. You pick topics, it picks questions based on what you're weakest at (SM-2 spaced repetition), and it tracks how you're improving. Scenario questions with real code snippets, timed 10-question challenges with a leaderboard, a 30-minute mock interview mode, per-option explanations so you can see why each choice is right or wrong, streaks, badges, and a small companion (a dragon, a plant, or an RPG hero) that levels up alongside you.
+
+It's actually two repos:
+
+- **preprep** is the app itself: Next.js 16, React 19, Tailwind, FastAPI, Postgres, Google sign-in, Docker Compose.
+- **dataprep** is the content pipeline: a knowledge graph with 451 nodes across 40 subjects (Python and Kubernetes, but also Korean history and chemistry) and an LLM-backed generator that watches for coverage gaps and fills them. Around 2,500 questions so far.
+
+Both repos are private for now. I like making things that feel a little more polished than they need to be, and I like surprising people with what a side project can be.`,
       },
     ] as SideProject[],
     hobbies: [
-      { name: "(stub) Hobby 1", detail: "replace me" },
-      { name: "(stub) Hobby 2" },
+      { name: "Swimming" },
+      { name: "Climbing", detail: "indoor mostly" },
+      { name: "Boxing" },
+      { name: "Running" },
+      { name: "Snowboarding" },
+      { name: "Watching movies" },
+      { name: "Board games", detail: "lately One Piece card game" },
+      { name: "Playing with our cats" },
     ] as Hobby[],
   },
 };
