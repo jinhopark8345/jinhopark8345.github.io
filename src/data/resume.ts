@@ -360,6 +360,25 @@ It's actually two repos:
 
 Both repos are private for now. I like making things that feel a little more polished than they need to be, and I like surprising people with what a side project can be.`,
       },
+      {
+        slug: "ubc-ocean",
+        title: "UBC-OCEAN",
+        subtitle: "Kaggle, solo, three months",
+        url: "https://www.kaggle.com/competitions/UBC-OCEAN/overview",
+        date: "Oct 2023 – Jan 2024",
+        content: `A three-month solo run at the [UBC Ovarian Cancer Subtype Classification (UBC-OCEAN)](https://www.kaggle.com/competitions/UBC-OCEAN/overview) Kaggle competition. Classify five ovarian cancer subtypes from whole-slide (WSI) and tissue-microarray (TMA) histopathology images, plus detect an "Other" outlier class. I finished 28th of 1,724, silver medal.
+
+My approach was classic fine-tuned-CNN territory: mine tumor-only tiles from WSIs using supplemental masks, fine-tune \`maxvit_tiny_tf_512\` on them, majority-vote at inference. A thumbnail tumor gate routed no-tumor slides to "Other". Full writeup [here](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/jinho-park-28th-solution).
+
+**What the winners did differently (Owkin, 1st place):** they didn't fine-tune a classifier at all. They used [Phikon](https://huggingface.co/owkin/phikon), Owkin's ViT foundation model for digital pathology (iBOT-pretrained on 40M TCGA tiles), to precompute 768-d tile embeddings once, then trained a lightweight Multiple Instance Learning (MIL) model called Chowder on top, a 50-model ensemble for stability. Outlier detection was a one-line heuristic: threshold on the entropy of ensemble predictions. They even iBOT-fine-tuned Phikon further on the competition train set for an extra bump.
+
+**Takeaways I'm still thinking about:**
+
+- Domain-specific foundation models change the shape of the problem. My ImageNet-pretrained backbone had to learn pathology from scratch, a frozen Phikon embedding is already most of the way there.
+- Pre-compute embeddings once, iterate cheaply on classifiers. Most of my three months went into fine-tuning a backbone; the winners spent theirs on modeling choices over frozen features.
+- Multiple Instance Learning is the natural framing for WSI. Treat the slide as a bag of patches and let the model choose which ones matter.
+- Entropy-based outlier detection generalizes better than my thumbnail-gate heuristic, and it's simpler.`,
+      },
     ] as SideProject[],
     interests: [
       {
