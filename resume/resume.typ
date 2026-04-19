@@ -94,7 +94,7 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
   date: "Jan 2024 – Present",
 )
 #bullet[
-  *Agentic RAG for aviation regulatory compliance:* Architected a high-precision retrieval system on Qdrant: dedicated retrieval service + generation app, with a hybrid sparse + dense pipeline that outperformed dense-only on a 200-query MRR eval.
+  *Agentic RAG for aviation regulatory compliance:* Architected and implemented a high-precision retrieval system on Qdrant: dedicated retrieval service + generation app, with a hybrid sparse + dense pipeline that outperformed dense-only on a 200-query MRR eval.
 ]
 #bullet[
   *Low-latency CPU retrieval:* Tuned Qdrant indexing and payload filtering to hold p95 retrieval latency under 1000 ms on CPU-only infrastructure; sustained embedding throughput with BentoML dynamic batching + ONNX Runtime + quantization.
@@ -189,8 +189,10 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
 #linebreak()
 #skill("Databases", ("PostgreSQL", "Qdrant", "Redis"))
 #linebreak()
-#skill("ML / Inference", ("PyTorch", "LangChain", "Transformers", "NVIDIA Triton", "OpenVINO", "ONNX Runtime", "Quantization", "MLflow"))
+#skill("ML / Inference", ("PyTorch", "LangChain", "Transformers", "BentoML", "NVIDIA Triton", "OpenVINO", "ONNX Runtime", "Quantization",))
 #linebreak()
-#skill("Backend & App", ("FastAPI", "BentoML", "Streamlit", "React"))
+#skill("Backend & App", ("FastAPI", "Streamlit", "React"))
 #linebreak()
-#skill("Infra & MLOps", ("Prefect", "Kubernetes", "Docker", "Helm", "GitLab CI/CD", "ArgoCD", "OpenShift", "Prometheus", "Grafana"))
+#skill("Ops", ("MLflow", "ArgoCD", "GitLab CI/CD", "Prefect"))
+#linebreak()
+#skill("Infra", ("Helm", "Kubernetes (Openshift)", "Docker", "Prometheus", "Grafana"))
