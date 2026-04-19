@@ -44,6 +44,35 @@ All resume content lives in one typed source of truth:
 Edit that file to add a job, a cert, a contribution, etc. — the page picks
 it up automatically.
 
+## Resume PDF
+
+The one-page PDF at `public/resume.pdf` is rendered separately from the site
+content. It is authored in [Typst](https://typst.app) at `resume/resume.typ`
+and is **not** auto-synced with `src/data/resume.ts` — the PDF is hand-curated
+to fit one page, while the site's About Me is intentionally more verbose.
+
+Install Typst once (prebuilt binary, Linux x86_64):
+
+```bash
+curl -sL https://github.com/typst/typst/releases/latest/download/typst-x86_64-unknown-linux-musl.tar.xz \
+  | tar -xJ -C /tmp
+install /tmp/typst-x86_64-unknown-linux-musl/typst ~/.local/bin/
+```
+
+macOS: `brew install typst`. Other platforms: see the
+[Typst release page](https://github.com/typst/typst/releases/latest).
+
+Then, from the repo root:
+
+```bash
+# edit resume/resume.typ, then:
+npm run resume:pdf            # → writes public/resume.pdf
+```
+
+Commit the regenerated `public/resume.pdf` alongside the `.typ` change —
+the GitHub Pages workflow does not run Typst, so the committed PDF is what
+gets deployed.
+
 ## Repository layout
 
 ```
