@@ -370,7 +370,7 @@ Both repos are private for now. I like making things that feel a little more pol
 
 **Why it was tricky.** The images come in two very different formats. **Whole-slide images (WSI)** are enormous scans of an entire tissue slide at 20x magnification, often around 50,000 × 50,000 pixels and mostly non-tumor area. **Tissue microarrays (TMA)** are small cores the pathologist has already punched out of a WSI and scanned at 40x, usually around 4,000 × 4,000 pixels and almost entirely tumor. The train set is mostly WSIs with only 25 TMAs, but the test set is mostly TMAs. The "Other" class never appears in training at all.
 
-**My approach: the "classic" path.** A fine-tuned CNN classifier, with a separate tumor detector for WSIs.
+**[My approach: the "classic" path.](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/jinho-park-28th-solution) ** A fine-tuned CNN classifier, with a separate tumor detector for WSIs.
 
 - Only 25 TMAs in training, so I mined tumor-heavy tiles out of the WSIs (using the organizers' supplemental tumor masks) and used them as TMA-like training samples: >70% tumor pixels for training, 30-70% for validation.
 - Fine-tuned \`maxvit_tiny_tf_512\` on those tiles to predict the subtype.
@@ -382,14 +382,18 @@ Full writeup [on Kaggle](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/
 
 **What the top solutions did differently.** Most winning teams framed this as a **Multiple Instance Learning (MIL)** problem instead. The idea: a slide is a "bag of patches", and the model learns to pick which patches matter. Nobody fine-tunes a classifier on pixels. You run a frozen **pathology foundation model** (a big ViT pretrained with self-supervision on millions of pathology tiles) to turn each patch into a fixed-size feature vector, then train a cheap MIL classifier on top of those vectors. Since the foundation model already knows what pathology looks like, the classifiers on top can stay tiny and iterate fast.
 
-**1st place, [Owkin](https://www.kaggle.com/competitions/UBC-OCEAN/discussion/465908):**
+**[1st place, Owkin](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/owkin-1st-place-solution-owkin):**
 
-- [Phikon](https://huggingface.co/owkin/phikon), Owkin's pathology ViT-Base (iBOT-pretrained on 40M TCGA tiles), pre-computed a 768-dim embedding per patch once.
+- Phikon, Owkin's pathology ViT-Base (iBOT-pretrained on 40M TCGA tiles), pre-computed a 768-dim embedding per patch once.
 - Ensemble of **50 Chowder MIL models** (Owkin's own MIL architecture). Chowder is sensitive to initialization; ensembling was the stabilizer.
 - **Outlier detection:** a threshold on the entropy of ensemble predictions. High entropy (the ensemble disagreed) got labeled "Other". One line of code, took their public-LB score from 0.59 to 0.64.
 - Extra bump: further iBOT-fine-tuned Phikon on the competition's own patches.
 
-**7th place, [m1dsolo](https://github.com/jinhopark8345/UBC-OCEAN-7th):**
+![Owkin's 1st place pipeline for UBC-OCEAN: WSI or TMA to matter detection, tiling, Phikon feature extraction, Chowder MIL, final cancer subtype, with high-entropy predictions routed to "Other"](/img/owkin-ubc-ocean-pipeline.webp)
+
+*Pipeline diagram from [Owkin's 1st-place writeup](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/owkin-1st-place-solution-owkin).*
+
+**[7th place, m1dsolo](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/m1dsolo-7th-place-solution):**
 
 - Same recipe (frozen pathology backbone + MIL on top), different cast.
 - **Two feature extractors:** [CTransPath](https://github.com/Xiyue-Wang/TransPath) (pathology-specific Swin Transformer, MIA 2022) and a ViT-S/16 pretrained on pathology with [LunitDINO](https://github.com/lunit-io/benchmark-ssl-pathology) (CVPR 2023).

@@ -12,6 +12,10 @@ function escapeHtml(s: string): string {
 export function renderInline(s: string): string {
   let out = escapeHtml(s);
   out = out.replace(
+    /!\[([^\]]*)\]\(([^)]+)\)/g,
+    '<img src="$2" alt="$1" class="my-4 rounded-lg max-w-full h-auto" loading="lazy">'
+  );
+  out = out.replace(
     /\[([^\]]+)\]\(([^)]+)\)/g,
     '<a href="$2" target="_blank" rel="noopener" class="text-sky-600 dark:text-sky-400 hover:underline">$1</a>'
   );
