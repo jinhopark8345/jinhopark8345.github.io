@@ -168,7 +168,7 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
   *#label* #h(4pt) #text(fill: gray.darken(20%), items.join(" · "))
 ]
 
-#skill("Languages", ("Python", "C++"))
+#skill("Languages", ("Python", "C++", "TypeScript"))
 #linebreak()
 #skill("Databases", ("PostgreSQL", "Qdrant", "Redis"))
 #linebreak()

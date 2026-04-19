@@ -97,11 +97,11 @@ export const resume = {
       "I have a proven track record of automating the end-to-end ML lifecycle using **Prefect, Kubernetes, and GitOps**, and deep expertise in bridging the gap between complex IR research and high-availability **FastAPI** services.",
       "One thing I'm known for: **fast prototyping**. I'd rather validate an idea with a working demo in days than theorize for weeks. It keeps iteration with clients tight, cheap, and grounded in what actually works.",
       "A significant part of my day-to-day is **cross-timezone collaboration with international teams and clients**. Most of my work happens in written and spoken English.",
-      "Currently at **Boeing**, I work on FAA-compliance agentic RAG project. Before that, at **Lomin**, I optimized Transformer inference serving with NVIDIA Triton and built document-understanding systems for financial clients.",
+      "Currently at **Boeing**, I work on a FAA-compliance agentic RAG project. Before that, at **Lomin**, I optimized Transformer inference serving with NVIDIA Triton and built document-understanding systems for financial clients.",
       "I graduated from Konkuk University in 2022 with a B.S. in Electrical and Electronics Engineering, and spent a semester on exchange at the University of Agder in Norway.",
     ],
     skillGroups: [
-      { label: "Languages", items: ["Python", "C++"] },
+      { label: "Languages", items: ["Python", "C++", "TypeScript"] },
       {
         label: "Databases",
         items: ["PostgreSQL", "Qdrant", "Redis"],
