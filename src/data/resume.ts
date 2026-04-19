@@ -265,7 +265,7 @@ export const resume = {
       date: "Jan 2024",
       url: "https://www.kaggle.com/certification/competitions/jinho8345/UBC-OCEAN",
       content:
-        "Ranked **28 of 1,724** participants (top 2%) in the UBC Ovarian Cancer Subtype Classification and Outlier Detection (UBC-OCEAN) competition.",
+        "Ranked **28 of 1,724** participants (top 2%) in the UBC Ovarian Cancer Subtype Classification and Outlier Detection (UBC-OCEAN) competition: multi-class classification of five ovarian cancer subtypes across whole-slide histopathology and tissue-microarray images, plus outlier detection for the \"Other\" class. Full approach in my [28th-place solution writeup](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/jinho-park-28th-solution).",
     },
     {
       title: "2nd Prize, College Student Papers & Capstone Design Contest",
