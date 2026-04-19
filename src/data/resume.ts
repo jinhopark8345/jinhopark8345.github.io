@@ -96,7 +96,7 @@ export const resume = {
       "I'm an AI Application Engineer specializing in **Information Retrieval** and **scalable backend systems** — architecting production-grade vector search and Agentic RAG systems with a focus on latency optimization and retrieval precision.",
       "I have a proven track record of automating the end-to-end ML lifecycle using **Prefect, Kubernetes, and GitOps**, and deep expertise in bridging the gap between complex IR research and high-availability **FastAPI** services.",
       "One thing I'm known for: **fast prototyping**. I'd rather validate an idea with a working demo in days than theorize for weeks — it keeps iteration with clients tight, cheap, and grounded in what actually works.",
-      "Currently at **Boeing**, where I work on FAA-compliance RAG and the Boeing AI Factory training framework. Before that, at **Lomin**, I optimized Transformer inference serving with NVIDIA Triton and built document-understanding systems for financial clients.",
+      "Currently at **Boeing**, I work on FAA-compliance agentic RAG project. Before that, at **Lomin**, I optimized Transformer inference serving with NVIDIA Triton and built document-understanding systems for financial clients.",
       "I graduated from Konkuk University in 2022 with a B.S. in Electrical and Electronics Engineering, and spent a semester on exchange at the University of Agder in Norway.",
     ],
     skillGroups: [
