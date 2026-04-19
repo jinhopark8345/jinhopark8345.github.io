@@ -59,3 +59,37 @@
     @apply text-center text-2xl font-semibold tracking-tight mb-6;
   }
 }
+
+@media print {
+  /* Hide interactive / site-chrome elements that don't belong in the PDF */
+  header,
+  #expand-all-btn,
+  [data-print-hidden] {
+    display: none !important;
+  }
+
+  /* Force every <details> card open and drop the chevron */
+  details.card > .body {
+    display: block !important;
+  }
+  details.card > summary {
+    cursor: default;
+  }
+  details.card > summary .chevron {
+    display: none !important;
+  }
+
+  /* Keep section headings with their first item */
+  .section-title {
+    break-after: avoid;
+  }
+  /* Keep a card's header row attached to its body */
+  details.card > summary {
+    break-after: avoid;
+  }
+
+  /* Trim top padding the Navbar would otherwise occupy */
+  #top {
+    padding-top: 0 !important;
+  }
+}

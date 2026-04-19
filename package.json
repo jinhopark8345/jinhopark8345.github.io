@@ -8,13 +8,17 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "resume:pdf": "astro build && node scripts/generate-resume-pdf.mjs"
   },
   "dependencies": {
-    "astro": "^5.0.0",
-    "@astrojs/tailwind": "^5.1.2",
     "@astrojs/check": "^0.9.4",
+    "@astrojs/tailwind": "^5.1.2",
+    "astro": "^5.0.0",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "puppeteer": "^24.41.0"
   }
 }
