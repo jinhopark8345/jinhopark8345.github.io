@@ -135,7 +135,7 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
 
 #role(
   title: "B.S., Electrical and Electronics Engineering",
-  org: "Konkuk University",
+  org: "Konkuk University, Korea",
   orgUrl: "https://www.konkuk.ac.kr/",
   date: "Mar 2015 – Feb 2022",
 )
@@ -146,7 +146,7 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
 #v(2pt)
 #role(
   title: "Exchange Student, Computer Science",
-  org: "University of Agder",
+  org: "University of Agder, Norway",
   orgUrl: "https://www.uia.no/en",
   date: "Aug 2017 – Jan 2018",
 )
