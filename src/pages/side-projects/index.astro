@@ -4,7 +4,7 @@ import Card from "~/components/Card.astro";
 import { Image } from "astro:assets";
 import { resume } from "~/data/resume";
 import { renderInline } from "~/lib/markdown";
-import catsPhoto from "~/assets/two-cats-on-a-chair.jpg";
+import catsPhoto from "~/assets/two-cats-on-a-cat-tower.jpg";
 
 const { sideProjects } = resume;
 ---
@@ -19,7 +19,7 @@ const { sideProjects } = resume;
       </div>
       <Image
         src={catsPhoto}
-        alt="Our two cats napping together on my office chair"
+        alt="Our two cats hanging off the top of their cat tower, looking down at the camera"
         widths={[240, 360, 480]}
         sizes="(min-width: 768px) 224px, 70vw"
         class="w-56 md:w-56 lg:w-64 aspect-[3/4] object-cover rounded-2xl shadow-lg justify-self-center md:justify-self-end"
