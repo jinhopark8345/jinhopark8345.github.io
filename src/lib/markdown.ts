@@ -9,7 +9,7 @@ function escapeHtml(s: string): string {
     .replace(/>/g, "&gt;");
 }
 
-function renderInline(s: string): string {
+export function renderInline(s: string): string {
   let out = escapeHtml(s);
   out = out.replace(
     /\[([^\]]+)\]\(([^)]+)\)/g,

@@ -67,7 +67,6 @@ export type SideProject = {
 export type Interest = {
   title: string;
   content: string;
-  link?: { label: string; url: string };
 };
 
 export type Hobby = {
@@ -354,8 +353,7 @@ Both repos are private for now. I like making things that feel a little more pol
       {
         title: "New AI tooling",
         content:
-          "Running OpenClaw locally against Qwen 27B on a single 3090, didn't know that was possible with decent inference speed. The reasoning isn't Gemini or Opus sharp, but it's close enough to be genuinely useful, which is wild for a local open-weights model.",
-        link: { label: "OpenClaw", url: "https://openclaw.ai/" },
+          "Running [OpenClaw](https://openclaw.ai/) locally against [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) on a single 3090, didn't know that was possible with decent inference speed. The reasoning isn't Gemini or Opus sharp, but it's close enough to be genuinely useful, which is wild for a local open-weights model.",
       },
     ] as Interest[],
     hobbies: [
