@@ -62,7 +62,7 @@ params:
     enable: true
     intro: "Hi, I'm"
     title: "Jinho Park."
-    subtitle: "I build AI systems that find the right answer, fast."
+    subtitle: "I work closely with clients to turn real requirements into AI systems that ship."
     content: |-
       AI Application Engineer focused on Information Retrieval and
       scalable backend systems — vector search, Agentic RAG, latency
