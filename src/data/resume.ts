@@ -102,10 +102,6 @@ export const resume = {
     skillGroups: [
       { label: "Languages", items: ["Python", "C++"] },
       {
-        label: "Retrieval",
-        items: ["Hybrid search", "Sparse/Dense embeddings"],
-      },
-      {
         label: "Databases",
         items: ["PostgreSQL", "Qdrant", "Redis"],
       },

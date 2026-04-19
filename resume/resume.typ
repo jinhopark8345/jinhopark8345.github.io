@@ -167,8 +167,6 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
 
 #skill("Languages", ("Python", "C++"))
 #linebreak()
-#skill("Retrieval", ("Hybrid search", "Sparse/Dense embeddings"))
-#linebreak()
 #skill("Databases", ("PostgreSQL", "Qdrant", "Redis"))
 #linebreak()
 #skill("ML / Inference", ("PyTorch", "LangChain", "Transformers", "NVIDIA Triton", "OpenVINO", "ONNX Runtime", "Quantization", "MLflow"))
