@@ -73,9 +73,9 @@ export const resume = {
   name: "Jinho Park",
   role: "AI Application Engineer",
   location: "Seoul, South Korea",
-  browserTitle: "Jinho Park — AI Application Engineer",
+  browserTitle: "Jinho Park · AI Application Engineer",
   description:
-    "Jinho Park — AI Application Engineer. Information Retrieval, Agentic RAG, vector search, MLOps.",
+    "Jinho Park · AI Application Engineer. Information Retrieval, Agentic RAG, vector search, MLOps.",
 
   socials: {
     github: "https://github.com/jinhopark8345",
@@ -155,7 +155,7 @@ export const resume = {
           name: "AI Application Engineer",
           date: "Jan 2024 – present",
           info: "ML Team · Seoul, South Korea",
-          content: `**Advanced Information Retrieval** — *Agentic RAG for aviation regulatory compliance*
+          content: `**Advanced Information Retrieval**: *Agentic RAG for aviation regulatory compliance*
 
 - Architected a high-precision **Agentic RAG** system that cross-references technical aviation reports against regulatory frameworks through an agentic loop.
 - Built it as a dedicated **retrieval service on Qdrant**, then extended it into a **generation app** consuming the retrieval layer as an internal API.
@@ -167,7 +167,7 @@ export const resume = {
 
 **LLM Applications & Internal Tooling**
 
-- Built a **GitLab merge-request bot** that lets engineers chat with the internal LLM directly on MRs — code review, summarization, and Q&A inside the review flow.
+- Built a **GitLab merge-request bot** that lets engineers chat with the internal LLM directly on MRs: code review, summarization, and Q&A inside the review flow.
 - Shipped an **MCP (Model Context Protocol) server** exposing internal tools and data sources to LLM agents through a standard interface.
 - Built a **complex PDF parser** that extracts document layout via few-shot prompting over (v)LLM APIs; it now powers the data-ingestion pipeline for the compliance RAG system and other internal tools.
 
@@ -176,7 +176,7 @@ export const resume = {
 - Implemented a **GitOps** deployment flow with **ArgoCD** and **OpenShift**, reducing deployment cycles from **1 hour to 10 minutes**.
 - Developed a fault-tolerant **Prefect** orchestration layer, automating data ingestion and inference pipelines for aircraft predictive maintenance.
 - Eliminated **~8 hours of manual weekly labor** by building an automated PDF-generation backend that converts raw telemetry into stakeholder-ready reports via FastAPI.
-- Built **gitlab-model-registry**, an internal tool for version-controlling AI project artifacts — models, datasets, and training snapshots — on top of GitLab.
+- Built **gitlab-model-registry**, an internal tool for version-controlling AI project artifacts (models, datasets, and training snapshots) on top of GitLab.
 
 **Boeing AI Factory**
 
@@ -219,7 +219,7 @@ export const resume = {
       location: "Seoul, South Korea",
       jobs: [
         {
-          name: "Software Engineer Intern — OpenVINO Korea",
+          name: "Software Engineer Intern, OpenVINO Korea",
           date: "Aug 2021 – Feb 2022",
           info: "OpenVINO Korea · Seoul, South Korea",
           content: `- Collaborated with local and international teams to analyze the performance of deep learning models on Intel hardware.
@@ -255,7 +255,7 @@ export const resume = {
 
   achievements: [
     {
-      title: "Silver Medal — UBC Ovarian Cancer Subtype Classification",
+      title: "Silver Medal, UBC Ovarian Cancer Subtype Classification",
       subtitle: "Kaggle",
       date: "Jan 2024",
       url: "https://www.kaggle.com/certification/competitions/jinho8345/UBC-OCEAN",
@@ -263,7 +263,7 @@ export const resume = {
         "Ranked **28 of 1,724** participants (top 2%) in the UBC Ovarian Cancer Subtype Classification and Outlier Detection (UBC-OCEAN) competition.",
     },
     {
-      title: "2nd Prize — College Student Papers & Capstone Design Contest",
+      title: "2nd Prize, College Student Papers & Capstone Design Contest",
       subtitle: "Korean Institute of Broadcast and Media Engineers",
       date: "Nov 2021",
       content:
@@ -307,7 +307,7 @@ export const resume = {
 - Shipped with docs, model card, and integration tests.`,
     },
     {
-      project: "[GPU] Fix issue of prepare_output — OpenVINO",
+      project: "[GPU] Fix issue of prepare_output, OpenVINO",
       subtitle: "openvinotoolkit/openvino#7783",
       url: "https://github.com/openvinotoolkit/openvino/pull/7783",
       date: "Oct 2021",
