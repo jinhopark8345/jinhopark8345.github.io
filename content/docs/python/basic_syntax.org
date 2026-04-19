@@ -3,6 +3,7 @@
 #+PUBLISHDATE: 2023-07-07T20:47:51+09:00
 #+CATEGORIES[]: python
 #+DESCRIPTION: Short description
+#+DRAFT: true
 
 * Dictionary
 

@@ -2,6 +2,7 @@
 #+DATE: 2023-07-07T20:47:51+09:00
 #+PUBLISHDATE: 2023-07-07T20:47:51+09:00
 #+DESCRIPTION: Short description
+#+DRAFT: true
 
 * Stack
 - A stack is an ADT that follows the *Last-In-First-Out* (LIFO)
