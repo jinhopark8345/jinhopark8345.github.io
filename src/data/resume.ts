@@ -102,8 +102,12 @@ export const resume = {
     skillGroups: [
       { label: "Languages", items: ["Python", "C++"] },
       {
-        label: "Retrieval & Vector DBs",
-        items: ["Qdrant", "Hybrid search", "Sparse/Dense embeddings"],
+        label: "Retrieval",
+        items: ["Hybrid search", "Sparse/Dense embeddings"],
+      },
+      {
+        label: "Databases",
+        items: ["PostgreSQL", "Qdrant", "Redis"],
       },
       {
         label: "ML Frameworks",
@@ -115,7 +119,7 @@ export const resume = {
       },
       {
         label: "Backend & Application",
-        items: ["FastAPI", "Redis", "PostgreSQL", "Streamlit"],
+        items: ["FastAPI", "Streamlit"],
       },
       {
         label: "Infrastructure & Automation",
