@@ -1,0 +1,26 @@
+---
+import { resume } from "~/data/resume";
+const { hero, socials, name, role } = resume;
+---
+<section id="top" class="mx-auto max-w-3xl px-4 sm:px-6 pt-16 pb-12">
+  <p class="text-sky-600 dark:text-sky-400 font-medium mb-3">{hero.intro}</p>
+  <h1 class="text-4xl sm:text-5xl font-bold tracking-tight mb-2">{name}.</h1>
+  <h2 class="text-2xl sm:text-3xl text-slate-500 dark:text-slate-400 font-semibold mb-4">{role}</h2>
+  <p class="text-lg text-slate-600 dark:text-slate-300 mb-4 italic">{hero.subtitle}</p>
+  <p class="text-base text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">{hero.content}</p>
+  <div class="flex flex-wrap items-center gap-3">
+    <a
+      href={hero.resumeUrl}
+      target="_blank" rel="noopener"
+      class="inline-flex items-center gap-2 rounded-md bg-sky-600 px-4 py-2 text-sm font-medium text-white hover:bg-sky-700"
+    >Resume
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+    <a href={socials.github} target="_blank" rel="noopener"
+      class="inline-flex items-center gap-2 rounded-md border border-slate-300 dark:border-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800"
+    >GitHub</a>
+    <a href={socials.linkedin} target="_blank" rel="noopener"
+      class="inline-flex items-center gap-2 rounded-md border border-slate-300 dark:border-slate-700 px-4 py-2 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800"
+    >LinkedIn</a>
+  </div>
+</section>

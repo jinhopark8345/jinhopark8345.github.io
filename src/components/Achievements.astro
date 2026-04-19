@@ -1,0 +1,21 @@
+---
+import { resume } from "~/data/resume";
+import Card from "~/components/Card.astro";
+const items = resume.achievements;
+---
+<section id="achievements" class="py-8">
+  <div class="section-shell">
+    <h3 class="section-title">Achievements & Certifications</h3>
+    <div class="space-y-3">
+      {items.map((entry) => (
+        <Card
+          title={entry.title}
+          subtitle={entry.subtitle}
+          subtitleUrl={entry.url}
+          date={entry.date}
+          content={entry.content}
+        />
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+import { resume } from "~/data/resume";
+import Card from "~/components/Card.astro";
+const items = resume.experience;
+---
+<section id="experience" class="py-8">
+  <div class="section-shell">
+    <h3 class="section-title">Experience</h3>
+    <div class="space-y-3">
+      {items.map((entry) => (
+        entry.jobs.map((job) => (
+          <Card
+            title={job.name}
+            subtitle={entry.company}
+            subtitleUrl={entry.companyUrl}
+            date={job.date}
+            content={(job.info ? `*${job.info}*\n\n` : "") + job.content}
+          />
+        ))
+      ))}
+    </div>
+  </div>
+</section>

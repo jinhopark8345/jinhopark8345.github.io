@@ -1,0 +1,23 @@
+---
+import { resume } from "~/data/resume";
+import { renderMarkdown } from "~/lib/markdown";
+const { about } = resume;
+---
+<section id="about" class="py-8">
+  <div class="section-shell">
+    <h3 class="section-title">About Me</h3>
+    <div class="space-y-4 leading-relaxed text-slate-700 dark:text-slate-300">
+      {about.paragraphs.map((p) => (
+        <div set:html={renderMarkdown(p)} />
+      ))}
+    </div>
+    <div class="mt-6">
+      <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Technologies I work with:</p>
+      <ul class="flex flex-wrap gap-2">
+        {about.skills.map((s) => (
+          <li class="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200">{s}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

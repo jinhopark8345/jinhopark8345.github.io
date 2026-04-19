@@ -4,24 +4,32 @@ Source for my personal portfolio.
 
 **Live site:** <https://jinhopark8345.github.io/>
 
-Hugo static site on the [hugo-profile](https://github.com/gurusabarish/hugo-profile)
-theme. Auto-deploys from `main` to GitHub Pages via `.github/workflows/hugo.yml`.
+Built with [Astro](https://astro.build) + Tailwind CSS. Auto-deploys from
+`main` to GitHub Pages via `.github/workflows/deploy.yml`.
 
 ## Local preview
 
 ```bash
-git clone --recurse-submodules https://github.com/jinhopark8345/jinhopark8345.github.io
-cd jinhopark8345.github.io
-hugo server
+npm install
+npm run dev
 ```
 
-Requires Hugo extended ≥ 0.114 and Dart Sass.
-Open <http://localhost:1313/>.
+Open <http://localhost:4321/>.
+
+## Build
+
+```bash
+npm run build     # outputs to dist/
+npm run preview   # serve dist/ locally
+```
 
 ## Layout
 
-- `hugo.yaml` — site config and all portfolio content (hero, experience, education, achievements, contact).
-- `layouts/partials/sections/` — custom overrides of the theme's section partials (collapsible cards, vertical list).
-- `content/` — any extra pages.
-- `archive/` — old TIL notes, parked here so Hugo ignores them.
-- `themes/hugo-profile/` — theme as a git submodule.
+- `src/data/resume.ts` — single source of truth for all content (hero, experience, education, achievements, open source, contact).
+- `src/components/` — one Astro component per section plus a shared `Card` for collapsible entries.
+- `src/layouts/Layout.astro` — base HTML shell, theme toggle.
+- `src/lib/markdown.ts` — tiny zero-dependency inline-markdown renderer used inside cards.
+- `src/pages/index.astro` — homepage composition.
+- `src/styles/global.css` — Tailwind entry + a few component classes.
+- `public/` — static assets copied verbatim to the build output.
+- `archive/` — old Hugo-era TIL notes, parked here and not built.
