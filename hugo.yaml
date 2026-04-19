@@ -56,7 +56,7 @@ params:
       disableExperience: false
       disableEducation: false
       disableProjects: true
-      disableAchievements: false
+      disableAchievements: true
       disableContact: false
 
   hero:
@@ -212,7 +212,30 @@ params:
           Computer Science coursework.
 
   achievements:
+    enable: false
+    items: []
+
+  openSource:
     enable: true
+    title: "Open Source"
+    items:
+      - project: "OpenVINO"
+        subtitle: "openvinotoolkit/openvino"
+        date: "Aug 2021 – Feb 2022"
+        url: "https://github.com/openvinotoolkit/openvino"
+        content: |-
+          Contributed to Intel's OpenVINO deep-learning inference toolkit as
+          a Software Engineer Intern on the OpenVINO Korea team.
+
+          - Collaborated with local and international teams to analyze the
+            performance of deep learning models on Intel hardware.
+          - Optimized OpenVINO components for Intel integrated GPUs,
+            resolving **5+ major performance issues** to enhance inference
+            efficiency.
+
+  competitions:
+    enable: true
+    title: "Competitions"
     items:
       - title: "Silver Medal — UBC Ovarian Cancer Subtype Classification"
         subtitle: "Kaggle"
@@ -220,15 +243,19 @@ params:
         url: "https://www.kaggle.com/competitions/UBC-OCEAN"
         content: "Ranked **28 of 1,724** participants (top 2%) in the UBC Ovarian Cancer Subtype Classification and Outlier Detection competition."
 
-      - title: "Certified Kubernetes Administrator (CKA)"
-        subtitle: "Linux Foundation"
-        date: "Dec 2024"
-        url: "https://www.cncf.io/certification/cka/"
-
       - title: "2nd Prize — College Student Papers & Capstone Design Contest"
         subtitle: "Korean Institute of Broadcast and Media Engineers"
         date: "Nov 2021"
         content: 'Paper: *"Further Optimizing MobileNetV2 with Channel-wise Squeeze and Excitation."*'
+
+  certifications:
+    enable: true
+    title: "Certifications"
+    items:
+      - title: "Certified Kubernetes Administrator (CKA)"
+        subtitle: "Linux Foundation"
+        date: "Dec 2024"
+        url: "https://www.cncf.io/certification/cka/"
 
       - title: "Deep Learning Specialization"
         subtitle: "Coursera · deeplearning.ai"
@@ -281,15 +308,19 @@ params:
     <style>
       section#about,
       section#experience,
+      section#open-source,
       section#education,
-      section#achievements {
+      section#competitions,
+      section#certifications {
         padding-top: 1rem !important;
         padding-bottom: 1rem !important;
       }
       section#experience .py-5,
       section#experience .py-4,
+      section#open-source .py-4,
       section#education .py-4,
-      section#achievements .py-4,
+      section#competitions .py-4,
+      section#certifications .py-4,
       section#about .py-5 {
         padding-top: 0.5rem !important;
         padding-bottom: 0.5rem !important;
@@ -307,7 +338,7 @@ params:
         var label = document.getElementById('toggle-all-label');
         if (!btn || typeof bootstrap === 'undefined') return;
 
-        var selector = '#experience .collapse, #education .collapse, #achievements .collapse';
+        var selector = '#experience .collapse, #open-source .collapse, #education .collapse, #competitions .collapse, #certifications .collapse';
         var expanded = false;
 
         btn.addEventListener('click', function () {
