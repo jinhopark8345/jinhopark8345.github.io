@@ -101,15 +101,6 @@
                     </li>
                     {{ end }}
 
-                    {{ if and (.Site.Params.openSource.enable | default false) (not (.Site.Params.navbar.menus.disableOpenSource | default false)) }}
-                    <li class="nav-item navbar-text">
-                        <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#open-source"
-                            aria-label="open source">
-                            {{ .Site.Params.openSource.title | default "Open Source" }}
-                        </a>
-                    </li>
-                    {{ end }}
-
                     {{ if and (.Site.Params.education.enable | default false) (not (.Site.Params.navbar.menus.disableEducation | default false)) }}
                     <li class="nav-item navbar-text">
                         <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#education"
@@ -133,6 +124,15 @@
                         <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#achievements"
                             aria-label="achievements">
                             {{ .Site.Params.achievements.title | default (i18n "nav_achievements") }}
+                        </a>
+                    </li>
+                    {{ end }}
+
+                    {{ if and (.Site.Params.openSource.enable | default false) (not (.Site.Params.navbar.menus.disableOpenSource | default false)) }}
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#open-source"
+                            aria-label="open source">
+                            {{ .Site.Params.openSource.title | default "Open Source" }}
                         </a>
                     </li>
                     {{ end }}

@@ -3,8 +3,8 @@
 <section id="experience" class="py-5">
     <div class="container">
         <h3 class="text-center">{{ $experience.title | default .Site.Params.experience.title | default (i18n "experience") }}</h3>
-        <div class="row justify-content-center">
-            <div class="col-lg-8 col-md-10 col-12 py-4">
+        <div class="row justify-content-center py-4">
+            <div class="col-lg-8 col-md-10 col-12">
                 {{ range $index, $element := $experience.items | default .Site.Params.experience.items }}
                     {{ $company := .company }}
                     {{ $companyUrl := .companyUrl }}
