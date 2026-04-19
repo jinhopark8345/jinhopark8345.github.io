@@ -8,7 +8,7 @@ import catsPhoto from "~/assets/two-cats-on-a-chair.jpg";
 
 const { sideProjects } = resume;
 ---
-<Layout title={`Side Projects · ${resume.name}`} description={resume.description} sidebar={true}>
+<Layout title={`Outside Work · ${resume.name}`} description={resume.description} sidebar={true}>
   <section class="py-4">
     <Image
       src={catsPhoto}
@@ -18,7 +18,7 @@ const { sideProjects } = resume;
       class="w-full max-w-xs mx-auto aspect-[3/4] object-cover rounded-2xl shadow-lg mb-8"
       loading="eager"
     />
-    <h1 class="text-2xl font-semibold tracking-tight mb-4">Side Projects</h1>
+    <h1 class="text-2xl font-semibold tracking-tight mb-4">Outside Work</h1>
     {sideProjects.intro && (
       <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">{sideProjects.intro}</p>
     )}

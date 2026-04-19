@@ -1,12 +1,7 @@
-* things to add to experience [1/1]
-- [X] at Boeing, I made gitlab-model-registry (internal tool) for version control AI project artifacts (models, data, snapshots)
--
-* UI [4/5]
-- [X] leave only About Me, Contact on footer
-- [X] make other sections (experience, education and others) as content that I can select from left bar. (like page content)
-- [X] add personal section to footer
-- [X] move contact to header
-- [ ] is there any way that I can add one-page-resume view/export to about me section?
+* things to add to experience [/]
+- [ ]
+* UI [/]
+- [ ]
 * content
 ** side projects [/]
 *** [ ] preprep (feat. dataprep)
@@ -19,6 +14,11 @@ codex
 ** tools i use
 emacs + ubuntu
 device : macbook
+openclaw (local llm server, qwen3.5 - 27B, for investment(?) tracker)
 ** really personal
 my norwegian wife
 two cats
+** what I am interested in
+- knowledge managemetn (Zetelkasten)
+- tool improvement (like Emacs)
+- add cats
