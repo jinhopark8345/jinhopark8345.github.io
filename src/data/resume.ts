@@ -14,6 +14,8 @@ export type Job = {
 export type ExperienceEntry = {
   company: string;
   companyUrl?: string;
+  team?: string;
+  location?: string;
   jobs: Job[];
 };
 
@@ -22,6 +24,8 @@ export type EducationEntry = {
   school: string;
   schoolUrl?: string;
   date: string;
+  degree?: string;
+  location?: string;
   content?: string;
 };
 
@@ -41,16 +45,22 @@ export type OpenSourceEntry = {
   content?: string;
 };
 
+export type SpokenLanguage = {
+  name: string;
+  level: string;
+};
+
 export const resume = {
   name: "Jinho Park",
   role: "AI Application Engineer",
+  location: "Seoul, South Korea",
   browserTitle: "Jinho Park — AI Application Engineer",
   description:
     "Jinho Park — AI Application Engineer. Information Retrieval, Agentic RAG, vector search, MLOps.",
 
   socials: {
     github: "https://github.com/jinhopark8345",
-    linkedin: "https://www.linkedin.com/in/jinho-park-9a511a1b9/",
+    linkedin: "https://linkedin.com/in/jinhopark",
     email: "jinhoparkseoul@gmail.com",
   } as Socials,
 
@@ -67,77 +77,85 @@ export const resume = {
   about: {
     paragraphs: [
       "I'm an AI Application Engineer based in Seoul, focused on Information Retrieval and scalable backend systems. My day-to-day is building **Agentic RAG** systems, tuning **hybrid vector search**, squeezing latency out of retrieval pipelines, and automating ML workflows with **Prefect, Kubernetes, and GitOps**.",
-      "Currently a Machine Learning Engineer at **Boeing**, where I work on FAA-compliance RAG and predictive maintenance pipelines. Before that, at **Lomin**, I optimized Transformer inference serving with NVIDIA Triton and built document-understanding systems for financial clients.",
+      "Currently a Machine Learning Engineer at **Boeing**, where I work on FAA-compliance RAG and Boeing's AI training framework. Before that, at **Lomin**, I optimized Transformer inference serving with NVIDIA Triton and built document-understanding systems for financial clients.",
       "I graduated from Konkuk University in 2022 with a B.S. in Electrical and Electronics Engineering, and spent a semester on exchange at the University of Agder in Norway.",
     ],
     skills: [
       "Python",
       "C++",
       "PyTorch",
-      "LangChain",
-      "Qdrant",
-      "FastAPI",
-      "Redis",
-      "PostgreSQL",
-      "Kubernetes (OpenShift)",
-      "ArgoCD",
-      "Prefect",
-      "MLflow",
-      "NVIDIA Triton",
-      "ONNX Runtime",
+      "Transformers",
+      "NetworkX",
+      "ONNX",
       "OpenVINO",
-      "Grafana",
-      "Prometheus",
+      "OpenShift",
+      "Kubernetes",
+      "Docker",
+      "CMake",
+      "Git",
+      "Linux",
     ],
+    otherSkills: ["Data structures", "Graph algorithms"],
+    languages: [
+      { name: "Korean", level: "Native" },
+      { name: "English", level: "Advanced" },
+      { name: "Norwegian", level: "Beginner" },
+    ] as SpokenLanguage[],
   },
 
   experience: [
     {
       company: "Boeing",
       companyUrl: "https://www.boeing.com/",
+      team: "ML Team",
+      location: "Seoul, South Korea",
       jobs: [
         {
           name: "Machine Learning Engineer",
           date: "Jan 2024 – present",
-          info: "Information Retrieval & MLOps",
-          content: `**Information Retrieval**
-- Architected an Agentic RAG system for FAA compliance workflows, improving MRR by **7%** on domain-specific technical terminology.
-- Implemented hybrid search on Qdrant while keeping **p95 retrieval latency under 500 ms**.
-- Deployed embedding models via BentoML with ONNX Runtime and quantization for efficient inference.
-- Established Prometheus & Grafana monitoring with custom KPI tracking for retrieval quality and system health.
+          info: "ML Team · Seoul, South Korea",
+          content: `**Information Retrieval (IR) System for Boeing Problem Solving Model (BPSM)**
 
-**MLOps & Backend Automation**
-- Reduced deployment cycles from **1 hour to 10 minutes** via ArgoCD and OpenShift GitOps.
-- Built Prefect orchestration for data ingestion and predictive maintenance pipelines.
-- Automated PDF report generation with a FastAPI backend, eliminating **~8 hours of manual work per week**.`,
+- **Deployment & Infrastructure:** Deployed the solution on OpenShift, enhancing scalability and reliability.
+- **Backend & API Development:** Designed and implemented a FastAPI-based backend for efficient document retrieval and processing.
+- **Frontend Development:** Built a user-friendly interface using Streamlit and React, improving accessibility for Boeing CAP (Corrective Action Plan) owners in generating FAA-compliant reports.
+
+**Boeing AI Factory**
+
+- Developed a scalable deep learning training framework, enabling efficient AI model development across classical ML, deep learning, and RL.
+- Reduced redundant model development efforts by designing a reusable framework for both AI and non-AI engineers.
+- Built on **Ray** & **PyTorch Lightning** and integrated with Boeing's MLOps stack (ClearML, model hub, dataset hub) for seamless deployment.`,
         },
       ],
     },
     {
       company: "Lomin",
       companyUrl: "https://lomin.ai/",
+      team: "ML Team",
+      location: "Seoul, South Korea",
       jobs: [
         {
           name: "Machine Learning Engineer",
           date: "May 2022 – Aug 2023",
-          info: "Inference optimization & document understanding at a document-AI startup.",
-          content: `**Inference & Serving Optimization**
-- Architected a high-throughput NVIDIA Triton serving layer with KV-caching and quantization, accelerating Transformer inference by **20%**.
-- Engineered multi-modal table-extraction systems, improving F1 by **15%** for financial-services clients.
-
-**Retrieval & Fine-tuning**
-- Developed a Document Understanding framework with graph-based augmentation and dataset curation pipelines.`,
+          info: "ML Team · Seoul, South Korea",
+          content: `- **Encoder–Decoder Model Optimization & Conversion:** Improved inference speed of encoder–decoder Transformer models by **20%** through caching and quantization, without memory trade-offs.
+- **Table Information Extraction System:** Designed and implemented a multi-modal ML framework that improved table information extraction F1 score by **15%**.
+- **Document Understanding Model Pre-training:** Developed a document understanding (DU) framework and curated datasets for DU model pre-training and graph-based augmentations.
+- **Key Clients:** Delivered ML solutions for Kyobo Life, Lina Life, Shinhan Asset Trust, and KIPO.
+- **Proof of Concept (PoC) Initiatives:** Led ML-driven PoC projects for Shinhan Asset Trust, Samsung Fire & Marine Insurance, Hanwha Life, Samsung Life, and KB Insurance.`,
         },
       ],
     },
     {
       company: "Intel",
       companyUrl: "https://www.intel.com/",
+      team: "OpenVINO Korea",
+      location: "Seoul, South Korea",
       jobs: [
         {
           name: "Software Engineer Intern — OpenVINO Korea",
           date: "Aug 2021 – Feb 2022",
-          info: "Deep learning performance engineering on Intel integrated GPUs.",
+          info: "OpenVINO Korea · Seoul, South Korea",
           content: `- Collaborated with local and international teams to analyze the performance of deep learning models on Intel hardware.
 - Optimized OpenVINO components for Intel integrated GPUs, resolving **5+ major performance issues** to enhance inference efficiency.`,
         },
@@ -151,17 +169,21 @@ export const resume = {
       school: "Konkuk University",
       schoolUrl: "https://www.konkuk.ac.kr/do/Index.do",
       date: "Mar 2015 – Feb 2022",
-      content: `Bachelor's degree in Electrical and Electronics Engineering.
-
-**Capstone project** — *Further Optimizing MobileNetV2 with Channel-wise Squeeze and Excitation* (🥈 2nd Prize, Korean Institute of Broadcast and Media Engineers, 2021).`,
+      degree: "Bachelor",
+      location: "Seoul, South Korea",
+      content: `- Studied embedded systems and semiconductors along with low-level programming languages.
+- **Thesis:** *Further Optimize MobileNetV2 with Channel-wise Squeeze and Excitation.*
+- **CS courses:** Algorithms, Data Structures, Operating Systems, Embedded Systems, Artificial Intelligence.`,
     },
     {
       title: "Exchange Student, Computer Science",
       school: "University of Agder",
       schoolUrl: "https://www.uia.no/en",
       date: "Aug 2017 – Jan 2018",
-      content:
-        "One-semester exchange program in Agder, Norway, studying Computer Science coursework.",
+      degree: "Exchange Student, Bachelor",
+      location: "Agder, Norway",
+      content: `- Studied application development, programming language concepts, and Norwegian.
+- Gained international exposure, expanded professional networks, and improved English communication skills.`,
     },
   ] as EducationEntry[],
 
@@ -172,14 +194,14 @@ export const resume = {
       date: "Jan 2024",
       url: "https://www.kaggle.com/competitions/UBC-OCEAN",
       content:
-        "Ranked **28 of 1,724** participants (top 2%) in the UBC Ovarian Cancer Subtype Classification and Outlier Detection competition.",
+        "Ranked **28 of 1,724** participants (top 2%) in the UBC Ovarian Cancer Subtype Classification and Outlier Detection (UBC-OCEAN) competition.",
     },
     {
       title: "2nd Prize — College Student Papers & Capstone Design Contest",
       subtitle: "Korean Institute of Broadcast and Media Engineers",
       date: "Nov 2021",
       content:
-        'Paper: *"Further Optimizing MobileNetV2 with Channel-wise Squeeze and Excitation."*',
+        'Paper: *"Further Optimize MobileNetV2 with Channel-wise Squeeze and Excitation."*',
     },
     {
       title: "Certified Kubernetes Administrator (CKA)",
@@ -188,25 +210,43 @@ export const resume = {
       url: "https://www.cncf.io/certification/cka/",
     },
     {
+      title: "Build a Modern Computer from First Principles: Nand to Tetris",
+      subtitle: "Coursera",
+      date: "Jan 2021",
+      url: "https://www.coursera.org/learn/build-a-computer",
+    },
+    {
       title: "Deep Learning Specialization",
       subtitle: "Coursera · deeplearning.ai",
       date: "May 2019",
       url: "https://www.coursera.org/specializations/deep-learning",
-      content:
-        "Also completed *Machine Learning* (Stanford, Feb 2019) and *Nand to Tetris* (Jan 2021).",
+    },
+    {
+      title: "Machine Learning",
+      subtitle: "Coursera · Stanford",
+      date: "Feb 2019",
+      url: "https://www.coursera.org/learn/machine-learning",
     },
   ] as CardEntry[],
 
   openSource: [
     {
-      project: "OpenVINO",
-      subtitle: "openvinotoolkit/openvino",
-      date: "Aug 2021 – Feb 2022",
-      url: "https://github.com/openvinotoolkit/openvino",
-      content: `Contributed to Intel's OpenVINO deep-learning inference toolkit as a Software Engineer Intern on the OpenVINO Korea team.
+      project: "Add BROS model to 🤗 Transformers",
+      subtitle: "huggingface/transformers",
+      url: "https://huggingface.co/docs/transformers/model_doc/bros",
+      date: "Sep 2023",
+      content: `Added the **BROS** (BERT Relying On Spatiality) document-understanding model to the Hugging Face Transformers library.
 
-- Collaborated with local and international teams to analyze the performance of deep learning models on Intel hardware.
-- Optimized OpenVINO components for Intel integrated GPUs, resolving **5+ major performance issues** to enhance inference efficiency.`,
+- Ported the model architecture, tokenization, and pre-processing for spatially-aware document inputs.
+- Shipped with docs, model card, and integration tests.`,
+    },
+    {
+      project: "Add test case — OpenVINO",
+      subtitle: "openvinotoolkit/openvino",
+      url: "https://github.com/openvinotoolkit/openvino",
+      date: "Oct 2021",
+      content:
+        "Added a test case to the OpenVINO project during my Software Engineer Internship at Intel, strengthening coverage for GPU-integrated inference paths.",
     },
   ] as OpenSourceEntry[],
 };

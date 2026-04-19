@@ -27,7 +27,9 @@ const hasBody = Boolean(content);
                 rel="noopener"
                 class="text-sky-600 dark:text-sky-400 hover:underline"
                 onclick="event.stopPropagation();"
-              >{subtitle}</a>
+              >{subtitle}
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="inline ml-0.5 -translate-y-[1px]"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </a>
             ) : (
               <span class="text-slate-500 dark:text-slate-400">{subtitle}</span>
             )}
@@ -50,7 +52,9 @@ const hasBody = Boolean(content);
           <>
             <span class="text-slate-400 mx-1">·</span>
             {subtitleUrl ? (
-              <a href={subtitleUrl} target="_blank" rel="noopener" class="text-sky-600 dark:text-sky-400 hover:underline">{subtitle}</a>
+              <a href={subtitleUrl} target="_blank" rel="noopener" class="text-sky-600 dark:text-sky-400 hover:underline">{subtitle}
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="inline ml-0.5 -translate-y-[1px]"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              </a>
             ) : (
               <span class="text-slate-500 dark:text-slate-400">{subtitle}</span>
             )}
