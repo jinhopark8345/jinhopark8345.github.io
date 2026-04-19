@@ -1,5 +1,7 @@
 // One-page resume — curated. Does not auto-sync with src/data/resume.ts.
 // Compile: typst compile resume/resume.typ public/resume.pdf
+#import "@preview/fontawesome:0.5.0": *
+
 #set document(
   title: "Jinho Park — Resume",
   author: "Jinho Park",
@@ -63,11 +65,11 @@
   ],
   [
     #text(size: 9pt)[
-      Seoul, South Korea \
-      #link("mailto:jinhoparkseoul@gmail.com")[jinhoparkseoul\@gmail.com] \
-      #link("https://jinhopark8345.github.io/")[jinhopark8345.github.io] \
-      #link("https://www.linkedin.com/in/jinho-park-9a511a1b9/")[linkedin.com/in/jinho-park-9a511a1b9] \
-      #link("https://github.com/jinhopark8345")[github.com/jinhopark8345]
+      #fa-location-dot()#h(5pt)Seoul, South Korea \
+      #fa-envelope()#h(5pt)#link("mailto:jinhoparkseoul@gmail.com")[jinhoparkseoul\@gmail.com] \
+      #fa-globe()#h(5pt)#link("https://jinhopark8345.github.io/")[jinhopark8345.github.io] \
+      #fa-linkedin()#h(5pt)#link("https://www.linkedin.com/in/jinho-park-9a511a1b9/")[jinho-park-9a511a1b9] \
+      #fa-github()#h(5pt)#link("https://github.com/jinhopark8345")[jinhopark8345]
     ]
   ]
 )
