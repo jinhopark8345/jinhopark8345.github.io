@@ -65,6 +65,7 @@
     #text(size: 9pt)[
       Seoul, South Korea \
       #link("mailto:jinhoparkseoul@gmail.com")[jinhoparkseoul\@gmail.com] \
+      #link("https://jinhopark8345.github.io/")[jinhopark8345.github.io] \
       #link("https://www.linkedin.com/in/jinho-park-9a511a1b9/")[linkedin.com/in/jinho-park-9a511a1b9] \
       #link("https://github.com/jinhopark8345")[github.com/jinhopark8345]
     ]
