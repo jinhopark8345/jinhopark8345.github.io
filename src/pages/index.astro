@@ -1,26 +1,30 @@
 ---
 import Layout from "~/layouts/Layout.astro";
-import Navbar from "~/components/Navbar.astro";
 import Hero from "~/components/Hero.astro";
-import About from "~/components/About.astro";
-import Experience from "~/components/Experience.astro";
-import Education from "~/components/Education.astro";
-import Achievements from "~/components/Achievements.astro";
-import OpenSource from "~/components/OpenSource.astro";
-import Contact from "~/components/Contact.astro";
-import ExpandAllButton from "~/components/ExpandAllButton.astro";
 import { resume } from "~/data/resume";
 ---
 <Layout title={resume.browserTitle} description={resume.description}>
-  <Navbar />
-  <main>
-    <Hero />
-    <About />
-    <Experience />
-    <Education />
-    <Achievements />
-    <OpenSource />
-    <Contact />
-  </main>
-  <ExpandAllButton />
+  <Hero />
+  <section class="mx-auto max-w-4xl px-4 sm:px-6 pb-16">
+    <div class="grid gap-4 sm:grid-cols-2">
+      <a
+        href="/about"
+        class="block rounded-lg border border-slate-200 dark:border-slate-800 px-5 py-5 hover:border-sky-500 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors"
+      >
+        <div class="font-semibold text-lg mb-1">About Me →</div>
+        <div class="text-sm text-slate-500 dark:text-slate-400">
+          Background, experience, education, and how to reach me.
+        </div>
+      </a>
+      <a
+        href="/side-projects"
+        class="block rounded-lg border border-slate-200 dark:border-slate-800 px-5 py-5 hover:border-sky-500 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors"
+      >
+        <div class="font-semibold text-lg mb-1">Side Projects →</div>
+        <div class="text-sm text-slate-500 dark:text-slate-400">
+          What I build and tinker with outside of work.
+        </div>
+      </a>
+    </div>
+  </section>
 </Layout>

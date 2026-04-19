@@ -1,0 +1,9 @@
+* things to add to experience [/]
+- at Boeing, I made gitlab-model-registry (internal tool) for version control AI project artifacts (models, data, snapshots)
+-
+* UI
+- UI update [0/4]
+  - [ ] leave only About Me, Contact on footer
+  - [ ] make other sections (experience, education and others) as content that I can select from left bar. (like page content)
+  - [ ] add personal section to footer
+  - [ ] move contact to header

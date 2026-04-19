@@ -1,12 +1,17 @@
 ---
 import "~/styles/global.css";
+import TopNav from "~/components/TopNav.astro";
+import Sidebar from "~/components/Sidebar.astro";
+import SiteFooter from "~/components/SiteFooter.astro";
 
 export interface Props {
   title: string;
   description?: string;
+  bare?: boolean;
+  sidebar?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, bare = false, sidebar = false } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
@@ -30,6 +35,25 @@ const { title, description } = Astro.props;
     </script>
   </head>
   <body class="font-sans">
-    <slot />
+    {bare ? (
+      <slot />
+    ) : (
+      <div class="min-h-screen flex flex-col">
+        <TopNav />
+        {sidebar ? (
+          <div class="flex-1 mx-auto w-full max-w-6xl px-4 sm:px-6 flex gap-0 md:gap-6">
+            <Sidebar />
+            <main class="flex-1 min-w-0 py-6">
+              <slot />
+            </main>
+          </div>
+        ) : (
+          <main class="flex-1">
+            <slot />
+          </main>
+        )}
+        <SiteFooter />
+      </div>
+    )}
   </body>
 </html>

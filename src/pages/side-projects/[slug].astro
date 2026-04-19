@@ -1,0 +1,39 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import { resume } from "~/data/resume";
+import { renderMarkdown } from "~/lib/markdown";
+
+export function getStaticPaths() {
+  return resume.sideProjects.projects.map((p) => ({
+    params: { slug: p.slug },
+    props: { project: p },
+  }));
+}
+
+const { project } = Astro.props;
+---
+<Layout title={`${project.title} — ${resume.name}`} description={resume.description} sidebar={true}>
+  <article class="py-4 max-w-3xl">
+    <nav class="mb-4 text-sm text-slate-500 dark:text-slate-400">
+      <a href="/side-projects" class="hover:text-slate-700 dark:hover:text-slate-200 hover:underline">Side Projects</a>
+      <span class="mx-1.5">/</span>
+      <span>{project.title}</span>
+    </nav>
+
+    <h1 class="text-2xl font-semibold tracking-tight mb-2">{project.title}</h1>
+    {project.subtitle && (
+      <p class="text-slate-500 dark:text-slate-400 mb-1">
+        {project.url ? (
+          <a href={project.url} target="_blank" rel="noopener" class="text-sky-600 dark:text-sky-400 hover:underline">{project.subtitle}</a>
+        ) : project.subtitle}
+      </p>
+    )}
+    {project.date && (
+      <p class="text-xs text-slate-500 dark:text-slate-400 mb-6">{project.date}</p>
+    )}
+
+    {project.content && (
+      <div class="prose-body text-slate-700 dark:text-slate-300 leading-relaxed space-y-3" set:html={renderMarkdown(project.content)} />
+    )}
+  </article>
+</Layout>

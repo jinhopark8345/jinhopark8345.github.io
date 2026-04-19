@@ -1,0 +1,45 @@
+---
+import Layout from "~/layouts/Layout.astro";
+import Card from "~/components/Card.astro";
+import { resume } from "~/data/resume";
+
+const { sideProjects } = resume;
+---
+<Layout title={`Side Projects — ${resume.name}`} description={resume.description} sidebar={true}>
+  <section class="py-4">
+    <h1 class="text-2xl font-semibold tracking-tight mb-4">Side Projects</h1>
+    {sideProjects.intro && (
+      <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">{sideProjects.intro}</p>
+    )}
+
+    <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-3">
+      Projects
+    </h2>
+    <div class="space-y-3 mb-8">
+      {sideProjects.projects.map((p) => (
+        <Card
+          title={p.title}
+          subtitle={p.subtitle}
+          subtitleUrl={`/side-projects/${p.slug}`}
+          date={p.date}
+        />
+      ))}
+    </div>
+
+    {sideProjects.hobbies.length > 0 && (
+      <>
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-3">
+          Hobbies
+        </h2>
+        <ul class="flex flex-wrap gap-2">
+          {sideProjects.hobbies.map((h) => (
+            <li class="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-sm text-slate-700 dark:text-slate-200">
+              {h.name}
+              {h.detail && <span class="text-slate-500 dark:text-slate-400"> · {h.detail}</span>}
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+  </section>
+</Layout>

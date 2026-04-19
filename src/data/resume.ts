@@ -55,6 +55,20 @@ export type SkillGroup = {
   items: string[];
 };
 
+export type SideProject = {
+  slug: string;
+  title: string;
+  subtitle?: string;
+  url?: string;
+  date?: string;
+  content?: string;
+};
+
+export type Hobby = {
+  name: string;
+  detail?: string;
+};
+
 export const resume = {
   name: "Jinho Park",
   role: "AI Application Engineer",
@@ -75,7 +89,6 @@ export const resume = {
       "I work closely with clients to turn real requirements into AI systems that ship.",
     content:
       "AI Application Engineer focused on Information Retrieval and scalable backend systems — vector search, Agentic RAG, latency optimization, and retrieval precision. Currently at Boeing, previously at Lomin.",
-    resumeUrl: "/resume.pdf",
   },
 
   about: {
@@ -161,6 +174,7 @@ export const resume = {
 - Implemented a **GitOps** deployment flow with **ArgoCD** and **OpenShift**, reducing deployment cycles from **1 hour to 10 minutes**.
 - Developed a fault-tolerant **Prefect** orchestration layer, automating data ingestion and inference pipelines for aircraft predictive maintenance.
 - Eliminated **~8 hours of manual weekly labor** by building an automated PDF-generation backend that converts raw telemetry into stakeholder-ready reports via FastAPI.
+- Built **gitlab-model-registry**, an internal tool for version-controlling AI project artifacts — models, datasets, and training snapshots — on top of GitLab.
 
 **Boeing AI Factory**
 
@@ -299,4 +313,29 @@ export const resume = {
         "Fixed a GPU-path issue in `prepare_output` during my Software Engineer Internship at Intel, strengthening correctness for Intel-integrated-GPU inference.",
     },
   ] as OpenSourceEntry[],
+
+  sideProjects: {
+    intro:
+      "Outside of work, I build small things for myself and spend time off-screen.",
+    projects: [
+      {
+        slug: "project-1",
+        title: "(stub) Project #1",
+        subtitle: "replace me",
+        content:
+          "A short description of what you're building, why, and where it lives.",
+      },
+      {
+        slug: "project-2",
+        title: "(stub) Project #2",
+        subtitle: "replace me",
+        content:
+          "A short description of what you're building, why, and where it lives.",
+      },
+    ] as SideProject[],
+    hobbies: [
+      { name: "(stub) Hobby 1", detail: "replace me" },
+      { name: "(stub) Hobby 2" },
+    ] as Hobby[],
+  },
 };

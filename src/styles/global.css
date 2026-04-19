@@ -63,9 +63,14 @@
 @media print {
   /* Hide interactive / site-chrome elements that don't belong in the PDF */
   header,
-  #expand-all-btn,
+  aside,
+  footer,
   [data-print-hidden] {
     display: none !important;
+  }
+  /* Neutralize sidebar-shift padding on the main wrapper */
+  .md\:pl-64 {
+    padding-left: 0 !important;
   }
 
   /* Force every <details> card open and drop the chevron */

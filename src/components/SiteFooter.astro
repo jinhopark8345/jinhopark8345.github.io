@@ -1,0 +1,23 @@
+---
+import { resume } from "~/data/resume";
+
+const footerLinks = [
+  { href: "/about", label: "About Me" },
+  { href: "/side-projects", label: "Side Projects" },
+  { href: "/contact", label: "Contact" },
+];
+---
+<footer class="border-t border-slate-200 dark:border-slate-800 py-8 mt-12">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500 dark:text-slate-400">
+    <nav>
+      <ul class="flex items-center gap-5">
+        {footerLinks.map((l) => (
+          <li>
+            <a href={l.href} class="hover:text-slate-700 dark:hover:text-slate-200 hover:underline">{l.label}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    <div>&copy; {new Date().getFullYear()} {resume.name}</div>
+  </div>
+</footer>
