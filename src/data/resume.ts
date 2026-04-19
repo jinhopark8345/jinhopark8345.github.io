@@ -115,7 +115,7 @@ export const resume = {
       location: "Seoul, South Korea",
       jobs: [
         {
-          name: "Machine Learning Engineer",
+          name: "AI Application Engineer",
           date: "Jan 2024 – present",
           info: "ML Team · Seoul, South Korea",
           content: `**Information Retrieval (IR) System for Boeing Problem Solving Model (BPSM)**
