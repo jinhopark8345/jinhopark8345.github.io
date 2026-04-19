@@ -1,24 +1,5 @@
-* things to add to experience [/]
-- [ ]
-* UI [/]
-- [ ]
 * content
 ** side projects [/]
 *** [ ] preprep (feat. dataprep)
 *** [ ] tickerpicker
 *** [ ] Pawsonality
-** AI tools
-openclaw
-claude
-codex
-** tools i use
-emacs + ubuntu
-device : macbook
-openclaw (local llm server, qwen3.5 - 27B, for investment(?) tracker)
-** really personal
-my norwegian wife
-two cats
-** what I am interested in
-- knowledge managemetn (Zetelkasten)
-- tool improvement (like Emacs)
-- add cats
