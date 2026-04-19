@@ -264,8 +264,16 @@ export const resume = {
       subtitle: "Kaggle",
       date: "Jan 2024",
       url: "https://www.kaggle.com/certification/competitions/jinho8345/UBC-OCEAN",
-      content:
-        "Ranked **28 of 1,724** participants (top 2%) in the UBC Ovarian Cancer Subtype Classification and Outlier Detection (UBC-OCEAN) competition: multi-class classification of five ovarian cancer subtypes across whole-slide histopathology and tissue-microarray images, plus outlier detection for the \"Other\" class. Full approach in my [28th-place solution writeup](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/jinho-park-28th-solution).",
+      content: `Ranked **28 of 1,724** participants (top 2%) in the UBC Ovarian Cancer Subtype Classification and Outlier Detection (UBC-OCEAN) competition: classify five ovarian cancer subtypes on whole-slide (WSI) and tissue-microarray (TMA) histopathology images, plus detect the "Other" class.
+
+**My approach:**
+
+- Fine-tuned \`maxvit_tiny_tf_512.in1k\` on cancerous tiles mined from WSIs using supplemental masks (>70% tumor pixels for training, 30-70% for validation).
+- TMA inference: tile, classify per tile, majority-vote the subtype.
+- WSI inference: a thumbnail-level tumor/non-tumor classifier runs first. No-tumor thumbnails are labeled "Other"; tumor thumbnails feed the subtype head with majority voting.
+- Tried StainNet stain-normalization, simple normalization won.
+
+Full approach in my [28th-place solution writeup](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/jinho-park-28th-solution).`,
     },
     {
       title: "2nd Prize, College Student Papers & Capstone Design Contest",
