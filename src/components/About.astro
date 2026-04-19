@@ -5,7 +5,7 @@ const { about } = resume;
 ---
 <section id="about" class="py-8">
   <div class="section-shell">
-    <h3 class="section-title">About Me</h3>
+    <h3 class="section-title">About</h3>
     <div class="space-y-4 leading-relaxed text-slate-700 dark:text-slate-300">
       {about.paragraphs.map((p) => (
         <div set:html={renderMarkdown(p)} />

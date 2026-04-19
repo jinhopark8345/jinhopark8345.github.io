@@ -22,7 +22,7 @@ const sideProjectsLinks = [
 ];
 
 const links = isSideProjects ? sideProjectsLinks : aboutMeLinks;
-const sectionLabel = isSideProjects ? "Outside Work" : "About Me";
+const sectionLabel = isSideProjects ? "Outside Work" : "Work";
 
 // Server-side active for Side Projects (route-based). About Me uses client-side scroll-spy.
 const isActive = (href: string) => isSideProjects && current === href;

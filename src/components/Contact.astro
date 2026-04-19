@@ -30,17 +30,11 @@ const channels = [
 ];
 ---
 <section class="py-12">
-  <div class="mx-auto max-w-xl px-4 sm:px-6">
-    <Image
-      src={wifeOcean}
-      alt="My wife sitting by the ocean with our dog"
-      widths={[480, 720, 960]}
-      sizes="(min-width: 640px) 480px, 100vw"
-      class="w-full max-w-md mx-auto aspect-[3/4] object-cover rounded-2xl shadow-lg mb-8"
-      loading="eager"
-    />
-    <h3 class="section-title">Contact</h3>
-    <ul class="space-y-3">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6">
+    <div class="grid gap-8 md:gap-10 md:grid-cols-[1fr_auto] md:items-start">
+      <div>
+        <h3 class="section-title">Contact</h3>
+        <ul class="space-y-3">
       {channels.map((c) => (
         <li>
           <a
@@ -68,6 +62,16 @@ const channels = [
           </a>
         </li>
       ))}
-    </ul>
+        </ul>
+      </div>
+      <Image
+        src={wifeOcean}
+        alt="My wife sitting by the ocean with our dog"
+        widths={[240, 360, 480]}
+        sizes="(min-width: 768px) 240px, 70vw"
+        class="w-56 md:w-56 lg:w-64 aspect-[3/4] object-cover rounded-2xl shadow-lg justify-self-center md:justify-self-end"
+        loading="eager"
+      />
+    </div>
   </div>
 </section>
