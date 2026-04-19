@@ -144,11 +144,18 @@ export const resume = {
           content: `**Advanced Information Retrieval** — *IR System for Boeing Problem Solving Model (BPSM)*
 
 - Architected a high-precision **Agentic RAG** system for FAA compliance, using an agentic loop to cross-reference technical aviation reports against regulatory frameworks.
+- Built the pipeline as a dedicated **retrieval service on Qdrant**, then extended it into a **generation app** that consumes the retrieval layer as an internal API.
 - Built a **hybrid search** pipeline on **Qdrant** (sparse + dense), improving **MRR by 7%** on domain-specific technical terminology over a 500-query eval set.
 - Tuned Qdrant indexing and payload filtering to hold **p95 retrieval latency under 500 ms**.
 - Served the embedding model on **CPU-only infrastructure** with **BentoML** dynamic batching, combined with **ONNX Runtime / OpenVINO** and quantization, to sustain throughput without GPUs.
 - Stood up a **Prometheus & Grafana** monitoring stack for the retrieval service, plus a custom **Postgres-backed KPI tracker** (CTR, query quality, adoption, latency SLOs) visualized in Grafana.
 - Delivered a user-friendly interface with **Streamlit** and **React** for Boeing CAP (Corrective Action Plan) owners generating FAA-compliant reports.
+
+**LLM Applications & Internal Tooling**
+
+- Built a **GitLab merge-request bot** that lets engineers chat with Boeing's internal LLM directly on MRs — code review, summarization, and Q&A inside the review flow.
+- Shipped an **MCP (Model Context Protocol) server** exposing Boeing's internal tools and data sources to LLM agents through a standard interface.
+- Built a **complex PDF parser** that extracts document layout via few-shot prompting over (v)LLM APIs; it now powers the data-ingestion pipeline for BPSM and other internal tools.
 
 **MLOps & Backend Automation**
 
