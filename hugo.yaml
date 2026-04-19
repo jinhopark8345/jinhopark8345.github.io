@@ -171,6 +171,20 @@ params:
               - Developed a Document Understanding framework with
                 graph-based augmentation and dataset curation pipelines.
 
+      - company: "Intel"
+        companyUrl: "https://www.intel.com/"
+        jobs:
+          - name: "Software Engineer Intern — OpenVINO Korea"
+            date: "Aug 2021 – Feb 2022"
+            info:
+              content: Deep learning performance engineering on Intel integrated GPUs.
+            content: |-
+              - Collaborated with local and international teams to analyze
+                the performance of deep learning models on Intel hardware.
+              - Optimized OpenVINO components for Intel integrated GPUs,
+                resolving **5+ major performance issues** to enhance
+                inference efficiency.
+
   education:
     enable: true
     index: false
