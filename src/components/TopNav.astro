@@ -3,11 +3,13 @@ import { resume } from "~/data/resume";
 
 const current = Astro.url.pathname.replace(/\/$/, "") || "/";
 const isSideProjects = current.startsWith("/side-projects");
-const aboutMeActive = !isSideProjects;
+const isContact = current === "/contact";
+const aboutMeActive = !isSideProjects && !isContact;
 
 const tabs = [
   { href: "/about", label: "About Me", active: aboutMeActive },
   { href: "/side-projects", label: "Side Projects", active: isSideProjects },
+  { href: "/contact", label: "Contact", active: isContact },
 ];
 ---
 <header class="sticky top-0 z-40 backdrop-blur bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800">
