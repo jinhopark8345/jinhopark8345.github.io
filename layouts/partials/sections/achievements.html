@@ -1,0 +1,45 @@
+{{ if .Site.Params.achievements.enable | default false }}
+{{- $achievements := .Site.Language.Params.achievements | default .Site.Params.achievements -}}
+<section id="achievements" class="py-5">
+    <div class="container">
+        <h3 class="text-center">{{ $achievements.title | default .Site.Params.achievements.title | default (i18n "achievements") }}</h3>
+        <div class="px-0 px-md-5 px-lg-5">
+            <div class="row justify-content-center px-3 px-md-5 px-lg-5">
+                <div class="col-lg-8 col-md-10 col-12">
+                    {{ range $achievements.items | default .Site.Params.achievements.items }}
+                    {{ if .url }}
+                    <a class="card my-3 p-3 d-block text-decoration-none" href="{{ .url }}" title="{{ .title }}" target="_blank">
+                        <div class="d-flex align-items-start">
+                            {{if .image }}
+                                <img src="{{ .image }}" style="width: 64px; height: 64px; object-fit: cover; margin-right: 1rem; flex-shrink: 0;">
+                            {{ end }}
+                            <div class="flex-grow-1">
+                                <h5 class="card-title mb-2">{{ .title }}</h5>
+                                <div class="card-text secondary-font">
+                                    {{ .content }}
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    {{ else }}
+                    <div class="card my-3 p-3" title="{{ .title }}">
+                        <div class="d-flex align-items-start">
+                            {{if .image }}
+                                <img src="{{ .image }}" style="width: 64px; height: 64px; object-fit: cover; margin-right: 1rem; flex-shrink: 0;">
+                            {{ end }}
+                            <div class="flex-grow-1">
+                                <h5 class="card-title mb-2">{{ .title }}</h5>
+                                <div class="card-text secondary-font">
+                                    {{ .content }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
