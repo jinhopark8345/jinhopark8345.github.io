@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { resume } from "~/data/resume";
+import wifeOcean from "~/assets/wife_looking_at_the_ocean.jpg";
 const { socials } = resume;
 
 const prettify = (u: string) => u.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
@@ -29,6 +31,14 @@ const channels = [
 ---
 <section class="py-12">
   <div class="mx-auto max-w-xl px-4 sm:px-6">
+    <Image
+      src={wifeOcean}
+      alt="My wife sitting by the ocean with our dog"
+      widths={[480, 720, 960]}
+      sizes="(min-width: 640px) 480px, 100vw"
+      class="w-full max-w-md mx-auto aspect-[3/4] object-cover rounded-2xl shadow-lg mb-8"
+      loading="eager"
+    />
     <h3 class="section-title">Contact</h3>
     <ul class="space-y-3">
       {channels.map((c) => (
