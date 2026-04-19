@@ -102,13 +102,13 @@ export const resume = {
       },
       {
         label: "Backend & Application",
-        items: ["FastAPI", "Redis", "PostgreSQL", "Streamlit", "REST APIs"],
+        items: ["FastAPI", "Redis", "PostgreSQL", "Streamlit"],
       },
       {
         label: "Infrastructure & Automation",
         items: [
           "Prefect",
-          "Kubernetes (OpenShift)",
+          "Kubernetes",
           "Docker",
           "Helm",
           "GitLab CI/CD",
@@ -119,7 +119,7 @@ export const resume = {
       },
       {
         label: "Observability & Metrics",
-        items: ["Grafana", "Prometheus", "Custom metric exporters", "KPI tracking"],
+        items: ["Grafana", "Prometheus", "KPI tracking"],
       },
     ] as SkillGroup[],
     spokenLanguages: [
