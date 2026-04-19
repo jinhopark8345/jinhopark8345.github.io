@@ -279,8 +279,17 @@ Full approach in my [28th-place solution writeup](https://www.kaggle.com/competi
       title: "2nd Prize, College Student Papers & Capstone Design Contest",
       subtitle: "Korean Institute of Broadcast and Media Engineers",
       date: "Nov 2021",
-      content:
-        'Paper: [*"Further Optimize MobileNetV2 with Channel-wise Squeeze and Excitation."*](https://koreascience.kr/article/CFKO202115161202726.pdf)',
+      content: `Paper: [*"Further Optimize MobileNetV2 with Channel-wise Squeeze and Excitation."*](https://koreascience.kr/article/CFKO202115161202726.pdf)
+
+**Problem:** 1x1 convolutions contribute 70-75% of MobileNetV2's parameters and scale with channel count, so they become the bottleneck as the network deepens.
+
+**Approach:**
+
+- Proposed a channel-wise squeeze-and-excitation (CSE) block, inspired by SENet, whose parameters scale with resolution instead of channel count.
+- Hybrid strategy: 1x1 conv in early layers (high resolution, low channels), CSE in later layers (low resolution, high channels), so the two complement each other.
+- Added a \`cap\` hyperparameter to prevent over-compression at low resolutions.
+
+**Results:** ~15% fewer parameters than MobileNetV2 optimized for CIFAR-10 with no accuracy loss, and 20% of baseline size on ImageNette at comparable accuracy (0.44M vs 2.25M params, 91.31% vs 91.56%).`,
     },
     {
       title: "Certified Kubernetes Administrator (CKA)",
