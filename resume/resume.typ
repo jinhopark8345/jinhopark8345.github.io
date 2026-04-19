@@ -81,7 +81,7 @@
 
 #v(4pt)
 
-AI Application Engineer focused on *Information Retrieval* and *scalable backend systems*, building production-grade vector search, Agentic RAG, and latency optimization. Validate ideas fast with working PoCs, then ship them to production on *Prefect, Kubernetes, GitOps*, and high-availability *FastAPI* services. Regularly collaborate with *international teams and clients* across timezones.
+AI Application Engineer focused on *Information Retrieval* and *scalable backend systems*, building production-grade vector search, Agentic RAG, and latency optimization. Validate ideas fast with working PoCs, then take them to production. Day-to-day stack: *Prefect, Kubernetes, GitOps*, and high-availability *FastAPI* services. Regularly collaborate with *international teams and clients* across timezones.
 
 // ───────── experience ─────────
 #section("Experience")
@@ -90,7 +90,7 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
   title: "AI Application Engineer",
   org: "Boeing",
   orgUrl: "https://www.boeing.com/",
-  location: "ML Team · Seoul, South Korea",
+  location: "AI Team · Seoul, South Korea",
   date: "Jan 2024 – Present",
 )
 #bullet[
@@ -126,9 +126,9 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
 
 #v(3pt)
 #role(
-  title: "Software Engineer Intern, OpenVINO Korea",
+  title: "Software Engineer Intern",
   org: "Intel",
-  location: "OpenVINO Korea · Seoul, South Korea",
+  location: "OpenVINO · Seoul, South Korea",
   date: "Aug 2021 – Feb 2022",
 )
 #bullet[
