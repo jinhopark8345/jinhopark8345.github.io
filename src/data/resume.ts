@@ -88,7 +88,7 @@ export const resume = {
     subtitle:
       "I work closely with clients to turn real requirements into AI systems that ship.",
     content:
-      "AI Application Engineer focused on Information Retrieval and scalable backend systems — vector search, Agentic RAG, latency optimization, and retrieval precision. Currently at Boeing, previously at Lomin.",
+      "AI Application Engineer focused on Information Retrieval and scalable backend systems: vector search, Agentic RAG, latency optimization, and retrieval precision. Currently at Boeing, previously at Lomin.",
   },
 
   about: {
