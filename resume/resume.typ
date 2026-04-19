@@ -76,7 +76,7 @@
 
 #v(4pt)
 
-AI Application Engineer focused on *Information Retrieval* and *scalable backend systems* — production-grade vector search, Agentic RAG, latency optimization. Strong fast-prototyping track record with *Prefect, Kubernetes, GitOps* and high-availability *FastAPI* services. Regularly collaborate with *international teams and clients* across timezones.
+AI Application Engineer focused on *Information Retrieval* and *scalable backend systems*, building production-grade vector search, Agentic RAG, and latency optimization. Strong fast-prototyping track record with *Prefect, Kubernetes, GitOps* and high-availability *FastAPI* services. Regularly collaborate with *international teams and clients* across timezones.
 
 // ───────── experience ─────────
 #section("Experience")
@@ -121,7 +121,7 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
 
 #v(3pt)
 #role(
-  title: "Software Engineer Intern — OpenVINO Korea",
+  title: "Software Engineer Intern, OpenVINO Korea",
   org: "Intel",
   location: "OpenVINO Korea · Seoul, South Korea",
   date: "Aug 2021 – Feb 2022",
@@ -155,10 +155,10 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
 #section("Open Source")
 
 #bullet[
-  *Add BROS model to Transformers* · #link("https://github.com/huggingface/transformers/pull/23190")[huggingface/transformers\#23190] — ported architecture, tokenization, and spatial pre-processing for document understanding.
+  *Add BROS model to Transformers* · #link("https://github.com/huggingface/transformers/pull/23190")[huggingface/transformers\#23190]. Ported architecture, tokenization, and spatial pre-processing for document understanding.
 ]
 #bullet[
-  *OpenVINO GPU fix: prepare_output* · #link("https://github.com/openvinotoolkit/openvino/pull/7783")[openvinotoolkit/openvino\#7783] — correctness fix on the Intel-integrated-GPU inference path.
+  *OpenVINO GPU fix: prepare_output* · #link("https://github.com/openvinotoolkit/openvino/pull/7783")[openvinotoolkit/openvino\#7783]. Correctness fix on the Intel-integrated-GPU inference path.
 ]
 
 // ───────── skills ─────────
