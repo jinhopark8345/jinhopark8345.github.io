@@ -27,16 +27,21 @@
 
 #let role(
   title: none,
+  titleUrl: none,
   org: none,
   orgUrl: none,
   location: none,
   date: none,
 ) = {
+  let titleNode = if titleUrl != none { link(titleUrl)[#title] } else { title }
+  let orgNode = if org != none {
+    [ #h(4pt) · #h(4pt) #if orgUrl != none { link(orgUrl)[#org] } else { org } ]
+  } else { [] }
   grid(
     columns: (1fr, auto),
     align: (left, right),
     [
-      *#title* #h(4pt) · #h(4pt) #if orgUrl != none { link(orgUrl)[#org] } else { org }
+      *#titleNode*#orgNode
     ],
     [#text(fill: gray.darken(20%), date)],
   )
@@ -154,11 +159,23 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
 // ───────── open source ─────────
 #section("Open Source")
 
-#bullet[
-  #link("https://github.com/huggingface/transformers/pull/23190")[*Add BROS model to Transformers*]: ported architecture, tokenization, and spatial pre-processing for document understanding.
+#role(
+  title: "Add BROS",
+  titleUrl: "https://github.com/huggingface/transformers/pull/23190",
+  org: "Huggingface / Transformers",
+)
+#text(size: 9pt)[
+  Ported architecture, tokenization, and spatial pre-processing for document understanding.
 ]
-#bullet[
-  #link("https://github.com/openvinotoolkit/openvino/pull/7783")[*OpenVINO GPU fix: prepare_output*]: correctness fix on the Intel-integrated-GPU inference path.
+
+#v(2pt)
+#role(
+  title: "prepare_output",
+  titleUrl: "https://github.com/openvinotoolkit/openvino/pull/7783",
+  org: "OpenVINO",
+)
+#text(size: 9pt)[
+  Correctness fix on the Intel-integrated-GPU inference path.
 ]
 
 // ───────── skills ─────────
