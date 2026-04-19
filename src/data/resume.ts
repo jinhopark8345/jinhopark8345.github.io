@@ -404,6 +404,25 @@ Full writeup [on Kaggle](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/
 - Entropy-based outlier detection generalizes better than my thumbnail-gate heuristic, and it's simpler.
 - Next time I touch this kind of problem, I'd start with a pathology foundation model + MIL + ensemble before writing a single line of fine-tuning code.`,
       },
+      {
+        slug: "bros",
+        title: "BROS",
+        subtitle: "porting a document-understanding model into Hugging Face Transformers",
+        url: "https://github.com/huggingface/transformers/pull/23190",
+        date: "2023",
+        content: `I have a soft spot for [BROS (BERT Relying On Spatiality)](https://huggingface.co/docs/transformers/model_doc/bros) for reasons I'll keep to myself. The short version of the public story: I wanted to use it, it wasn't in [Hugging Face Transformers](https://github.com/huggingface/transformers), so I ported it from the [original author's repo](https://github.com/clovaai/bros) and upstreamed it as [PR #23190](https://github.com/huggingface/transformers/pull/23190).
+
+BROS is a layout-aware BERT variant for form and document understanding. The idea: instead of treating a document as a flat stream of words, use the 2D coordinates of each word box on the page. It encodes the spatial relationship between tokens (above, below, left, right, distance) directly into attention, so the model reads a form the way a person does.
+
+**What "document understanding" actually means here:**
+
+- **Entity Extraction (EE / NER):** find the fields. Classify each word as part of a question, answer, header, or other. BIO/BIOES tagging matters so you can separate adjacent entities with the same label (think "Shake Shack" next to "Burger King", without tagging they look like one run).
+- **Entity Linking (EL):** connect the fields. Which question goes with which answer, which header groups which items. BROS predicts a "from-token" given a "to-token" for each link.
+
+**[FormUnderstanding](https://github.com/jinhopark8345/FormUnderstanding) repo.** I spun this up alongside the PR, with worked-through notebooks on the FUNSD dataset: how EE and EL are framed, BIO vs BIOES, and where BROS's linking approach struggles (it assumes each "to" box has one "from" box, which breaks on table-like layouts where a header links to many rows).
+
+**Where this lands in 2026.** There are plenty of classical approaches to form understanding (LayoutLM family, BROS, DocFormer, and so on), but these days a multimodal LLM can just read the document and emit structured JSON. Cheaper, no fine-tuning, often better. The specialized models still win on latency, cost-per-page, and on forms where layout really matters, but the center of gravity has shifted.`,
+      },
     ] as SideProject[],
     interests: [
       {
