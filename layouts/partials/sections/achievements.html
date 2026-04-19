@@ -20,25 +20,26 @@
                                 style="cursor: pointer;"
                             {{ end }}
                         >
-                            <div class="d-flex align-items-center">
-                                {{ if .image }}
-                                    <img src="{{ .image }}" style="width: 32px; height: 32px; object-fit: cover; margin-right: 0.75rem; flex-shrink: 0;">
+                            <div>
+                                <span class="h5">{{ .title }}</span>
+                                {{ if .subtitle }}
+                                    <small>·</small>
+                                    {{ if .url }}
+                                        <a href="{{ .url }}" target="_blank" onclick="event.stopPropagation();">{{ .subtitle }}</a>
+                                    {{ else }}
+                                        {{ .subtitle }}
+                                    {{ end }}
                                 {{ end }}
-                                <span class="h5 mb-0">{{ .title }}</span>
                             </div>
                             <div class="d-flex align-items-center">
-                                {{ if .url }}
-                                    <a href="{{ .url }}" target="_blank" class="me-3" title="Open link" onclick="event.stopPropagation();">
-                                        <i class="fas fa-external-link-alt"></i>
-                                    </a>
-                                {{ end }}
+                                {{ if .date }}<small class="me-3">{{ .date }}</small>{{ end }}
                                 {{ if $hasBody }}<i class="fas fa-chevron-down"></i>{{ end }}
                             </div>
                         </div>
                         {{ if $hasBody }}
                         <div id="{{ $id }}" class="collapse">
-                            <div class="card-body secondary-font">
-                                {{ .content }}
+                            <div class="card-body">
+                                {{ .content | markdownify }}
                             </div>
                         </div>
                         {{ end }}

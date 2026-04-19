@@ -214,20 +214,27 @@ params:
   achievements:
     enable: true
     items:
-      - title: "Kaggle — Silver Medal, UBC Ovarian Cancer Subtype Classification"
-        content: "Ranked 28 of 1,724 participants (top 2%) in the UBC Ovarian Cancer Subtype Classification and Outlier Detection competition. Jan 2024."
+      - title: "Silver Medal — UBC Ovarian Cancer Subtype Classification"
+        subtitle: "Kaggle"
+        date: "Jan 2024"
         url: "https://www.kaggle.com/competitions/UBC-OCEAN"
+        content: "Ranked **28 of 1,724** participants (top 2%) in the UBC Ovarian Cancer Subtype Classification and Outlier Detection competition."
 
-      - title: "CKA — Certified Kubernetes Administrator"
-        content: "Linux Foundation, Dec 2024."
+      - title: "Certified Kubernetes Administrator (CKA)"
+        subtitle: "Linux Foundation"
+        date: "Dec 2024"
         url: "https://www.cncf.io/certification/cka/"
 
       - title: "2nd Prize — College Student Papers & Capstone Design Contest"
-        content: "Korean Institute of Broadcast and Media Engineers, Nov 2021. Paper: \"Further Optimizing MobileNetV2 with Channel-wise Squeeze and Excitation.\""
+        subtitle: "Korean Institute of Broadcast and Media Engineers"
+        date: "Nov 2021"
+        content: 'Paper: *"Further Optimizing MobileNetV2 with Channel-wise Squeeze and Excitation."*'
 
-      - title: "Coursera — Deep Learning Specialization"
-        content: "deeplearning.ai, May 2019. Also completed Machine Learning (Stanford, Feb 2019) and Nand to Tetris (Jan 2021)."
+      - title: "Deep Learning Specialization"
+        subtitle: "Coursera · deeplearning.ai"
+        date: "May 2019"
         url: "https://www.coursera.org/specializations/deep-learning"
+        content: "Also completed *Machine Learning* (Stanford, Feb 2019) and *Nand to Tetris* (Jan 2021)."
 
   projects:
     enable: false
@@ -269,3 +276,36 @@ params:
     article: "Jan 2, 2006"
     articleList: "Jan 2, 2006"
     articleRecent: "Jan 2, 2006"
+
+  customScripts: |-
+    <button id="toggle-all-btn" type="button" class="btn btn-primary shadow"
+      style="position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1030; border-radius: 999px; padding: 0.6rem 1.1rem;"
+      aria-label="Expand all sections">
+      <i class="fas fa-expand-arrows-alt me-2"></i><span id="toggle-all-label">Expand all</span>
+    </button>
+    <script>
+    (function () {
+      document.addEventListener('DOMContentLoaded', function () {
+        var btn = document.getElementById('toggle-all-btn');
+        var label = document.getElementById('toggle-all-label');
+        if (!btn || typeof bootstrap === 'undefined') return;
+
+        var selector = '#experience .collapse, #education .collapse, #achievements .collapse';
+        var expanded = false;
+
+        btn.addEventListener('click', function () {
+          var nodes = document.querySelectorAll(selector);
+          nodes.forEach(function (el) {
+            var inst = bootstrap.Collapse.getOrCreateInstance(el, { toggle: false });
+            if (expanded) { inst.hide(); } else { inst.show(); }
+          });
+          expanded = !expanded;
+          label.textContent = expanded ? 'Collapse all' : 'Expand all';
+          btn.querySelector('i').className = expanded
+            ? 'fas fa-compress-arrows-alt me-2'
+            : 'fas fa-expand-arrows-alt me-2';
+        });
+      });
+    })();
+    </script>
+
