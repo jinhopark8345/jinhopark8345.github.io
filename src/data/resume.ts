@@ -145,9 +145,9 @@ export const resume = {
 
 - Architected a high-precision **Agentic RAG** system that cross-references technical aviation reports against regulatory frameworks through an agentic loop.
 - Built it as a dedicated **retrieval service on Qdrant**, then extended it into a **generation app** consuming the retrieval layer as an internal API.
-- Built a **hybrid search** pipeline on **Qdrant** (sparse + dense), improving **MRR by 7%** on domain-specific technical terminology over a 500-query eval set.
-- Tuned Qdrant indexing and payload filtering to hold **p95 retrieval latency under 500 ms**.
-- **CPU-only embedding serving under a hard budget constraint.** The project had no GPU budget for the embedding stage (the downstream internal LLM ran on GPU, managed by a separate team). I sustained throughput with **BentoML** dynamic batching + **ONNX Runtime / OpenVINO** + quantization on CPU — turning a cost ceiling into a working production setup.
+- Built a **hybrid search** pipeline on **Qdrant** (sparse + dense) from scratch, outperforming a dense-only configuration on MRR across a 200-query evaluation set for domain-specific technical terminology.
+- Tuned Qdrant indexing and payload filtering to hold **p95 retrieval latency under 1000 ms**.
+- **CPU-only embedding serving.** The embedding stage ran on CPU only (the downstream internal LLM ran on GPU, managed by a separate team). I sustained throughput with **BentoML** dynamic batching + **ONNX Runtime / OpenVINO** + quantization on CPU.
 - Stood up a **Prometheus & Grafana** monitoring stack for the retrieval service, plus a custom **Postgres-backed KPI tracker** (CTR, query quality, adoption, latency SLOs) visualized in Grafana.
 - Delivered a user-friendly interface with **Streamlit** and **React** for compliance owners generating regulator-ready reports.
 
