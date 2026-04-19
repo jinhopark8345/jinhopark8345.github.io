@@ -99,6 +99,7 @@ export const resume = {
       "A significant part of my day-to-day is **cross-timezone collaboration with international teams and clients**. Most of my work happens in written and spoken English.",
       "Currently at **Boeing**, I work on a FAA-compliance agentic RAG project. Before that, at **Lomin**, I optimized Transformer inference serving with NVIDIA Triton and built document-understanding systems for financial clients.",
       "I graduated from Konkuk University in 2022 with a B.S. in Electrical and Electronics Engineering, and spent a semester on exchange at the University of Agder in Norway.",
+      "Outside of work, I live in Seoul with my Norwegian wife and our two cats.",
     ],
     skillGroups: [
       { label: "Languages", items: ["Python", "C++", "TypeScript"] },
