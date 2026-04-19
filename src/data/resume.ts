@@ -396,11 +396,24 @@ Full writeup [on Kaggle](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/
 - **Two MIL models:** [DSMIL](https://github.com/binli123/dsmil-wsi) (Dual-Stream MIL, CVPR 2021) and [Perceiver](https://github.com/cgtuebingen/DualQueryMIL) (from DualQueryMIL, BMVA 2023).
 - Final ensemble of 4 combinations: {CTransPath, ViT-S/16} × {DSMIL, Perceiver}.
 
+**Lessons I took from this:**
+
+- **Do more research when the domain is unfamiliar to you.** I jumped into modeling before really understanding how pathologists work or how the WSI literature usually frames these problems. I paid for that in wasted cycles.
+- **Mid-competition leaderboard position doesn't mean much.** I was doing well for a stretch, but the private test set was built specifically to catch models that don't generalize. You don't win by being high at week 4, you win by being high when the competition ends.
+- **Don't be afraid to try new approaches from recent papers.** A lot of the top solutions used methods from papers published only a few months before the competition. I played conservatively and lost ground because of it.
+- **First time handling huge images.** A single WSI can be 100,000 × 50,000 pixels. You don't load them, you tile and stream them (libpng row-reads, pyvips, custom tiling code). PIL is not the answer.
+- **First time with medical imaging.** Staining differs between hospitals, scanners vary, metadata like magnification sometimes gets stripped during format conversion, the same cancer can look different under two different setups. None of that was in my vocabulary when I started.
+
+**Concepts I picked up:**
+
+- **Bag of patches.** Instead of feeding a whole image to the model, chop it into small tiles (say 224×224) and treat the image as an unordered "bag" of those tiles. The label belongs to the bag, not to any individual tile.
+- **Multiple Instance Learning (MIL).** The learning setup built for exactly the bag-of-patches case: the model receives an unordered set of feature vectors and predicts one label for the whole bag. It learns which patches to pay attention to. Chowder, DSMIL, and Perceiver (all used by the winners here) are MIL architectures.
+
 **Takeaways I'm still thinking about:**
 
 - Domain-specific foundation models change the shape of the problem. My ImageNet-pretrained backbone had to learn pathology from scratch. A frozen Phikon or CTransPath embedding is already most of the way there.
 - Pre-compute embeddings once, iterate cheaply on classifiers. Most of my three months went into fine-tuning a backbone; the winners spent theirs on modeling choices over frozen features.
-- Multiple Instance Learning is the natural framing for WSI. Treat the slide as a bag of patches and let the model pick which ones matter, instead of hand-engineering a tumor gate the way I did.
+- MIL beats my hand-engineered tumor gate for WSIs. Letting the model pick which patches matter is cleaner than coding a thumbnail classifier.
 - Entropy-based outlier detection generalizes better than my thumbnail-gate heuristic, and it's simpler.
 - Next time I touch this kind of problem, I'd start with a pathology foundation model + MIL + ensemble before writing a single line of fine-tuning code.`,
       },
