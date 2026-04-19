@@ -94,13 +94,13 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
   date: "Jan 2024 – Present",
 )
 #bullet[
-  *Agentic RAG for aviation regulatory compliance:* Architected and implemented a high-precision retrieval system on Qdrant: dedicated retrieval service + generation app, with a hybrid sparse + dense pipeline that outperformed dense-only on a 200-query MRR eval.
+  *Agentic RAG for regulated-industry document compliance:* Architected and implemented a high-precision retrieval system on Qdrant: dedicated retrieval service + generation app, with a hybrid sparse + dense pipeline that outperformed dense-only on a 200-query MRR eval.
 ]
 #bullet[
   *Low-latency CPU retrieval:* Tuned Qdrant indexing and payload filtering to hold p95 retrieval latency under 1000 ms on CPU-only infrastructure; sustained embedding throughput with BentoML dynamic batching + ONNX Runtime + quantization.
 ]
 #bullet[
-  *Internal LLM tooling:* Shipped a GitLab MR bot, an MCP server exposing internal tools to LLM agents, a few-shot (v)LLM PDF parser for RAG ingestion, and gitlab-model-registry for versioning AI artifacts on GitLab.
+  *Internal LLM tooling:* Shipped an internal code-review LLM bot, an MCP server exposing in-house tools to LLM agents, a few-shot (v)LLM PDF parser for RAG ingestion, and an internal ML artifact registry on GitLab.
 ]
 #bullet[
   *GitOps and observability:* Implemented ArgoCD + OpenShift GitOps (deploy cycles 1h to 10min) and stood up Prometheus/Grafana plus a Postgres-backed KPI tracker for CTR, query quality, and latency SLOs.

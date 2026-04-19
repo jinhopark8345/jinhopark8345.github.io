@@ -97,7 +97,7 @@ export const resume = {
       "I have a proven track record of automating the end-to-end ML lifecycle using **Prefect, Kubernetes, and GitOps**, and deep expertise in bridging the gap between complex IR research and high-availability **FastAPI** services.",
       "One thing I'm known for: **fast prototyping**. I'd rather validate an idea with a working demo in days than theorize for weeks. It keeps iteration with clients tight, cheap, and grounded in what actually works.",
       "A significant part of my day-to-day is **cross-timezone collaboration with international teams and clients**. Most of my work happens in written and spoken English.",
-      "Currently at **Boeing**, I work on a FAA-compliance agentic RAG project. Before that, at **Lomin**, I optimized Transformer inference serving with NVIDIA Triton and built document-understanding systems for financial clients.",
+      "Currently at **Boeing**, I work on an agentic RAG project for regulated-industry document compliance. Before that, at **Lomin**, I optimized Transformer inference serving with NVIDIA Triton and built document-understanding systems for financial clients.",
       "I graduated from Konkuk University in 2022 with a B.S. in Electrical and Electronics Engineering, and spent a semester on exchange at the University of Agder in Norway.",
       "Outside of work, I live in Seoul with my Norwegian wife and our two cats.",
     ],
@@ -155,34 +155,34 @@ export const resume = {
           name: "AI Application Engineer",
           date: "Jan 2024 – present",
           info: "ML Team · Seoul, South Korea",
-          content: `**Advanced Information Retrieval**: *Agentic RAG for aviation regulatory compliance*
+          content: `**Advanced Information Retrieval**: *Agentic RAG for regulated-industry document compliance*
 
-- Architected a high-precision **Agentic RAG** system that cross-references technical aviation reports against regulatory frameworks through an agentic loop.
+- Architected a high-precision **Agentic RAG** system that cross-references technical reports against regulatory frameworks through an agentic loop.
 - Built it as a dedicated **retrieval service on Qdrant**, then extended it into a **generation app** consuming the retrieval layer as an internal API.
 - Built a **hybrid search** pipeline on **Qdrant** (sparse + dense) from scratch, outperforming a dense-only configuration on MRR across a 200-query evaluation set for domain-specific technical terminology.
 - Tuned Qdrant indexing and payload filtering to hold **p95 retrieval latency under 1000 ms on CPU-only infrastructure**.
-- **CPU-only embedding serving.** The embedding stage ran on CPU only (the downstream internal LLM ran on GPU, managed by a separate team). I sustained throughput with **BentoML** dynamic batching + **ONNX Runtime** + quantization on CPU.
+- **CPU-only embedding serving.** The embedding stage ran on CPU only (the downstream GPU-hosted LLM was managed separately). I sustained throughput with **BentoML** dynamic batching + **ONNX Runtime** + quantization on CPU.
 - Stood up a **Prometheus & Grafana** monitoring stack for the retrieval service, plus a custom **Postgres-backed KPI tracker** (CTR, query quality, adoption, latency SLOs) visualized in Grafana.
 - Delivered a user-friendly interface with **Streamlit** and **React** for compliance owners generating regulator-ready reports.
 
 **LLM Applications & Internal Tooling**
 
-- Built a **GitLab merge-request bot** that lets engineers chat with the internal LLM directly on MRs: code review, summarization, and Q&A inside the review flow.
-- Shipped an **MCP (Model Context Protocol) server** exposing internal tools and data sources to LLM agents through a standard interface.
+- Built an **internal code-review LLM bot** that lets engineers chat with an LLM directly on merge requests: code review, summarization, and Q&A inside the review flow.
+- Shipped an **MCP (Model Context Protocol) server** exposing in-house tools and data sources to LLM agents through a standard interface.
 - Built a **complex PDF parser** that extracts document layout via few-shot prompting over (v)LLM APIs; it now powers the data-ingestion pipeline for the compliance RAG system and other internal tools.
 
 **MLOps & Backend Automation**
 
 - Implemented a **GitOps** deployment flow with **ArgoCD** and **OpenShift**, reducing deployment cycles from **1 hour to 10 minutes**.
-- Developed a fault-tolerant **Prefect** orchestration layer, automating data ingestion and inference pipelines for aircraft predictive maintenance.
+- Developed a fault-tolerant **Prefect** orchestration layer, automating data ingestion and inference pipelines for industrial predictive maintenance.
 - Eliminated **~8 hours of manual weekly labor** by building an automated PDF-generation backend that converts raw telemetry into stakeholder-ready reports via FastAPI.
-- Built **gitlab-model-registry**, an internal tool for version-controlling AI project artifacts (models, datasets, and training snapshots) on top of GitLab.
+- Built an **internal ML artifact registry on GitLab** for version-controlling AI project artifacts (models, datasets, and training snapshots).
 
-**Boeing AI Factory**
+**Internal ML Training Framework**
 
 - Developed a scalable deep-learning training framework enabling efficient AI model development across classical ML, deep learning, and RL.
 - Reduced redundant model-development effort by designing a reusable framework for both AI and non-AI engineers.
-- Built on **Ray** & **PyTorch Lightning**; integrated with Boeing's MLOps stack (ClearML, model hub, dataset hub) for seamless deployment.`,
+- Built on **Ray** & **PyTorch Lightning**; integrated with the in-house MLOps stack for seamless deployment.`,
         },
       ],
     },
