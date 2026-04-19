@@ -278,6 +278,23 @@ params:
     articleRecent: "Jan 2, 2006"
 
   customScripts: |-
+    <style>
+      section#about,
+      section#experience,
+      section#education,
+      section#achievements {
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+      }
+      section#experience .py-5,
+      section#experience .py-4,
+      section#education .py-4,
+      section#achievements .py-4,
+      section#about .py-5 {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+      }
+    </style>
     <button id="toggle-all-btn" type="button" class="btn btn-primary shadow"
       style="position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 1030; border-radius: 999px; padding: 0.6rem 1.1rem;"
       aria-label="Expand all sections">
