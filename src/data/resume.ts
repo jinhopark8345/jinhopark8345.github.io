@@ -422,7 +422,7 @@ Full writeup [on Kaggle](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/
         title: "BROS",
         subtitle: "porting a document-understanding model into Hugging Face Transformers",
         url: "https://github.com/huggingface/transformers/pull/23190",
-        date: "2023",
+        date: "Aug – Sep 2023",
         content: `I have a soft spot for [BROS (BERT Relying On Spatiality)](https://huggingface.co/docs/transformers/model_doc/bros) for reasons I'll keep to myself. The short version of the public story: I wanted to use it, it wasn't in [Hugging Face Transformers](https://github.com/huggingface/transformers), so I ported it from the [original author's repo](https://github.com/clovaai/bros) and upstreamed it as [PR #23190](https://github.com/huggingface/transformers/pull/23190).
 
 BROS is a layout-aware BERT variant for form and document understanding. The idea: instead of treating a document as a flat stream of words, use the 2D coordinates of each word box on the page. It encodes the spatial relationship between tokens (above, below, left, right, distance) directly into attention, so the model reads a form the way a person does.
@@ -433,6 +433,12 @@ BROS is a layout-aware BERT variant for form and document understanding. The ide
 - **Entity Linking (EL):** connect the fields. Which question goes with which answer, which header groups which items. BROS predicts a "from-token" given a "to-token" for each link.
 
 **[FormUnderstanding](https://github.com/jinhopark8345/FormUnderstanding) repo.** I spun this up alongside the PR, with worked-through notebooks on the FUNSD dataset: how EE and EL are framed, BIO vs BIOES, and where BROS's linking approach struggles (it assumes each "to" box has one "from" box, which breaks on table-like layouts where a header links to many rows).
+
+**Lessons I took from this:**
+
+- **Contributing to an open-source project is one of the best ways to learn its internals.** After this PR, I know how Transformers is structured (modeling files, configuration, tokenizer, auto classes, tests, docs, model card) because the review process forces you to touch every layer of it.
+- **What to test after porting a model.** Forward-pass equivalence against the original implementation on the same inputs (bit-close, not just "similar"), tokenizer round-trips, save-and-reload round-trips, batched vs. unbatched parity, CPU vs. GPU parity, plus any model-specific edge cases (for BROS: spatial attention with 2D coordinates).
+- **The Hugging Face ecosystem is bigger than the Transformers library.** The Model Hub (weights and cards), the Datasets library, and the Dataset Hub are all separate pieces that plug into each other. Understanding how they fit together is half of shipping a model end-to-end.
 
 **Where this lands in 2026.** There are plenty of classical approaches to form understanding (LayoutLM family, BROS, DocFormer, and so on), but these days a multimodal LLM can just read the document and emit structured JSON. Cheaper, no fine-tuning, often better. The specialized models still win on latency, cost-per-page, and on forms where layout really matters, but the center of gravity has shifted.`,
       },
