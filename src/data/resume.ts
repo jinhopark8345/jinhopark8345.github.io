@@ -366,18 +366,43 @@ Both repos are private for now. I like making things that feel a little more pol
         subtitle: "Kaggle, solo, three months",
         url: "https://www.kaggle.com/competitions/UBC-OCEAN/overview",
         date: "Oct 2023 – Jan 2024",
-        content: `A three-month solo run at the [UBC Ovarian Cancer Subtype Classification (UBC-OCEAN)](https://www.kaggle.com/competitions/UBC-OCEAN/overview) Kaggle competition. Classify five ovarian cancer subtypes from whole-slide (WSI) and tissue-microarray (TMA) histopathology images, plus detect an "Other" outlier class. I finished 28th of 1,724, silver medal.
+        content: `A three-month solo run at the [UBC Ovarian Cancer Subtype Classification (UBC-OCEAN)](https://www.kaggle.com/competitions/UBC-OCEAN/overview) Kaggle competition. The task: look at a microscope scan of a biopsy and predict which of five ovarian cancer subtypes it is, while also flagging images that don't fit any known subtype as "Other". I finished 28th of 1,724, silver medal. Code is on [GitHub](https://github.com/jinhopark8345/UBC-OCEAN-28th-place-solution).
 
-My approach was classic fine-tuned-CNN territory: mine tumor-only tiles from WSIs using supplemental masks, fine-tune \`maxvit_tiny_tf_512\` on them, majority-vote at inference. A thumbnail tumor gate routed no-tumor slides to "Other". Full writeup [here](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/jinho-park-28th-solution).
+**Why it was tricky.** The images come in two very different formats. **Whole-slide images (WSI)** are enormous scans of an entire tissue slide at 20x magnification, often around 50,000 × 50,000 pixels and mostly non-tumor area. **Tissue microarrays (TMA)** are small cores the pathologist has already punched out of a WSI and scanned at 40x, usually around 4,000 × 4,000 pixels and almost entirely tumor. The train set is mostly WSIs with only 25 TMAs, but the test set is mostly TMAs. The "Other" class never appears in training at all.
 
-**What the winners did differently (Owkin, 1st place):** they didn't fine-tune a classifier at all. They used [Phikon](https://huggingface.co/owkin/phikon), Owkin's ViT foundation model for digital pathology (iBOT-pretrained on 40M TCGA tiles), to precompute 768-d tile embeddings once, then trained a lightweight Multiple Instance Learning (MIL) model called Chowder on top, a 50-model ensemble for stability. Outlier detection was a one-line heuristic: threshold on the entropy of ensemble predictions. They even iBOT-fine-tuned Phikon further on the competition train set for an extra bump.
+**My approach: the "classic" path.** A fine-tuned CNN classifier, with a separate tumor detector for WSIs.
+
+- Only 25 TMAs in training, so I mined tumor-heavy tiles out of the WSIs (using the organizers' supplemental tumor masks) and used them as TMA-like training samples: >70% tumor pixels for training, 30-70% for validation.
+- Fine-tuned \`maxvit_tiny_tf_512\` on those tiles to predict the subtype.
+- **TMA inference:** tile into 512×512 patches, classify each, majority-vote the final subtype.
+- **WSI inference:** a smaller tumor/non-tumor classifier runs first on downsized thumbnails. No-tumor thumbnails get labeled "Other"; tumor thumbnails feed the main classifier and majority-vote.
+- StainNet color normalization (popular for cross-hospital pathology generalization) underperformed simple normalization and was dropped.
+
+Full writeup [on Kaggle](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/jinho-park-28th-solution).
+
+**What the top solutions did differently.** Most winning teams framed this as a **Multiple Instance Learning (MIL)** problem instead. The idea: a slide is a "bag of patches", and the model learns to pick which patches matter. Nobody fine-tunes a classifier on pixels. You run a frozen **pathology foundation model** (a big ViT pretrained with self-supervision on millions of pathology tiles) to turn each patch into a fixed-size feature vector, then train a cheap MIL classifier on top of those vectors. Since the foundation model already knows what pathology looks like, the classifiers on top can stay tiny and iterate fast.
+
+**1st place, [Owkin](https://www.kaggle.com/competitions/UBC-OCEAN/discussion/465908):**
+
+- [Phikon](https://huggingface.co/owkin/phikon), Owkin's pathology ViT-Base (iBOT-pretrained on 40M TCGA tiles), pre-computed a 768-dim embedding per patch once.
+- Ensemble of **50 Chowder MIL models** (Owkin's own MIL architecture). Chowder is sensitive to initialization; ensembling was the stabilizer.
+- **Outlier detection:** a threshold on the entropy of ensemble predictions. High entropy (the ensemble disagreed) got labeled "Other". One line of code, took their public-LB score from 0.59 to 0.64.
+- Extra bump: further iBOT-fine-tuned Phikon on the competition's own patches.
+
+**7th place, [m1dsolo](https://github.com/jinhopark8345/UBC-OCEAN-7th):**
+
+- Same recipe (frozen pathology backbone + MIL on top), different cast.
+- **Two feature extractors:** [CTransPath](https://github.com/Xiyue-Wang/TransPath) (pathology-specific Swin Transformer, MIA 2022) and a ViT-S/16 pretrained on pathology with [LunitDINO](https://github.com/lunit-io/benchmark-ssl-pathology) (CVPR 2023).
+- **Two MIL models:** [DSMIL](https://github.com/binli123/dsmil-wsi) (Dual-Stream MIL, CVPR 2021) and [Perceiver](https://github.com/cgtuebingen/DualQueryMIL) (from DualQueryMIL, BMVA 2023).
+- Final ensemble of 4 combinations: {CTransPath, ViT-S/16} × {DSMIL, Perceiver}.
 
 **Takeaways I'm still thinking about:**
 
-- Domain-specific foundation models change the shape of the problem. My ImageNet-pretrained backbone had to learn pathology from scratch, a frozen Phikon embedding is already most of the way there.
+- Domain-specific foundation models change the shape of the problem. My ImageNet-pretrained backbone had to learn pathology from scratch. A frozen Phikon or CTransPath embedding is already most of the way there.
 - Pre-compute embeddings once, iterate cheaply on classifiers. Most of my three months went into fine-tuning a backbone; the winners spent theirs on modeling choices over frozen features.
-- Multiple Instance Learning is the natural framing for WSI. Treat the slide as a bag of patches and let the model choose which ones matter.
-- Entropy-based outlier detection generalizes better than my thumbnail-gate heuristic, and it's simpler.`,
+- Multiple Instance Learning is the natural framing for WSI. Treat the slide as a bag of patches and let the model pick which ones matter, instead of hand-engineering a tumor gate the way I did.
+- Entropy-based outlier detection generalizes better than my thumbnail-gate heuristic, and it's simpler.
+- Next time I touch this kind of problem, I'd start with a pathology foundation model + MIL + ensemble before writing a single line of fine-tuning code.`,
       },
     ] as SideProject[],
     interests: [
