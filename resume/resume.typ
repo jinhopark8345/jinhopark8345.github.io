@@ -76,7 +76,7 @@
 
 #v(4pt)
 
-AI Application Engineer focused on *Information Retrieval* and *scalable backend systems*, building production-grade vector search, Agentic RAG, and latency optimization. Strong fast-prototyping track record with *Prefect, Kubernetes, GitOps* and high-availability *FastAPI* services. Regularly collaborate with *international teams and clients* across timezones.
+AI Application Engineer focused on *Information Retrieval* and *scalable backend systems*, building production-grade vector search, Agentic RAG, and latency optimization. Move fast from prototype to production on *Prefect, Kubernetes, GitOps*, and high-availability *FastAPI* services. Regularly collaborate with *international teams and clients* across timezones.
 
 // ───────── experience ─────────
 #section("Experience")
