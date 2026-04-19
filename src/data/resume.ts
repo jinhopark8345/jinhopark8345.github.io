@@ -50,6 +50,11 @@ export type SpokenLanguage = {
   level: string;
 };
 
+export type SkillGroup = {
+  label: string;
+  items: string[];
+};
+
 export const resume = {
   name: "Jinho Park",
   role: "AI Application Engineer",
@@ -80,23 +85,22 @@ export const resume = {
       "Currently a Machine Learning Engineer at **Boeing**, where I work on FAA-compliance RAG and Boeing's AI training framework. Before that, at **Lomin**, I optimized Transformer inference serving with NVIDIA Triton and built document-understanding systems for financial clients.",
       "I graduated from Konkuk University in 2022 with a B.S. in Electrical and Electronics Engineering, and spent a semester on exchange at the University of Agder in Norway.",
     ],
-    skills: [
-      "Python",
-      "C++",
-      "PyTorch",
-      "Transformers",
-      "NetworkX",
-      "ONNX",
-      "OpenVINO",
-      "OpenShift",
-      "Kubernetes",
-      "Docker",
-      "CMake",
-      "Git",
-      "Linux",
-    ],
-    otherSkills: ["Data structures", "Graph algorithms"],
-    languages: [
+    skillGroups: [
+      { label: "Languages", items: ["Python", "C++"] },
+      {
+        label: "ML & Deep Learning",
+        items: ["PyTorch", "Transformers", "ONNX", "OpenVINO", "NetworkX"],
+      },
+      {
+        label: "Infrastructure & DevOps",
+        items: ["OpenShift", "Kubernetes", "Docker", "Git", "CMake", "Linux"],
+      },
+      {
+        label: "CS Foundations",
+        items: ["Data structures", "Graph algorithms"],
+      },
+    ] as SkillGroup[],
+    spokenLanguages: [
       { name: "Korean", level: "Native" },
       { name: "English", level: "Advanced" },
       { name: "Norwegian", level: "Beginner" },

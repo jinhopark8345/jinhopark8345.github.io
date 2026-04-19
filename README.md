@@ -2,34 +2,72 @@
 
 Source for my personal portfolio.
 
-**Live site:** <https://jinhopark8345.github.io/>
+🌐 **Live:** <https://jinhopark8345.github.io/>
 
-Built with [Astro](https://astro.build) + Tailwind CSS. Auto-deploys from
-`main` to GitHub Pages via `.github/workflows/deploy.yml`.
+## Tech stack
 
-## Local preview
+| Layer | Choice |
+| --- | --- |
+| Static site generator | [Astro 5](https://astro.build) |
+| Styling | [Tailwind CSS 3](https://tailwindcss.com) |
+| Type system | TypeScript (strict) |
+| Runtime | Node 22 |
+| Hosting | GitHub Pages (free) |
+| CI/CD | GitHub Actions — `.github/workflows/deploy.yml` |
+
+Every push to `main` triggers the workflow, which runs `npm ci && npm run build`
+and publishes the resulting `dist/` via `actions/deploy-pages`.
+
+## Run it locally
 
 ```bash
+# one-time
 npm install
+
+# dev server with live reload (http://localhost:4321)
 npm run dev
+
+# production build (outputs to dist/)
+npm run build
+
+# preview the production build locally
+npm run preview
 ```
 
-Open <http://localhost:4321/>.
+## Editing content
 
-## Build
+All resume content lives in one typed source of truth:
 
-```bash
-npm run build     # outputs to dist/
-npm run preview   # serve dist/ locally
+- **`src/data/resume.ts`** — name, role, contact, hero copy, skill groups,
+  spoken languages, experience, education, achievements, open source.
+
+Edit that file to add a job, a cert, a contribution, etc. — the page picks
+it up automatically.
+
+## Repository layout
+
 ```
-
-## Layout
-
-- `src/data/resume.ts` — single source of truth for all content (hero, experience, education, achievements, open source, contact).
-- `src/components/` — one Astro component per section plus a shared `Card` for collapsible entries.
-- `src/layouts/Layout.astro` — base HTML shell, theme toggle.
-- `src/lib/markdown.ts` — tiny zero-dependency inline-markdown renderer used inside cards.
-- `src/pages/index.astro` — homepage composition.
-- `src/styles/global.css` — Tailwind entry + a few component classes.
-- `public/` — static assets copied verbatim to the build output.
-- `archive/` — old Hugo-era TIL notes, parked here and not built.
+src/
+  data/resume.ts         # all content
+  components/            # one Astro component per section
+    Navbar.astro
+    Hero.astro
+    About.astro
+    Experience.astro
+    Education.astro
+    Achievements.astro
+    OpenSource.astro
+    Contact.astro
+    Card.astro           # shared collapsible card
+    ExpandAllButton.astro
+  layouts/Layout.astro   # base HTML shell, dark-mode bootstrap
+  lib/markdown.ts        # tiny inline markdown renderer used inside cards
+  pages/index.astro      # homepage composition
+  styles/global.css      # Tailwind entry + component classes
+public/                  # static assets copied verbatim into dist/
+.github/workflows/
+  deploy.yml             # Pages deploy workflow
+astro.config.mjs
+tailwind.config.mjs
+tsconfig.json
+```

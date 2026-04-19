@@ -11,13 +11,36 @@ const { about } = resume;
         <div set:html={renderMarkdown(p)} />
       ))}
     </div>
-    <div class="mt-6">
-      <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">Technologies I work with:</p>
-      <ul class="flex flex-wrap gap-2">
-        {about.skills.map((s) => (
-          <li class="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200">{s}</li>
-        ))}
-      </ul>
+
+    <div class="mt-6 space-y-3">
+      <p class="text-sm font-medium text-slate-500 dark:text-slate-400">
+        Technologies I work with
+      </p>
+      {about.skillGroups.map((group) => (
+        <div class="flex flex-wrap items-baseline gap-x-3 gap-y-2">
+          <span class="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 w-full sm:w-40 shrink-0">
+            {group.label}
+          </span>
+          <ul class="flex flex-wrap gap-2">
+            {group.items.map((s) => (
+              <li class="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200">{s}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
+
+      <div class="flex flex-wrap items-baseline gap-x-3 gap-y-2 pt-2 border-t border-slate-200 dark:border-slate-800 mt-4">
+        <span class="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 w-full sm:w-40 shrink-0">
+          Spoken languages
+        </span>
+        <ul class="flex flex-wrap gap-2">
+          {about.spokenLanguages.map((l) => (
+            <li class="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200">
+              {l.name} <span class="text-slate-500 dark:text-slate-400">· {l.level}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   </div>
 </section>
