@@ -378,6 +378,10 @@ Both repos are private for now. I like making things that feel a little more pol
 - **WSI inference:** a smaller tumor/non-tumor classifier runs first on downsized thumbnails. No-tumor thumbnails get labeled "Other"; tumor thumbnails feed the main classifier and majority-vote.
 - StainNet color normalization (popular for cross-hospital pathology generalization) underperformed simple normalization and was dropped.
 
+![Inference flow: an input slide is routed by type, TMA goes straight to tiling and the TMA model, WSI first passes a thumbnail tumor classifier which routes no-tumor thumbnails to "Other" and tumor thumbnails back to the TMA model, all tile predictions are majority-voted into a subtype](/img/ubc-ocean-inference-flow.svg)
+
+*Inference pipeline for my 28th-place UBC-OCEAN solution.*
+
 Full writeup [on Kaggle](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/jinho-park-28th-solution).
 
 **What the top solutions did differently.** Most winning teams framed this as a **Multiple Instance Learning (MIL)** problem instead. The idea: a slide is a "bag of patches", and the model learns to pick which patches matter. Nobody fine-tunes a classifier on pixels. You run a frozen **pathology foundation model** (a big ViT pretrained with self-supervision on millions of pathology tiles) to turn each patch into a fixed-size feature vector, then train a cheap MIL classifier on top of those vectors. Since the foundation model already knows what pathology looks like, the classifiers on top can stay tiny and iterate fast.
