@@ -13,7 +13,7 @@ export function renderInline(s: string): string {
   let out = escapeHtml(s);
   out = out.replace(
     /!\[([^\]]*)\]\(([^)]+)\)/g,
-    '<img src="$2" alt="$1" class="my-4 rounded-lg max-w-full h-auto" loading="lazy">'
+    '<a href="$2" target="_blank" rel="noopener" class="block my-4 cursor-zoom-in"><img src="$2" alt="$1" class="rounded-lg max-w-full h-auto" loading="lazy"></a>'
   );
   out = out.replace(
     /\[([^\]]+)\]\(([^)]+)\)/g,
