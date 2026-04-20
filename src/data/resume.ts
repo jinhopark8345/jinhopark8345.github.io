@@ -366,10 +366,20 @@ I didn't go that route, but the urge to help people learn never really left. Pre
 
 It's a tech interview training app. You pick topics, it picks questions based on what you're weakest at (SM-2 spaced repetition), and it tracks how you're improving. Scenario questions with real code snippets, timed 10-question challenges with a leaderboard, a 30-minute mock interview mode, per-option explanations so you can see why each choice is right or wrong, streaks, badges, and a small companion (a dragon, a plant, or an RPG hero) that levels up alongside you.
 
-It's actually two repos:
+**Architecture.**
 
-- **preprep** is the app itself: Next.js 16, React 19, Tailwind, FastAPI, Postgres, Google sign-in, Docker Compose.
+![PrePrep architecture: the dataprep content pipeline generates and validates questions in a Postgres knowledge graph and syncs them into preprep, which serves a Next.js frontend backed by FastAPI](/img/preprep-architecture.webp)
+
+It's actually two repos, on purpose:
+
+- **preprep** is the app itself: Next.js 16, React 19, Tailwind, FastAPI, Postgres, Google sign-in, Docker Compose. It serves questions, it never writes them.
 - **dataprep** is the content pipeline: a knowledge graph with 451 nodes across 40 subjects (Python and Kubernetes, but also Korean history and chemistry) and an LLM-backed generator that watches for coverage gaps and fills them. Around 2,500 questions so far.
+
+The split is the robustness story. Generation is slow, expensive, and occasionally wrong; serving needs to be fast, cheap, and always up. Keeping \`dataprep\` out of the request path means I can re-generate questions, migrate schemas, or rate-limit LLMs without ever touching the live app. When the pipeline breaks, the app keeps working.
+
+**Bloom levels.**
+
+Every question carries a [Bloom's taxonomy](https://en.wikipedia.org/wiki/Bloom%27s_taxonomy) level: *remember*, *understand*, *apply*, *analyze*, *evaluate*, *create*. I care about this axis more than raw "difficulty". Recalling a syntax detail and designing a caching strategy are both "hard", but in completely different ways. Bloom lets me target weak areas by cognitive operation, and it tells the generator which *kind* of question is still missing for a given concept.
 
 Both repos are private for now. I like making things that feel a little more polished than they need to be, and I like surprising people with what a side project can be.`,
       },
@@ -517,7 +527,7 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
         title: "Productivity and personal knowledge management",
         bullets: [
           "Getting more done, and making what I learn actually stick",
-          "Active learning over read-and-forget, which is why I made PrePrep",
+          "Active learning over read-and-forget, which is why I made [PrePrep](/side-projects/preprep)",
           "Heavy Emacs user for work and personal use, 7+ years",
           "Love tiling window managers"
         ],
