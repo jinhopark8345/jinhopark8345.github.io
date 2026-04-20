@@ -500,7 +500,7 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
         title: "AI",
         bullets: [
           "[OpenClaw](https://openclaw.ai/) + [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) locally on one 3090",
-          "Claude daily at home and at work;",
+          "Claude daily for work and personal use",
           "Scared and enjoying the insane pace at the same time",
           "Can't step out of this current, so I'd rather flow with it",
         ],
@@ -517,7 +517,7 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
         title: "Productivity and personal knowledge management",
         bullets: [
           "Getting more done, and making what I learn actually stick",
-          "Active learning over read-and-forget -> why I made Preprep!" ,
+          "Active learning over read-and-forget, which is why I made PrePrep",
           "Heavy Emacs user for work and personal use, 7+ years",
           "Love tiling window managers"
         ],
