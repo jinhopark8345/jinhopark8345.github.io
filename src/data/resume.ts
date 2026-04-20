@@ -431,6 +431,10 @@ Full writeup [on Kaggle](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/
 
 BROS is a layout-aware BERT variant for form and document understanding. The idea: instead of treating a document as a flat stream of words, use the 2D coordinates of each word box on the page. It encodes the spatial relationship between tokens (above, below, left, right, distance) directly into attention, so the model reads a form the way a person does.
 
+![BROS architecture overview: tokens and their 2D positions are embedded, the position differences between text blocks are encoded directly into the Transformer's attention as relative spatial encoding, a token-and-area masking strategy is used during pre-training, and the output token representations drive both pre-training and fine-tuning](/img/bros-architecture.webp)
+
+*Figure 2 from the [BROS paper](https://arxiv.org/abs/2108.04539) (Hong et al., 2021).*
+
 **What "document understanding" actually means here:**
 
 - **Entity Extraction (EE / NER):** find the fields. Classify each word as part of a question, answer, header, or other. BIO/BIOES tagging matters so you can separate adjacent entities with the same label (think "Shake Shack" next to "Burger King", without tagging they look like one run).
