@@ -67,10 +67,19 @@
 }
 
 /* Collapsible sidebar: when the toggle sets html.sidebar-closed, hide the
-   aside on md+ (mobile already hides it via Tailwind utility). */
+   aside on md+ (mobile already hides it via Tailwind utility). The toggle
+   button sits at the sidebar's right edge when open, and at the content's
+   left edge when closed. */
 @media (min-width: 768px) {
+  #sidebar-toggle {
+    /* 14rem sidebar + 0.75rem (half of gap-6) - 14px (half button) */
+    left: calc(14rem + 0.75rem - 14px);
+  }
   html.sidebar-closed aside#sidebar {
     display: none;
+  }
+  html.sidebar-closed #sidebar-toggle {
+    left: -14px;
   }
 }
 
