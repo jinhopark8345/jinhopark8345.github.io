@@ -227,8 +227,22 @@ export const resume = {
           name: "Software Engineer Intern, OpenVINO Korea",
           date: "Aug 2021 – Feb 2022",
           info: "OpenVINO Korea · Seoul, South Korea",
-          content: `- Collaborated with local and international teams to analyze the performance of deep learning models on Intel hardware.
-- Optimized [OpenVINO](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html) components for Intel integrated GPUs, resolving **5+ major performance issues** to enhance inference efficiency.`,
+          content: `**GPU runtime work on the [OpenVINO](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html) clDNN plugin**
+
+- Implemented the **Gather-ND 8** operator in the clDNN GPU plugin (kernel-selector boilerplate, kernel registration, GoogleTest unit tests) as part of the internal ticket pipeline that upstreamed GatherND-8 support to OpenVINO.
+- Co-authored [openvinotoolkit/openvino#7783](https://github.com/openvinotoolkit/openvino/pull/7783): contributed the mutable-output test case that reproduced a GPU-path \`prepare_output\` regression. The runtime fix itself was owned by the team.
+
+**Regression triage across production models**
+
+- Owned accuracy and performance investigations on Intel integrated GPUs for **YOLOv5, MTCNN, BrainTumor-segmentation, Tacotron, Swin, ICNet, machine-translation-nar, and text-detection-0003/0004**, often running \`git bisect\` across the OpenVINO tree (with submodule rebuilds on every step) to pin regressions down to a single commit.
+- Isolated GPU-plugin-specific divergences by comparing CPU vs GPU runs through OpenVINO's \`accuracy_check\` tool (e.g., text-detection-0003: reasonable f-measure on CPU, 0% on GPU pointed to a quantization path issue).
+- Built a small library of bash + Python scripts to automate "good build vs bad build" \`benchmark_app\` sweeps on INT8-quantized models.
+
+**What I took away**
+
+- First real exposure to industrial C++ in a release-grade ML runtime; CMake, \`gdb\`, GoogleTest, and the OpenVINO component layout became part of my baseline.
+- ML-inference work on production systems is mostly debugging with deterministic reproducers, not modeling.
+- \`git bisect\` across a submodule-heavy repo is a skill, not a one-liner.`,
         },
       ],
     },
@@ -329,12 +343,12 @@ Full approach in my [28th-place solution writeup](https://www.kaggle.com/competi
 - Shipped with docs, model card, and integration tests.`,
     },
     {
-      project: "[GPU] Fix issue of prepare_output, OpenVINO",
+      project: "[GPU] prepare_output test case, OpenVINO",
       subtitle: "openvinotoolkit/openvino#7783",
       url: "https://github.com/openvinotoolkit/openvino/pull/7783",
       date: "Oct 2021",
       content:
-        "Fixed a GPU-path issue in `prepare_output` during my Software Engineer Internship at Intel, strengthening correctness for Intel-integrated-GPU inference.",
+        "Contributed the mutable-output test case reproducing a GPU-path `prepare_output` regression during my Intel OpenVINO Korea internship. The runtime fix was authored by the team; my commit added the test coverage that protects against regressions.",
     },
   ] as OpenSourceEntry[],
 
