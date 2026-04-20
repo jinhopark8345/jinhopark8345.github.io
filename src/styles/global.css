@@ -51,6 +51,12 @@
     @apply text-slate-50;
   }
 
+  /* Figure/reference captions: italic-only paragraphs render right-aligned */
+  .prose-body p:has(> em:only-child),
+  .card > .body p:has(> em:only-child) {
+    @apply text-right text-sm text-slate-500 dark:text-slate-400;
+  }
+
   /* Section layout */
   .section-shell {
     @apply mx-auto w-full max-w-4xl px-4 sm:px-6;
