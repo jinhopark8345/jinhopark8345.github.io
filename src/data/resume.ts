@@ -66,7 +66,7 @@ export type SideProject = {
 
 export type Interest = {
   title: string;
-  content: string;
+  bullets: string[];
 };
 
 export type Hobby = {
@@ -498,18 +498,28 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
     interests: [
       {
         title: "Productivity and personal knowledge management",
-        content:
-          "How to get more done, and how to make the things I learn actually stick. It's the reason I got into Emacs years ago, and it turns out PrePrep scratches the same itch, I just didn't see the connection until I was already building it. Active learning beats reading-and-forgetting. Honest caveat: I've spent more hours customizing Emacs than it's probably ever saved me, and I wouldn't recommend it to anyone who hasn't already fallen into that rabbit hole. No regrets though.",
+        bullets: [
+          "Getting more done, and making what I learn actually stick",
+          "Active learning over read-and-forget",
+          "Emacs for years; [PrePrep](https://preprep.io/) turned out to be the same itch",
+        ],
       },
       {
         title: "Investment",
-        content:
-          "Markets, companies, how money and capital actually move. Feels like picking up a new school subject, and I like having one of those again. Real motivation underneath: you don't need to be rich, but not having money when you need it is brutal. I'd rather stay ahead of it.",
+        bullets: [
+          "How markets, companies, and capital actually move",
+          "The pull: not needing to be rich, but never wanting to be short",
+          "A new subject to study, which I've missed",
+        ],
       },
       {
         title: "AI",
-        content:
-          "Running [OpenClaw](https://openclaw.ai/) locally against [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) on a single 3090, didn't know that was possible with decent inference speed. The reasoning isn't Gemini or Opus sharp, but it's close enough to be genuinely useful, which is wild for a local open-weights model. I've had a few conversations with it that genuinely surprised me, might share one here sometime. Claude is in my daily life, and Claude and Codex are both in my work. Honestly I'm scared and enjoying this insane pace at the same time. These tools can already do most of what I do, and this isn't a current I get to step out of. The only way to survive it that I can see right now is to use all of them, live with them, and fold them into how I work. Where this goes next is what I spend most of my spare cycles on.",
+        bullets: [
+          "[OpenClaw](https://openclaw.ai/) + [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) locally on one 3090",
+          "Claude daily at home; Claude and Codex at work",
+          "Scared and enjoying the insane pace at the same time",
+          "Can't step out of this current, so I'd rather flow with it",
+        ],
       },
     ] as Interest[],
     dailyDrivers: [
