@@ -81,7 +81,7 @@
 
 #v(4pt)
 
-AI Application Engineer focused on *Information Retrieval* and *scalable backend systems*, building production-grade vector search, Agentic RAG, and latency optimization. Validate ideas fast with working PoCs, then take them to production. Fluent with *Prefect*, *Kubernetes*, *GitOps*, and *FastAPI*; comfortable taking ML systems from PoC through production.
+AI Application Engineer focused on *Information Retrieval* and *scalable backend systems*, building production-grade vector search, Agentic RAG, and latency optimization. Comfortable scoping a PoC from a rough idea, validating it fast, and taking it through to production. Fluent with *Prefect*, *Kubernetes*, *GitOps*, and *FastAPI*.
 
 // ───────── experience ─────────
 #section("Experience")
