@@ -497,11 +497,12 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
     ] as SideProject[],
     interests: [
       {
-        title: "Productivity and personal knowledge management",
+        title: "AI",
         bullets: [
-          "Getting more done, and making what I learn actually stick",
-          "Active learning over read-and-forget",
-          "Emacs for years; [PrePrep](https://preprep.io/) turned out to be the same itch",
+          "[OpenClaw](https://openclaw.ai/) + [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) locally on one 3090",
+          "Claude daily at home and at work;",
+          "Scared and enjoying the insane pace at the same time",
+          "Can't step out of this current, so I'd rather flow with it",
         ],
       },
       {
@@ -513,12 +514,12 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
         ],
       },
       {
-        title: "AI",
+        title: "Productivity and personal knowledge management",
         bullets: [
-          "[OpenClaw](https://openclaw.ai/) + [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) locally on one 3090",
-          "Claude daily at home; Claude and Codex at work",
-          "Scared and enjoying the insane pace at the same time",
-          "Can't step out of this current, so I'd rather flow with it",
+          "Getting more done, and making what I learn actually stick",
+          "Active learning over read-and-forget -> why I made Preprep!" ,
+          "Heavy Emacs user for work and personal use, 7+ years",
+          "Love tiling window managers"
         ],
       },
     ] as Interest[],
