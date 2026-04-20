@@ -364,22 +364,22 @@ Full approach in my [28th-place solution writeup](https://www.kaggle.com/competi
 
 I didn't go that route, but the urge to help people learn never really left. PrePrep is where it landed.
 
-It's a tech interview training app. You pick topics, it picks questions based on what you're weakest at (SM-2 spaced repetition), and it tracks how you're improving. Scenario questions with real code snippets, timed 10-question challenges with a leaderboard, a 30-minute mock interview mode, per-option explanations so you can see why each choice is right or wrong, streaks, badges, and a small companion (a dragon, a plant, or an RPG hero) that levels up alongside you.
+I wanted it to feel like something between a language-learning app and a game, not a quiz bank. You pick topics, it picks questions based on what you're weakest at (SM-2 spaced repetition), and it tracks how you're improving. Timed challenges with a leaderboard, a 30-minute mock interview mode, per-option explanations so you can see why each choice is right or wrong, streaks, badges, and a small companion (a dragon, a plant, or an RPG hero) that levels up alongside you. The companion was supposed to be a one-day experiment. I kept polishing it anyway.
 
 **Architecture.**
 
 ![PrePrep architecture: the dataprep content pipeline generates and validates questions in a Postgres knowledge graph and syncs them into preprep, which serves a Next.js frontend backed by FastAPI](/img/preprep-architecture.webp)
 
-It's actually two repos, on purpose:
+It started as one repo, and it got messy fast. The serving code and the question-generation code kept rubbing against each other, every LLM experiment risked breaking the app, and schema changes on one side always pulled the other along. So I split them:
 
-- **preprep** is the app itself: Next.js 16, React 19, Tailwind, FastAPI, Postgres, Google sign-in, Docker Compose. It serves questions, it never writes them.
+- **preprep** is the app: Next.js 16, React 19, Tailwind, FastAPI, Postgres, Google sign-in, Docker Compose. It only ever *reads* questions.
 - **dataprep** is the content pipeline: a knowledge graph with 451 nodes across 40 subjects (Python and Kubernetes, but also Korean history and chemistry) and an LLM-backed generator that watches for coverage gaps and fills them. Around 2,500 questions so far.
 
-The split is the robustness story. Generation is slow, expensive, and occasionally wrong; serving needs to be fast, cheap, and always up. Keeping \`dataprep\` out of the request path means I can re-generate questions, migrate schemas, or rate-limit LLMs without ever touching the live app. When the pipeline breaks, the app keeps working.
+Generation is slow, expensive, and occasionally wrong; serving needs to be fast, cheap, and always up. Keeping \`dataprep\` out of the request path means I can re-generate questions, migrate schemas, or rate-limit LLMs without ever touching the live app. When the pipeline breaks, the app keeps working. That separation is the thing I'm most proud of in this project, more than any single feature.
 
 **Bloom levels.**
 
-Every question carries a [Bloom's taxonomy](https://en.wikipedia.org/wiki/Bloom%27s_taxonomy) level: *remember*, *understand*, *apply*, *analyze*, *evaluate*, *create*. I care about this axis more than raw "difficulty". Recalling a syntax detail and designing a caching strategy are both "hard", but in completely different ways. Bloom lets me target weak areas by cognitive operation, and it tells the generator which *kind* of question is still missing for a given concept.
+Every question carries a [Bloom's taxonomy](https://en.wikipedia.org/wiki/Bloom%27s_taxonomy) level: *remember*, *understand*, *apply*, *analyze*, *evaluate*, *create*. I care about this axis more than raw "difficulty". Recalling a syntax detail and designing a caching strategy are both "hard", but in completely different ways, and a 1-to-5 difficulty slider compresses too many unrelated things into one number. Bloom lets me target weak areas by cognitive operation, and it tells the generator which *kind* of question is still missing for a given concept.
 
 Both repos are private for now. I like making things that feel a little more polished than they need to be, and I like surprising people with what a side project can be.`,
       },
