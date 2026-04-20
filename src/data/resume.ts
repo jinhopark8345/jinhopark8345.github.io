@@ -368,7 +368,7 @@ I wanted it to feel like something between a language-learning app and a game, n
 
 **Architecture.**
 
-![PrePrep architecture: the dataprep content pipeline generates and validates questions in a Postgres knowledge graph and syncs them into preprep, which serves a Next.js frontend backed by FastAPI](/img/preprep-architecture.webp)
+![Dataprep and preprep architecture: dataprep's knowledge graph feeds a 9-table Postgres that drives gap analysis, LLM generation, and a dashboard; sync.py joins and flattens the tables into preprep's read-only DB, which a Quiz API serves to users](/img/preprep-architecture.webp)
 
 It started as one repo, and it got messy fast. The serving code and the question-generation code kept rubbing against each other, every LLM experiment risked breaking the app, and schema changes on one side always pulled the other along. So I split them:
 
