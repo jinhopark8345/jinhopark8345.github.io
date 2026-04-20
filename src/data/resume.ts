@@ -509,7 +509,7 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
       {
         title: "AI",
         content:
-          "Running [OpenClaw](https://openclaw.ai/) locally against [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) on a single 3090, didn't know that was possible with decent inference speed. The reasoning isn't Gemini or Opus sharp, but it's close enough to be genuinely useful, which is wild for a local open-weights model. I've had a few conversations with it that genuinely surprised me, might share one here sometime. Where this all goes in the next few years is what I spend most of my spare cycles thinking about.",
+          "Running [OpenClaw](https://openclaw.ai/) locally against [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) on a single 3090, didn't know that was possible with decent inference speed. The reasoning isn't Gemini or Opus sharp, but it's close enough to be genuinely useful, which is wild for a local open-weights model. I've had a few conversations with it that genuinely surprised me, might share one here sometime. Some of that wildness also makes me nervous about my own future. These tools can already do most of my work, and this isn't a current I get to step out of. The only way to survive it that I can see right now is to use all of them, live with them, and fold them into how I work. Where this goes next is what I spend most of my spare cycles on.",
       },
     ] as Interest[],
     dailyDrivers: [
