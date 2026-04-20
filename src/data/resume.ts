@@ -229,7 +229,6 @@ export const resume = {
           info: "OpenVINO Korea · Seoul, South Korea",
           content: `**GPU runtime work on the [OpenVINO](https://www.intel.com/content/www/us/en/developer/tools/openvino-toolkit/overview.html) clDNN plugin**
 
-- Implemented the **Gather-ND 8** operator in the clDNN GPU plugin (kernel-selector boilerplate, kernel registration, GoogleTest unit tests) as part of the internal ticket pipeline that upstreamed GatherND-8 support to OpenVINO.
 - Co-authored [openvinotoolkit/openvino#7783](https://github.com/openvinotoolkit/openvino/pull/7783): contributed the mutable-output test case that reproduced a GPU-path \`prepare_output\` regression. The runtime fix itself was owned by the team.
 
 **Regression triage across production models**
@@ -467,6 +466,33 @@ BROS is a layout-aware BERT variant for form and document understanding. The ide
 - **The Hugging Face ecosystem is bigger than the Transformers library.** The Model Hub (weights and cards), the Datasets library, and the Dataset Hub are all separate pieces that plug into each other. Understanding how they fit together is half of shipping a model end-to-end.
 
 **Where this lands in 2026.** There are plenty of classical approaches to form understanding (LayoutLM family, BROS, DocFormer, and so on), but these days a multimodal LLM can just read the document and emit structured JSON. Cheaper, no fine-tuning, often better. The specialized models still win on latency, cost-per-page, and on forms where layout really matters, but the center of gravity has shifted.`,
+      },
+      {
+        slug: "mobilenetv2-cse",
+        title: "Optimizing MobileNetV2",
+        subtitle: "my undergrad thesis, and my first paper",
+        url: "https://koreascience.kr/article/CFKO202115161202726.pdf",
+        date: "Nov 2021",
+        content: `My undergraduate thesis at Konkuk University. The prompt was open: find something to optimize in a neural network. I went with MobileNetV2 because it was everywhere on mobile and embedded, and I wanted to understand *why* it was fast, not just that it was fast.
+
+Months of failed experiments came first. Drop a bottleneck layer? Accuracy tanks. Add strides? Accuracy tanks. Swap \`relu6\` for \`prelu\` from ENet? Marginal. The one thing that kept holding up across experiments was that the depth-wise separable convolution was the real efficiency story, not the parts around it. Once I stopped trying to beat it and started reading how the parameter count actually breaks down, the insight came out on its own:
+
+- Depth-wise separable convs only filter channels, they can't mix them. 1×1 conv is what creates new features by mixing channels. And **1×1 conv scales with channel count**, so as the network deepens and channels grow, 1×1 ends up dominating the parameter budget (70-75% of MobileNetV2).
+
+That meant the optimization target was 1×1, not depth-wise. I proposed a channel-wise squeeze-and-excitation (CSE) block, inspired by [SENet](https://arxiv.org/abs/1709.01507), that scales with resolution instead of channels. The two are natural complements:
+
+- 1×1 conv where resolution is high and channels are low (early layers).
+- CSE where resolution is low and channels are high (late layers).
+- A \`cap\` hyperparameter to prevent over-compression when resolution is very low.
+
+**Results.** ~15% fewer parameters than MobileNetV2 optimized for CIFAR-10 with no accuracy loss; 20% of baseline size on ImageNette at comparable accuracy (0.44M vs 2.25M params, 91.31% vs 91.56%). Paper: [*Further Optimize MobileNetV2 with Channel-wise Squeeze and Excitation*](https://koreascience.kr/article/CFKO202115161202726.pdf). 2nd prize at the Korean Institute of Broadcast and Media Engineers College Student Paper Contest, 2021.
+
+**Lessons I took from this:**
+
+- **The ablation table taught me more than the abstract did.** I learned architectures by reading other papers' experiment sections, not their narrative.
+- **My first real paper.** Writing it was harder than running the experiments. Figuring out what to cut is a skill I didn't have yet.
+- **Replacing vs complementing.** Framing CSE as a *complement* to 1×1 conv (different parameter-scaling axes) was more honest, and more useful, than pitching it as a drop-in replacement. Drop-ins rarely survive ablations.
+- **Null results are where understanding forms.** The insight wasn't a single discovery, it came from months of failing to beat depth-wise conv by tweaking the things around it.`,
       },
     ] as SideProject[],
     interests: [
