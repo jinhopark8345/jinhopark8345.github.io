@@ -66,6 +66,14 @@
   }
 }
 
+/* Collapsible sidebar: when the toggle sets html.sidebar-closed, hide the
+   aside on md+ (mobile already hides it via Tailwind utility). */
+@media (min-width: 768px) {
+  html.sidebar-closed aside#sidebar {
+    display: none;
+  }
+}
+
 @media print {
   /* Hide interactive / site-chrome elements that don't belong in the PDF */
   header,

@@ -32,6 +32,9 @@ const { title, description, bare = false, sidebar = false } = Astro.props;
       if (pref === "dark" || (!pref && matchMedia("(prefers-color-scheme: dark)").matches)) {
         document.documentElement.classList.add("dark");
       }
+      if (localStorage.getItem("sidebar") === "closed") {
+        document.documentElement.classList.add("sidebar-closed");
+      }
     </script>
   </head>
   <body class="font-sans">
