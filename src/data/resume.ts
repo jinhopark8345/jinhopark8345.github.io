@@ -358,20 +358,22 @@ Full approach in my [28th-place solution writeup](https://www.kaggle.com/competi
       {
         slug: "freetoolspot",
         title: "FreeToolSpot",
-        subtitle: "free everyday tools I built that run inside your browser",
+        subtitle: "a free everyday-tools site I'm building",
         url: "https://freetoolspot.com/",
         date: "Started April 2026",
-        content: `[FreeToolSpot](https://freetoolspot.com/) is a site I built: a growing collection of small everyday utilities that all run inside your browser. PDF merge, compress, split, images-to-PDF, OCR, image conversion, JSON formatting, regex, hashing, the kinds of things you reach for on a random Tuesday.
+        content: `Every so often I'd reach for a free online tool, maybe to flatten a PDF, maybe to convert an image, and somewhere between "drop file" and "download result" I'd realize my file had just been uploaded to someone else's server for a task that could have happened locally in a few hundred milliseconds. That bothered me more than it probably should.
+
+[FreeToolSpot](https://freetoolspot.com/) is what came out of it: a growing set of small everyday utilities, all running inside your browser. PDF merge, compress, split, images-to-PDF, OCR, image conversion, JSON formatting, regex, hashing, the kinds of things you reach for on a random Tuesday and want to be done with in under two minutes.
 
 ![FreeToolSpot homepage: your files never leave your device, with tools grouped by PDF, Image, Text, and JSON](/img/freetoolspot-home.png)
 
-Three things I care about, in this order:
+**Three things I care about, in this order.**
 
-- **Privacy first.** Every tool runs client-side. Your files never leave your device. Nothing is uploaded, nothing is stored, nothing is queued. You can verify it yourself in DevTools: there is no network upload.
-- **Fast.** Because the work happens locally, there is no round-trip. Open the tool, drop the file, get the result. Works offline after the first load.
-- **Free.** No accounts, no daily limits, no watermarks.
+- **Privacy first.** Everything runs client-side. Your files never leave your device. Nothing uploaded, nothing stored, nothing queued. Don't trust me on it: pop open DevTools, watch the network tab, it stays empty.
+- **Fast.** No round-trip means no round-trip. Open the tool, drop the file, get the result. Works offline after the first load.
+- **Free.** No accounts, no daily limits, no watermarks. I find "3 free uses per day" paywalls on single-purpose utilities genuinely annoying, so this one isn't that.
 
-36 tools and counting, all built by me. The full list lives at [freetoolspot.com](https://freetoolspot.com/).`,
+36 tools and counting, all built by me. I like small tools that do one thing cleanly, and I like the idea that someone at 2 a.m. can flatten a PDF without creating an account, installing an app, or handing their file to a stranger's server. That's the whole pitch. [freetoolspot.com](https://freetoolspot.com/).`,
       },
       {
         slug: "preprep",
