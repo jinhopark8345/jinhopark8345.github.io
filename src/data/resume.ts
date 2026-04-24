@@ -358,10 +358,10 @@ Full approach in my [28th-place solution writeup](https://www.kaggle.com/competi
       {
         slug: "freetoolspot",
         title: "FreeToolSpot",
-        subtitle: "free everyday tools that run inside your browser",
+        subtitle: "free everyday tools I built that run inside your browser",
         url: "https://freetoolspot.com/",
         date: "Started April 2026",
-        content: `[FreeToolSpot](https://freetoolspot.com/) is a growing collection of small everyday utilities that all run inside your browser. PDF merge, compress, split, images-to-PDF, OCR, image conversion, JSON formatting, regex, hashing, the kinds of things you reach for on a random Tuesday.
+        content: `[FreeToolSpot](https://freetoolspot.com/) is a site I built: a growing collection of small everyday utilities that all run inside your browser. PDF merge, compress, split, images-to-PDF, OCR, image conversion, JSON formatting, regex, hashing, the kinds of things you reach for on a random Tuesday.
 
 ![FreeToolSpot homepage: your files never leave your device, with tools grouped by PDF, Image, Text, and JSON](/img/freetoolspot-home.png)
 
@@ -371,7 +371,7 @@ Three things I care about, in this order:
 - **Fast.** Because the work happens locally, there is no round-trip. Open the tool, drop the file, get the result. Works offline after the first load.
 - **Free.** No accounts, no daily limits, no watermarks.
 
-36 tools and counting. The full list lives at [freetoolspot.com](https://freetoolspot.com/).`,
+36 tools and counting, all built by me. The full list lives at [freetoolspot.com](https://freetoolspot.com/).`,
       },
       {
         slug: "preprep",
