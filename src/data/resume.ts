@@ -356,6 +356,24 @@ Full approach in my [28th-place solution writeup](https://www.kaggle.com/competi
       "Less work, more me. The apps I'm building for fun, the things I do off-screen, and the people I share them with. Most of what's below I do with my wife, while the two cats supervise.",
     projects: [
       {
+        slug: "freetoolspot",
+        title: "FreeToolSpot",
+        subtitle: "free everyday tools that run inside your browser",
+        url: "https://freetoolspot.com/",
+        date: "Started April 2026",
+        content: `[FreeToolSpot](https://freetoolspot.com/) is a growing collection of small everyday utilities that all run inside your browser. PDF merge, compress, split, images-to-PDF, OCR, image conversion, JSON formatting, regex, hashing, the kinds of things you reach for on a random Tuesday.
+
+![FreeToolSpot homepage: your files never leave your device, with tools grouped by PDF, Image, Text, and JSON](/img/freetoolspot-home.png)
+
+Three things I care about, in this order:
+
+- **Privacy first.** Every tool runs client-side. Your files never leave your device. Nothing is uploaded, nothing is stored, nothing is queued. You can verify it yourself in DevTools: there is no network upload.
+- **Fast.** Because the work happens locally, there is no round-trip. Open the tool, drop the file, get the result. Works offline after the first load.
+- **Free.** No accounts, no daily limits, no watermarks.
+
+36 tools and counting. The full list lives at [freetoolspot.com](https://freetoolspot.com/).`,
+      },
+      {
         slug: "preprep",
         title: "PrePrep",
         subtitle: "an interview prep app I'm building",
