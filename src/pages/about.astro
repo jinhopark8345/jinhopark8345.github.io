@@ -6,6 +6,15 @@ import Education from "~/components/Education.astro";
 import Achievements from "~/components/Achievements.astro";
 import OpenSource from "~/components/OpenSource.astro";
 import { resume } from "~/data/resume";
+import { execSync } from "node:child_process";
+
+let lastUpdatedLabel: string;
+try {
+  const iso = execSync("git log -1 --format=%cI -- src/data/resume.ts", { encoding: "utf8" }).trim();
+  lastUpdatedLabel = new Date(iso).toLocaleDateString("en-US", { year: "numeric", month: "long" });
+} catch {
+  lastUpdatedLabel = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long" });
+}
 ---
 <Layout title={`Work · ${resume.name}`} description={resume.description} sidebar={true}>
   <About />
@@ -13,4 +22,7 @@ import { resume } from "~/data/resume";
   <Education />
   <Achievements />
   <OpenSource />
+  <p class="mt-10 mb-2 text-center text-xs text-slate-500 dark:text-slate-400">
+    Last updated: {lastUpdatedLabel}
+  </p>
 </Layout>

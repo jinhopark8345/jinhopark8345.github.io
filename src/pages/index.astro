@@ -2,6 +2,24 @@
 import Layout from "~/layouts/Layout.astro";
 import Hero from "~/components/Hero.astro";
 import { resume } from "~/data/resume";
+
+const recent = [
+  {
+    when: "Now · Boeing",
+    href: "/about#experience",
+    title: "Agentic RAG for regulated-industry document compliance",
+  },
+  {
+    when: "Apr 2026 · Side project",
+    href: "/side-projects/freetoolspot",
+    title: "FreeToolSpot, 36 client-side everyday tools",
+  },
+  {
+    when: "Mar 2026 · Side project",
+    href: "/side-projects/preprep",
+    title: "PrePrep, interview prep with spaced repetition",
+  },
+];
 ---
 <Layout title={resume.browserTitle} description={resume.description}>
   <div class="min-h-[calc(100vh-3.5rem)] flex flex-col justify-center py-10">
@@ -27,6 +45,22 @@ import { resume } from "~/data/resume";
           </div>
         </a>
       </div>
+    </section>
+    <section class="mx-auto max-w-5xl w-full px-4 sm:px-6 mt-10">
+      <h2 class="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-3">Recent</h2>
+      <ul class="divide-y divide-slate-200 dark:divide-slate-800 border-t border-b border-slate-200 dark:border-slate-800">
+        {recent.map((r) => (
+          <li>
+            <a
+              href={r.href}
+              class="group flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4 px-2 py-3 -mx-2 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition-colors"
+            >
+              <span class="text-xs text-slate-500 dark:text-slate-400 sm:w-44 shrink-0">{r.when}</span>
+              <span class="text-slate-700 dark:text-slate-200 group-hover:text-sky-600 dark:group-hover:text-sky-400">{r.title}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
     </section>
   </div>
 </Layout>
