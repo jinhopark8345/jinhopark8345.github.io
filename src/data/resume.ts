@@ -353,7 +353,7 @@ Full approach in my [28th-place solution writeup](https://www.kaggle.com/competi
 
   sideProjects: {
     intro:
-      "Less work, more me. The apps I'm building for fun, the things I do off-screen, and the people I share them with. Most of what's below I do with my wife, while the two cats supervise.",
+      "Less work, more me. The apps I'm building for fun, the things I do off-screen, and the people I share them with. The projects I build on my own; the hobbies I share with my wife, while the two cats supervise.",
     projects: [
       {
         slug: "freetoolspot",
