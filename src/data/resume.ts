@@ -373,6 +373,12 @@ Full approach in my [28th-place solution writeup](https://www.kaggle.com/competi
 - **Fast.** No round-trip means no round-trip. Open the tool, drop the file, get the result. Works offline after the first load.
 - **Free.** No accounts, no daily limits, no watermarks. I find "3 free uses per day" paywalls on single-purpose utilities genuinely annoying, so this one isn't that.
 
+**Chrome extensions.** I packaged the tools people reach for most into three extensions, so they're one click away from any tab:
+
+- [PDF Toolkit](https://chromewebstore.google.com/detail/pdf-toolkit-%E2%80%94-by-freetool/dmpfpklkmoijppoepnecinilgpbbappi)
+- [Image Toolkit](https://chromewebstore.google.com/detail/image-toolkit-%E2%80%94-by-freeto/oceljmngbocdefpnbgeccldhoiehnchd)
+- [Dev Toolkit](https://chromewebstore.google.com/detail/dev-toolkit-%E2%80%94-by-freetool/pbgcmhbodppmcdpkfbakdjbdaedlafoh)
+
 36 tools and counting, all built by me. I like small tools that do one thing cleanly, and I like the idea that someone at 2 a.m. can flatten a PDF without creating an account, installing an app, or handing their file to a stranger's server. That's the whole pitch. [freetoolspot.com](https://freetoolspot.com/).`,
       },
       {
