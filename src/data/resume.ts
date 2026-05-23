@@ -559,45 +559,57 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
           },
           {
             date: "May 2026",
+            text: "[OpenClaw](https://openclaw.ai/) + [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) - not anymore, but personal AI assitant can be part of future, understand the importance of tailored context for each person, it can give surreal experience that I am talking with someone who knows me very well.",
+          },
+          {
+            date: "Apr 2026",
             text: "Claude code for work and personal use",
           },
           {
-            date: "2025",
-            text: "[OpenClaw](https://openclaw.ai/) + [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) locally on one 3090 (not anymore, but personal AI assitant can be part of future, understand the importance of tailored context for each person, it can give surreal experience that I am talking with someone who knows me very well.)",
-          },
-          {
-            date: "May 2026",
-            text: "Scared but at the same time enjoying the insane speed of AI development",
-          },
-          {
-            date: "May 2026",
+            date: "Mar 2026",
             text: "Can't step out of this current, so I'd rather flow with it",
+          },
+          {
+            date: "Mar 2026",
+            text: "[OpenClaw](https://openclaw.ai/) + [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) locally on one 3090.",
+          },
+          {
+            date: "Jan 2024",
+            text: "Scared but at the same time enjoying the insane speed of AI development",
           },
         ],
       },
       {
         title: "Investment",
         bullets: [
-          { date: "May 2026", text: "How markets, companies, and capital actually move" },
-          { date: "May 2026", text: "The pull: not needing to be rich, but never wanting to be short" },
-          { date: "May 2026", text: "A new subject to study, which I've missed" },
+          {
+            date: "Dec 2024",
+            text: "Interested in how markets, companies, and capital actually move",
+          },
+          {
+            date: "Dec 2024",
+            text: "Thoughts: no need to be rich, but never wanting to be poor or worried about money",
+          },
         ],
       },
       {
         title: "Productivity and personal knowledge management",
         bullets: [
-          { date: "May 2026", text: "Getting more done, and making what I learn actually stick" },
           {
-            date: "Mar 2026",
+            date: "Aug 2020",
+            text: "Love tiling window managers (Aerospace for Mac and i3wm for Ubuntu)",
+          },
+          {
+            date: "May 2018",
+            text: "Getting more done, and making what I learn actually stick",
+          },
+          {
+            date: "Mar 2019",
             text: "Active learning over read-and-forget, which is why I made [PrePrep](/side-projects/preprep)",
           },
           {
-            date: "Since 2019",
-            text: "Heavy Emacs user for work and personal use, 7+ years (Spacemacs inspired custom emacs config, small regret spent too much time on Emacs configuration ...)",
-          },
-          {
-            date: "May 2026",
-            text: "Love tiling window managers (Aerospace for Mac and i3wm for Ubuntu)",
+            date: "Jan 2018",
+            text: "Heavy Emacs + vim (evil mode in Emacs) user for work and personal use, 8+ years (Spacemacs inspired custom emacs config, small regret spent too much time on Emacs configuration ...)",
           },
         ],
       },
@@ -612,7 +624,7 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
     studioStack: [
       {
         label: "Frontend",
-        items: ["Next.js", "React", "TypeScript", "Tailwind", "shadcn/ui"],
+        items: ["Next.js", "React", "TypeScript"],
       },
       {
         label: "Backend",
