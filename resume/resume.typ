@@ -170,16 +170,28 @@ AI Application Engineer shipping production AI systems end-to-end: *Agentic RAG*
   *#label* #h(4pt) #text(fill: gray.darken(20%), items.join(" · "))
 ]
 
-#skill("Languages", ("Python", "C++", "TypeScript"))
-#linebreak()
-#skill("Databases", ("PostgreSQL", "Qdrant", "Redis"))
-#linebreak()
-#skill("ML / Inference", ("PyTorch", "LangChain", "Transformers", "BentoML", "NVIDIA Triton", "OpenVINO", "ONNX Runtime", "Quantization",))
-#linebreak()
-#skill("LLM & Agents", ("Anthropic", "OpenAI", "MCP", "Langfuse"))
-#linebreak()
-#skill("Backend & App", ("FastAPI", "Streamlit", "React"))
-#linebreak()
-#skill("Ops", ("MLflow", "ArgoCD", "GitLab CI/CD", "Prefect"))
-#linebreak()
-#skill("Infra", ("Helm", "Kubernetes (Openshift)", "Docker", "Prometheus", "Grafana"))
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 16pt,
+  row-gutter: 4pt,
+  [
+    #skill("Languages", ("Python", "C++", "TypeScript"))
+    #linebreak()
+    #skill("ML", ("PyTorch", "LangChain", "Transformers", "MLflow"))
+    #linebreak()
+    #skill("Inference", ("BentoML", "NVIDIA Triton", "OpenVINO", "ONNX Runtime", "Quantization"))
+    #linebreak()
+    #skill("LLM & Agents", ("Anthropic", "OpenAI", "MCP", "Langfuse"))
+  ],
+  [
+    #skill("Databases", ("PostgreSQL", "Qdrant", "Redis"))
+    #linebreak()
+    #skill("Backend", ("FastAPI", "Streamlit"))
+    #linebreak()
+    #skill("Frontend", ("React", "Next.js"))
+    #linebreak()
+    #skill("Infra", ("Kubernetes (Openshift)", "Helm", "Docker", "ArgoCD", "GitLab CI/CD", "Prefect"))
+    #linebreak()
+    #skill("Monitoring", ("Prometheus", "Grafana"))
+  ],
+)
