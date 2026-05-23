@@ -2,6 +2,7 @@ export type Socials = {
   github: string;
   linkedin: string;
   email: string;
+  initnode: string;
 };
 
 export type Job = {
@@ -86,6 +87,7 @@ export const resume = {
     github: "https://github.com/jinhopark8345",
     linkedin: "https://www.linkedin.com/in/jinho-park-9a511a1b9/",
     email: "jinhoparkseoul@gmail.com",
+    initnode: "https://initnode.ai/",
   } as Socials,
 
   hero: {
