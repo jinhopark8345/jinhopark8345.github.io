@@ -548,10 +548,11 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
       {
         title: "AI",
         bullets: [
-          "[OpenClaw](https://openclaw.ai/) + [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) locally on one 3090",
-          "Claude daily for work and personal use",
+          "[OpenClaw](https://openclaw.ai/) + [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) locally on one 3090 (not anymore)",
+          "Claude code for work and personal use",
           "Scared and enjoying the insane pace at the same time",
           "Can't step out of this current, so I'd rather flow with it",
+          "Tried wiring an end-to-end agent harness (client requirements → LLM parses & shapes → tailored build.md → repo scaffold → ping home server with Claude subscription → spawn Claude session on the build.md → Claude builds it). Gave up for now. Claude kept asking too many follow-up questions no matter how much infra and requirements I front-loaded, to the point where automating it would cost more effort than just building the thing by hand. (Reminds me of my hundred-hour Emacs config phase.)",
         ],
       },
       {
@@ -567,8 +568,8 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
         bullets: [
           "Getting more done, and making what I learn actually stick",
           "Active learning over read-and-forget, which is why I made [PrePrep](/side-projects/preprep)",
-          "Heavy Emacs user for work and personal use, 7+ years",
-          "Love tiling window managers",
+          "Heavy Emacs user for work and personal use, 7+ years (Spacemacs inspired custom emacs config, small regret spent too much time on Emacs configuration ...)",
+          "Love tiling window managers (Aerospace for Mac and i3wm for Ubuntu)",
         ],
       },
     ] as Interest[],
@@ -586,11 +587,11 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
       },
       {
         label: "Backend",
-        items: ["Node.js", "Python", "FastAPI", "Drizzle ORM", "PostgreSQL"],
+        items: ["Node.js", "Python", "FastAPI", "PostgreSQL"],
       },
       {
         label: "AI",
-        items: ["OpenAI", "Anthropic", "Claude Code", "Cursor"],
+        items: ["OpenAI", "Anthropic", "Claude Code"],
       },
       {
         label: "Infra & Auth",

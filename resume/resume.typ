@@ -71,7 +71,7 @@
   [
     #text(size: 9pt)[
       #fa-location-dot()#h(5pt)Seoul, South Korea \
-      #box(baseline: 1pt, image("initnode-caret.svg", height: 9pt))#h(5pt)#link("https://initnode.ai/")[initnode.ai] \
+      #fa-briefcase()#h(5pt)#link("https://initnode.ai/")[initnode.ai] \
       #fa-envelope()#h(5pt)#link("mailto:jinhoparkseoul@gmail.com")[jinhoparkseoul\@gmail.com] \
       #fa-globe()#h(5pt)#link("https://jinhopark8345.github.io/")[jinhopark8345.github.io] \
       #fa-linkedin()#h(5pt)#link("https://www.linkedin.com/in/jinho-park-9a511a1b9/")[jinho-park-9a511a1b9] \
@@ -193,7 +193,7 @@ AI Application Engineer shipping production AI systems end-to-end: *Agentic RAG*
     #linebreak()
     #skill("Inference", ("BentoML", "Triton", "OpenVINO", "ONNX Runtime", "Quantization"))
     #linebreak()
-    #skill("LLM & Agents", ("Anthropic", "OpenAI"))
+    #skill("LLM API", ("Anthropic", "OpenAI"))
     #linebreak()
     #skill("Vector DB", ("Qdrant",))
   ],
