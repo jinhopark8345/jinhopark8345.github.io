@@ -125,7 +125,7 @@ export const resume = {
           "Quantization",
         ],
       },
-      { label: "LLM & Agents", items: ["Anthropic", "OpenAI"] },
+      { label: "LLM", items: ["Anthropic", "OpenAI"] },
       {
         label: "Infra & CI/CD",
         items: [
@@ -574,10 +574,47 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
     ] as Interest[],
     dailyDrivers: [
       { name: "Emacs" },
+      { name: "Claude Code" },
       { name: "i3wm" },
       { name: "Ubuntu", detail: "desktop" },
       { name: 'MacBook Pro 16" M3', detail: "personal laptop" },
     ] as Hobby[],
+    studioStack: [
+      {
+        label: "Frontend",
+        items: ["Next.js", "React", "TypeScript", "Tailwind", "shadcn/ui"],
+      },
+      {
+        label: "Backend",
+        items: ["Node.js", "Python", "FastAPI", "Drizzle ORM", "PostgreSQL"],
+      },
+      {
+        label: "AI",
+        items: ["OpenAI", "Anthropic", "Claude Code", "Cursor"],
+      },
+      {
+        label: "Infra & Auth",
+        items: [
+          "Railway",
+          "Vercel",
+          "Cloudflare",
+          "Auth0",
+          "NextAuth",
+          "PostHog",
+        ],
+      },
+      {
+        label: "Studio ops",
+        items: [
+          "GitHub",
+          "Linear",
+          "Slack",
+          "Google Workspace",
+          "Resend",
+          "1Password",
+        ],
+      },
+    ] as SkillGroup[],
     hobbies: [
       { name: "Swimming" },
       { name: "Climbing" },

@@ -77,6 +77,28 @@ const { sideProjects } = resume;
       </>
     )}
 
+    {sideProjects.studioStack && sideProjects.studioStack.length > 0 && (
+      <>
+        <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-3">
+          InitNode stack
+        </h2>
+        <div class="space-y-3 mb-8">
+          {sideProjects.studioStack.map((group) => (
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-2">
+              <span class="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 w-full sm:w-40 shrink-0">
+                {group.label}
+              </span>
+              <ul class="flex flex-wrap gap-2">
+                {group.items.map((s) => (
+                  <li class="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200">{s}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </>
+    )}
+
     {sideProjects.hobbies.length > 0 && (
       <>
         <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-3">
