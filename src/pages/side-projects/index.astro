@@ -44,7 +44,7 @@ const { sideProjects } = resume;
     {sideProjects.interests && sideProjects.interests.length > 0 && (
       <>
         <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-3">
-          Currently into
+          Thoughts / Currently Into / My opinions
         </h2>
         <div class="space-y-4 mb-8">
           {sideProjects.interests.map((i) => (
@@ -52,7 +52,12 @@ const { sideProjects } = resume;
               <p class="font-semibold text-slate-900 dark:text-slate-100 mb-1">{i.title}</p>
               <ul class="list-disc pl-5 space-y-1 text-slate-700 dark:text-slate-300 leading-relaxed">
                 {i.bullets.map((b) => (
-                  <li set:html={renderInline(b)} />
+                  <li>
+                    {b.date && (
+                      <span class="text-xs font-mono uppercase tracking-wide text-slate-500 dark:text-slate-400 mr-2">{b.date}</span>
+                    )}
+                    <span set:html={renderInline(b.text)} />
+                  </li>
                 ))}
               </ul>
             </div>

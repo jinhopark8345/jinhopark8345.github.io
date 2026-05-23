@@ -65,9 +65,14 @@ export type SideProject = {
   content?: string;
 };
 
+export type InterestBullet = {
+  date?: string;
+  text: string;
+};
+
 export type Interest = {
   title: string;
-  bullets: string[];
+  bullets: InterestBullet[];
 };
 
 export type Hobby = {
@@ -341,7 +346,7 @@ Full approach in my [28th-place solution writeup](https://www.kaggle.com/competi
       {
         slug: "citely",
         title: "Citely",
-        subtitle: "a citation-first RAG demo app I'm building under InitNode",
+        subtitle: "a citation-first RAG demo app",
         url: "https://citely.initnode.ai/",
         date: "Started May 2026",
         content: `Most "chat with your PDF" tools give you an answer and a vague feeling it came from the document somewhere. I wanted the opposite: every claim in the answer linked back to the exact source page, so you can verify before you trust.
@@ -370,7 +375,7 @@ Closed beta, Korean-only, pre-production. Built under [InitNode](https://initnod
       {
         slug: "freetoolspot",
         title: "FreeToolSpot",
-        subtitle: "a free everyday-tools site I'm building",
+        subtitle: "a free everyday-tools site I built, run 100% on client side",
         url: "https://freetoolspot.com/",
         date: "Started April 2026",
         content: `Every so often I'd reach for a free online tool, maybe to flatten a PDF, maybe to convert an image, and somewhere between "drop file" and "download result" I'd realize my file had just been uploaded to someone else's server for a task that could have happened locally in a few hundred milliseconds. That bothered me more than it probably should.
@@ -548,28 +553,52 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
       {
         title: "AI",
         bullets: [
-          "[OpenClaw](https://openclaw.ai/) + [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) locally on one 3090 (not anymore)",
-          "Claude code for work and personal use",
-          "Scared and enjoying the insane pace at the same time",
-          "Can't step out of this current, so I'd rather flow with it",
-          "Tried wiring an end-to-end agent harness (client requirements → LLM parses & shapes → tailored build.md → repo scaffold → ping home server with Claude subscription → spawn Claude session on the build.md → Claude builds it). Gave up for now. Claude kept asking too many follow-up questions no matter how much infra and requirements I front-loaded, to the point where automating it would cost more effort than just building the thing by hand. (Reminds me of my hundred-hour Emacs config phase.)",
+          {
+            date: "May 2026",
+            text: "Tried wiring an end-to-end agent harness (client requirements → LLM parses & shapes → tailored build.md → repo scaffold → ping home server with Claude subscription → spawn Claude session on the build.md → Claude builds it). Gave up for now. Claude kept asking too many follow-up questions no matter how much infra and requirements I front-loaded, to the point where automating it would cost more effort than just building the thing by hand. (Reminds me of my countless hours of Emacs configuration in 2018...)",
+          },
+          {
+            date: "May 2026",
+            text: "Claude code for work and personal use",
+          },
+          {
+            date: "2025",
+            text: "[OpenClaw](https://openclaw.ai/) + [Qwen3.5-27B](https://huggingface.co/Qwen/Qwen3.5-27B) locally on one 3090 (not anymore, but personal AI assitant can be part of future, understand the importance of tailored context for each person, it can give surreal experience that I am talking with someone who knows me very well.)",
+          },
+          {
+            date: "May 2026",
+            text: "Scared but at the same time enjoying the insane speed of AI development",
+          },
+          {
+            date: "May 2026",
+            text: "Can't step out of this current, so I'd rather flow with it",
+          },
         ],
       },
       {
         title: "Investment",
         bullets: [
-          "How markets, companies, and capital actually move",
-          "The pull: not needing to be rich, but never wanting to be short",
-          "A new subject to study, which I've missed",
+          { date: "May 2026", text: "How markets, companies, and capital actually move" },
+          { date: "May 2026", text: "The pull: not needing to be rich, but never wanting to be short" },
+          { date: "May 2026", text: "A new subject to study, which I've missed" },
         ],
       },
       {
         title: "Productivity and personal knowledge management",
         bullets: [
-          "Getting more done, and making what I learn actually stick",
-          "Active learning over read-and-forget, which is why I made [PrePrep](/side-projects/preprep)",
-          "Heavy Emacs user for work and personal use, 7+ years (Spacemacs inspired custom emacs config, small regret spent too much time on Emacs configuration ...)",
-          "Love tiling window managers (Aerospace for Mac and i3wm for Ubuntu)",
+          { date: "May 2026", text: "Getting more done, and making what I learn actually stick" },
+          {
+            date: "Mar 2026",
+            text: "Active learning over read-and-forget, which is why I made [PrePrep](/side-projects/preprep)",
+          },
+          {
+            date: "Since 2019",
+            text: "Heavy Emacs user for work and personal use, 7+ years (Spacemacs inspired custom emacs config, small regret spent too much time on Emacs configuration ...)",
+          },
+          {
+            date: "May 2026",
+            text: "Love tiling window managers (Aerospace for Mac and i3wm for Ubuntu)",
+          },
         ],
       },
     ] as Interest[],
