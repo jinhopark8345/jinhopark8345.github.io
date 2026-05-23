@@ -80,7 +80,7 @@ export const resume = {
   location: "Seoul, South Korea",
   browserTitle: "Jinho Park · AI Application Engineer",
   description:
-    "Jinho Park · AI Application Engineer. Information Retrieval, Agentic RAG, vector search, MLOps.",
+    "Jinho Park · AI Application Engineer. Agentic RAG, document processing pipelines, MCP agent tooling, MLOps.",
 
   socials: {
     github: "https://github.com/jinhopark8345",
@@ -93,16 +93,16 @@ export const resume = {
     subtitle:
       "I work closely with clients to turn real requirements into AI systems that ship.",
     content:
-      "AI Application Engineer focused on Information Retrieval and scalable backend systems: vector search, Agentic RAG, latency optimization, and retrieval precision. Currently at Boeing, previously at Lomin.",
+      "AI Application Engineer who ships production AI systems end-to-end: Agentic RAG, document processing pipelines, and MCP-based agent tooling, with the MLOps to keep them running. Currently at Boeing, previously at Lomin.",
   },
 
   about: {
     paragraphs: [
-      "I'm an AI Application Engineer specializing in **Information Retrieval** and **scalable backend systems**, architecting production-grade vector search and Agentic RAG systems with a focus on latency optimization and retrieval precision.",
-      "I have a proven track record of automating the end-to-end ML lifecycle using **Prefect, Kubernetes, and GitOps**, and deep expertise in bridging the gap between complex IR research and high-availability **FastAPI** services.",
+      "I'm an AI Application Engineer who ships production AI systems end-to-end. My focus: **Agentic RAG**, **document processing pipelines**, and **MCP-based agent tooling**, designed for the throughput, latency, and observability that production demands.",
+      "I have a proven track record of automating the end-to-end ML lifecycle using **Prefect, Kubernetes, and GitOps**, and deep expertise in bridging the gap between AI research and high-availability **FastAPI** services.",
       "One thing I'm known for: **fast prototyping**. I'd rather validate an idea with a working demo in days than theorize for weeks. It keeps iteration with clients tight, cheap, and grounded in what actually works.",
       "A significant part of my day-to-day is **cross-timezone collaboration with international teams and clients**. Most of my work happens in written and spoken English.",
-      "Currently at **Boeing**, I work on an agentic RAG project for regulated-industry document compliance. Before that, at **Lomin**, I optimized Transformer inference serving with NVIDIA Triton and built document-understanding systems for financial clients.",
+      "Currently at **Boeing**, I work on an agentic RAG system for regulated-industry document compliance. Before that, at **Lomin**, I architected an on-premise document processing pipeline serving 20,000 documents per hour for enterprise financial and government clients.",
       "I graduated from Konkuk University in 2022 with a B.S. in Electrical and Electronics Engineering, and spent a semester on exchange at the University of Agder in Norway.",
       "Outside of work, I live in Seoul with my Norwegian wife and our two cats.",
     ],
@@ -115,6 +115,10 @@ export const resume = {
       {
         label: "ML Frameworks",
         items: ["PyTorch", "LangChain", "Transformers", "MLflow"],
+      },
+      {
+        label: "LLM & Agent Tooling",
+        items: ["Anthropic", "OpenAI", "MCP", "Langfuse"],
       },
       {
         label: "Hardware Optimization",
@@ -164,6 +168,7 @@ export const resume = {
 
 - Architected a high-precision **Agentic RAG** system that cross-references technical reports against regulatory frameworks through an agentic loop.
 - Split it into a dedicated **retrieval service** exposed as an **MCP server** and a **generation app** consuming it as MCP client; retrieval runs **hybrid sparse + dense** on **Qdrant**, outperforming dense-only on MRR across a 200-query eval set for domain-specific terminology.
+- Built an **LLM-powered PDF parser** (few-shot prompting for layout and field extraction) that powers the **data-ingestion pipeline**, keeping the retrieval index current as new technical reports and regulatory documents arrive.
 - Held **p95 retrieval latency under 1000 ms on CPU-only infrastructure** via Qdrant indexing and payload filtering, with **BentoML** dynamic batching + **ONNX Runtime** + quantization for CPU embedding serving (downstream LLM was GPU-hosted, managed separately).
 - Instrumented the stack with **Prometheus & Grafana** and a custom **Postgres-backed KPI tracker** (CTR, query quality, adoption, latency SLOs).
 - Shipped a **Streamlit + React** interface for compliance owners generating regulator-ready reports.
@@ -172,20 +177,13 @@ export const resume = {
 
 - Built an **internal code-review LLM bot** that lets engineers chat with an LLM directly on merge requests: code review, summarization, and Q&A inside the review flow.
 - Shipped an **MCP (Model Context Protocol) server** exposing in-house tools and data sources to LLM agents through a standard interface.
-- Built a **complex PDF parser** that extracts document layout via few-shot prompting over LLM APIs; it now powers the data-ingestion pipeline for the compliance RAG system and other internal tools.
 
 **MLOps & Backend Automation**
 
 - Implemented a **GitOps** deployment flow with **ArgoCD** and **OpenShift**, reducing deployment cycles from **1 hour to 10 minutes**.
 - Developed a fault-tolerant **Prefect** orchestration layer, automating data ingestion and inference pipelines for industrial predictive maintenance.
 - Eliminated **~8 hours of manual weekly labor** by building an automated PDF-generation backend that converts raw telemetry into stakeholder-ready reports via FastAPI.
-- Built an **internal ML artifact registry on GitLab** for version-controlling AI project artifacts (models, datasets, and training snapshots).
-
-**Internal ML Training Framework**
-
-- Developed a scalable deep-learning training framework enabling efficient AI model development across classical ML, deep learning, and RL.
-- Reduced redundant model-development effort by designing a reusable framework for both AI and non-AI engineers.
-- Built on **Ray** & **PyTorch Lightning**; integrated with the in-house MLOps stack for seamless deployment.`,
+- Built an **internal ML artifact registry on GitLab** for version-controlling AI project artifacts (models, datasets, and training snapshots).`,
         },
       ],
     },
@@ -199,19 +197,18 @@ export const resume = {
           name: "Machine Learning Engineer",
           date: "May 2022 – Aug 2023",
           info: "ML Team · Seoul, South Korea",
-          content: `**Inference & Serving Optimization**
+          content: `**End-to-end document processing pipeline** (on-premise, no external internet)
 
-- Architected a high-throughput serving layer using **NVIDIA Triton**, implementing KV-caching and quantization that accelerated Transformer inference by **20%**.
-- Engineered a multi-modal **Table Extraction** system for financial documents, improving **F1 by 15%** and deploying it for enterprise clients.
+- Architected the production pipeline that processed **20,000 documents per hour** at **p95 end-to-end latency under 1 second**, deployed on-premise for enterprise financial and government clients.
+- Pipeline stages: **preprocessing** (document angle correction), **processing** (box detection → box recognition → document-understanding models for **key-value extraction** and **entity linking**), **post-processing** (client-specific business logic).
+- High-throughput Transformer serving layer on **NVIDIA Triton** with KV-caching and quantization, accelerating inference by **20%**.
+- Multi-modal **Table Extraction** for financial documents, improving **F1 by 15%**.
+- **Document Understanding (DU)** framework with graph-based data augmentation and efficient dataset curation for fine-tuning on client-specific document layouts.
 
-**Retrieval & Fine-tuning**
+**Clients delivered to**
 
-- Developed a **Document Understanding (DU)** framework, building specialized data pipelines for graph-based augmentation and efficient dataset curation.
-
-**Clients & Projects**
-
-- **Key clients:** Delivered ML solutions for Kyobo Life, Lina Life, Shinhan Asset Trust, and KIPO.
-- **PoC initiatives:** Developed ML-driven PoC projects for Shinhan Asset Trust, Samsung Fire & Marine Insurance, Hanwha Life, Samsung Life, and KB Insurance.`,
+- **Production deployments:** Kyobo Life, Lina Life, Shinhan Asset Trust, Korean Intellectual Property Office (KIPO).
+- **PoCs:** Samsung Fire & Marine Insurance, Hanwha Life, Samsung Life, KB Insurance.`,
         },
       ],
     },
