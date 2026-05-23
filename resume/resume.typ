@@ -81,7 +81,7 @@
 
 #v(4pt)
 
-AI Application Engineer focused on *Information Retrieval* and *scalable backend systems*, building production-grade vector search, Agentic RAG, and latency optimization. Comfortable scoping a PoC from a rough idea, validating it fast, and taking it through to production. Fluent with *Prefect*, *Kubernetes*, *GitOps*, and *FastAPI*.
+AI Application Engineer shipping production AI systems end-to-end: *Agentic RAG*, *document processing pipelines*, and *MCP-based agent tooling*, with the MLOps to keep them running. Comfortable running iterative PoCs with clients and translating fuzzy asks into concrete application logic. Fluent with *Prefect*, *Kubernetes*, *GitOps*, and *FastAPI*.
 
 // ───────── experience ─────────
 #section("Experience")
@@ -103,7 +103,7 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
   *Internal LLM tooling:* Shipped an internal code-review LLM bot, an MCP server exposing in-house tools to LLM agents, a few-shot (v)LLM PDF parser for RAG ingestion, and an internal ML artifact registry on GitLab.
 ]
 #bullet[
-  *GitOps and observability:* Implemented ArgoCD + OpenShift GitOps (deploy cycles 1h to 10min) and stood up Prometheus/Grafana plus a Postgres-backed KPI tracker for CTR, query quality, and latency SLOs.
+  *GitOps and observability:* Implemented ArgoCD + OpenShift GitOps (deploy cycles 1h to 10min) and stood up Prometheus/Grafana plus a Postgres-backed KPI tracker for CTR, query quality, adoption, and latency.
 ]
 
 #v(3pt)
@@ -115,13 +115,13 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
   date: "May 2022 – Aug 2023",
 )
 #bullet[
-  *High-throughput Transformer inference:* Architected a serving layer on NVIDIA Triton with KV-caching and quantization that accelerated inference by 20%.
+  *End-to-end document processing pipeline (on-premise):* Architected the production pipeline that processed *10,000 documents/hour* at *p95 end-to-end latency under 1 second* for enterprise financial and government clients.
 ]
 #bullet[
-  *Multi-modal Table Extraction:* Built a system for financial documents, improving F1 by 15%, and shipped a Document Understanding framework with graph-based augmentation pipelines.
+  *Inference + extraction:* NVIDIA Triton with KV-caching and quantization for a *20% speedup*; multi-modal Table Extraction at *+15% F1*; Document Understanding framework with graph-based augmentation.
 ]
 #bullet[
-  *Enterprise delivery:* Delivered ML solutions for Kyobo Life, Lina Life, Shinhan Asset Trust, and KIPO; developed ML-driven PoCs for Samsung Fire & Marine, Hanwha Life, Samsung Life, and KB Insurance.
+  *Clients:* Kyobo Life, Lina Life, Shinhan Asset Trust, KIPO (production); Samsung Life, Hanwha Life, Samsung Fire & Marine, KB Insurance (PoCs).
 ]
 
 #v(3pt)
@@ -190,6 +190,8 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
 #skill("Databases", ("PostgreSQL", "Qdrant", "Redis"))
 #linebreak()
 #skill("ML / Inference", ("PyTorch", "LangChain", "Transformers", "BentoML", "NVIDIA Triton", "OpenVINO", "ONNX Runtime", "Quantization",))
+#linebreak()
+#skill("LLM & Agents", ("Anthropic", "OpenAI", "MCP", "Langfuse"))
 #linebreak()
 #skill("Backend & App", ("FastAPI", "Streamlit", "React"))
 #linebreak()
