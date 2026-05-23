@@ -103,7 +103,7 @@ AI Application Engineer shipping production AI systems end-to-end: *Agentic RAG*
   *Internal LLM tooling:* Shipped an internal code-review LLM bot, an MCP server exposing in-house tools to LLM agents, a few-shot (v)LLM PDF parser for RAG ingestion, and an internal ML artifact registry on GitLab.
 ]
 #bullet[
-  *GitOps and observability:* Implemented ArgoCD + OpenShift GitOps (deploy cycles 1h to 10min) and stood up Prometheus/Grafana plus a Postgres-backed KPI tracker for CTR, query quality, adoption, and latency.
+  *GitOps and observability:* Cut deploy cycles from 1h to 10min with ArgoCD on OpenShift; instrumented the stack with Prometheus, Grafana, and a Postgres-backed KPI tracker for CTR, query quality, adoption, and latency.
 ]
 
 #v(3pt)
