@@ -81,7 +81,7 @@
 
 #v(4pt)
 
-AI Application Engineer shipping production AI systems end-to-end: *Agentic RAG*, *document processing pipelines*, and *MCP-based agent tooling*, with the MLOps to keep them running. Comfortable running iterative PoCs with clients and translating fuzzy asks into concrete application logic. Fluent with *Prefect*, *Kubernetes*, *GitOps*, and *FastAPI*.
+AI Application Engineer shipping production AI systems end-to-end: *Agentic RAG*, *document processing pipelines*, and *MCP-based agent tooling*, with the MLOps to keep them running. Comfortable running iterative PoCs with clients and translating fuzzy asks into concrete application logic. Fluent with *Prefect*, *Kubernetes*, *GitOps*, and *FastAPI*. On the side, runs #link("https://initnode.ai/")[*InitNode*], an AI studio shipping demos and SaaS (#link("https://citely.initnode.ai/")[Citely], #link("https://ppuri.app/")[ppuri]).
 
 // ───────── experience ─────────
 #section("Experience")
