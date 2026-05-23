@@ -98,8 +98,8 @@ export const resume = {
 
   about: {
     paragraphs: [
-      "I'm an AI Application Engineer who ships production AI systems end-to-end. My focus: **Agentic RAG**, **document processing pipelines**, and **MCP-based agent tooling**, designed for the throughput, latency, and observability that production demands.",
-      "I work across the whole ML lifecycle: pipelines in **Prefect**, deployment via **Kubernetes** and **GitOps**, plus a lot of **FastAPI** to take research code from notebook to a service that stays up.",
+      "I'm an AI Application Engineer who ships production AI systems end-to-end. My current focus is on **Agentic RAG**, **document processing pipelines**, and **MCP-based agent tooling**, designed for the throughput, latency, and observability that production demands.",
+      "I work across the whole ML lifecycle: data ingestion pipelines with **Prefect**, deployment via **Kubernetes** (Openshift) and **GitOps** (Gitlab & ArgoCD), and the **FastAPI** services that sit in front of it all.",
       "A big part of how I work: I **listen to client requirements** and discuss tradeoffs openly. **Multiple iterative PoCs** help surface what the client actually needs versus what they first ask for. The translation from a fuzzy ask to concrete **application logic** and **AI workflows** is where most of the real design happens.",
       "One thing I'm known for: **fast prototyping**. I'd rather validate an idea with a working demo in days than theorize for weeks. It keeps iteration with clients tight, cheap, and grounded in what actually works.",
       "A significant part of my day-to-day is **cross-timezone collaboration with international teams and clients**. Most of my work happens in written and spoken English.",
