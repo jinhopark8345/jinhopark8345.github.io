@@ -94,7 +94,7 @@ AI Application Engineer focused on *Information Retrieval* and *scalable backend
   date: "Jan 2024 – Present",
 )
 #bullet[
-  *Agentic RAG for regulated-industry document compliance:* Architected and implemented a high-precision retrieval system on Qdrant: dedicated retrieval service + generation app, with a hybrid sparse + dense pipeline that outperformed dense-only on a 200-query MRR eval.
+  *Agentic RAG for regulated-industry document compliance:* Architected and implemented a high-precision retrieval system on Qdrant, exposed as an MCP server with the generation app as MCP client, with a hybrid sparse + dense pipeline that outperformed dense-only on a 200-query MRR eval.
 ]
 #bullet[
   *Low-latency CPU retrieval:* Tuned Qdrant indexing and payload filtering to hold p95 retrieval latency under 1000 ms on CPU-only infrastructure; sustained embedding throughput with BentoML dynamic batching + ONNX Runtime + quantization.

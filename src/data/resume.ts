@@ -163,7 +163,7 @@ export const resume = {
           content: `**Advanced Information Retrieval**: *Agentic RAG for regulated-industry document compliance*
 
 - Architected a high-precision **Agentic RAG** system that cross-references technical reports against regulatory frameworks through an agentic loop.
-- Built it as a dedicated **retrieval service on Qdrant**, then extended it into a **generation app** consuming the retrieval layer as an internal API.
+- Built it as a dedicated **retrieval service on Qdrant** exposed as an **MCP server**, with the **generation app** consuming it as an MCP client.
 - Built a **hybrid search** pipeline on **Qdrant** (sparse + dense) from scratch, outperforming a dense-only configuration on MRR across a 200-query evaluation set for domain-specific technical terminology.
 - Tuned Qdrant indexing and payload filtering to hold **p95 retrieval latency under 1000 ms on CPU-only infrastructure**.
 - **CPU-only embedding serving.** The embedding stage ran on CPU only (the downstream GPU-hosted LLM was managed separately). I sustained throughput with **BentoML** dynamic batching + **ONNX Runtime** + quantization on CPU.
