@@ -163,12 +163,10 @@ export const resume = {
           content: `**Advanced Information Retrieval**: *Agentic RAG for regulated-industry document compliance*
 
 - Architected a high-precision **Agentic RAG** system that cross-references technical reports against regulatory frameworks through an agentic loop.
-- Built it as a dedicated **retrieval service on Qdrant** exposed as an **MCP server**, with the **generation app** consuming it as an MCP client.
-- Built a **hybrid search** pipeline on **Qdrant** (sparse + dense) from scratch, outperforming a dense-only configuration on MRR across a 200-query evaluation set for domain-specific technical terminology.
-- Tuned Qdrant indexing and payload filtering to hold **p95 retrieval latency under 1000 ms on CPU-only infrastructure**.
-- **CPU-only embedding serving.** The embedding stage ran on CPU only (the downstream GPU-hosted LLM was managed separately). I sustained throughput with **BentoML** dynamic batching + **ONNX Runtime** + quantization on CPU.
-- Stood up a **Prometheus & Grafana** monitoring stack for the retrieval service, plus a custom **Postgres-backed KPI tracker** (CTR, query quality, adoption, latency SLOs) visualized in Grafana.
-- Delivered a user-friendly interface with **Streamlit** and **React** for compliance owners generating regulator-ready reports.
+- Split it into a dedicated **retrieval service** exposed as an **MCP server** and a **generation app** consuming it as MCP client; retrieval runs **hybrid sparse + dense** on **Qdrant**, outperforming dense-only on MRR across a 200-query eval set for domain-specific terminology.
+- Held **p95 retrieval latency under 1000 ms on CPU-only infrastructure** via Qdrant indexing and payload filtering, with **BentoML** dynamic batching + **ONNX Runtime** + quantization for CPU embedding serving (downstream LLM was GPU-hosted, managed separately).
+- Instrumented the stack with **Prometheus & Grafana** and a custom **Postgres-backed KPI tracker** (CTR, query quality, adoption, latency SLOs).
+- Shipped a **Streamlit + React** interface for compliance owners generating regulator-ready reports.
 
 **LLM Applications & Internal Tooling**
 
