@@ -35,7 +35,8 @@ const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${socials.email}
       <span>{location}</span>
     </div>
     <a href={socials.initnode} target="_blank" rel="noopener" class="inline-flex items-center gap-3 w-fit hover:text-sky-600 dark:hover:text-sky-400 hover:underline">
-      <svg class="w-4 h-4 text-slate-500 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+      <img src="/img/initnode-caret.svg" alt="" class="w-4 h-4 shrink-0 block dark:hidden" />
+      <img src="/img/initnode-caret-dark.svg" alt="" class="w-4 h-4 shrink-0 hidden dark:block" />
       <span>{initnodeLabel}</span>
     </a>
     <a href={gmailUrl} target="_blank" rel="noopener" class="inline-flex items-center gap-3 w-fit hover:text-sky-600 dark:hover:text-sky-400 hover:underline">
