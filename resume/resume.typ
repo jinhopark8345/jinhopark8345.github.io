@@ -159,24 +159,9 @@ AI Application Engineer shipping production AI systems end-to-end: *Agentic RAG*
 // ───────── open source ─────────
 #section("Open Source")
 
-#role(
-  title: "Add BROS",
-  titleUrl: "https://github.com/huggingface/transformers/pull/23190",
-  org: "Huggingface / Transformers",
-)
-#text(size: 9pt)[
-  Ported architecture, tokenization, and spatial pre-processing for document understanding.
-]
+*#link("https://github.com/huggingface/transformers/pull/23190")[Add BROS]* · Huggingface / Transformers: ported architecture, tokenization, and spatial pre-processing for document understanding.
 
-#v(2pt)
-#role(
-  title: "prepare_output",
-  titleUrl: "https://github.com/openvinotoolkit/openvino/pull/7783",
-  org: "OpenVINO",
-)
-#text(size: 9pt)[
-  Correctness fix on the Intel-integrated-GPU inference path.
-]
+*#link("https://github.com/openvinotoolkit/openvino/pull/7783")[prepare_output]* · OpenVINO: correctness fix on the Intel-integrated-GPU inference path.
 
 // ───────── skills ─────────
 #section("Skills")
