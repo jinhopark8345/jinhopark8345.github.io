@@ -100,9 +100,10 @@ export const resume = {
     paragraphs: [
       "I'm an AI Application Engineer who ships production AI systems end-to-end. My focus: **Agentic RAG**, **document processing pipelines**, and **MCP-based agent tooling**, designed for the throughput, latency, and observability that production demands.",
       "I have a proven track record of automating the end-to-end ML lifecycle using **Prefect, Kubernetes, and GitOps**, and deep expertise in bridging the gap between AI research and high-availability **FastAPI** services.",
+      "A big part of how I work: I **listen to client requirements**, discuss tradeoffs openly, and translate fuzzy asks into concrete **application logic** and **AI workflows** that match what they actually need. The translation step, from a vague requirement to something shippable, is where most of the real design happens.",
       "One thing I'm known for: **fast prototyping**. I'd rather validate an idea with a working demo in days than theorize for weeks. It keeps iteration with clients tight, cheap, and grounded in what actually works.",
       "A significant part of my day-to-day is **cross-timezone collaboration with international teams and clients**. Most of my work happens in written and spoken English.",
-      "Currently at **Boeing**, I work on an agentic RAG system for regulated-industry document compliance. Before that, at **Lomin**, I architected an on-premise document processing pipeline serving 20,000 documents per hour for enterprise financial and government clients.",
+      "Currently at **Boeing**, I work on an agentic RAG system for regulated-industry document compliance. Before that, at **Lomin**, I architected an on-premise document processing pipeline serving 10,000 documents per hour for enterprise financial and government clients.",
       "I graduated from Konkuk University in 2022 with a B.S. in Electrical and Electronics Engineering, and spent a semester on exchange at the University of Agder in Norway.",
       "Outside of work, I live in Seoul with my Norwegian wife and our two cats.",
     ],
@@ -170,7 +171,7 @@ export const resume = {
 - Split it into a dedicated **retrieval service** exposed as an **MCP server** and a **generation app** consuming it as MCP client; retrieval runs **hybrid sparse + dense** on **Qdrant**, outperforming dense-only on MRR across a 200-query eval set for domain-specific terminology.
 - Built an **LLM-powered PDF parser** (few-shot prompting for layout and field extraction) that powers the **data-ingestion pipeline**, keeping the retrieval index current as new technical reports and regulatory documents arrive.
 - Held **p95 retrieval latency under 1000 ms on CPU-only infrastructure** via Qdrant indexing and payload filtering, with **BentoML** dynamic batching + **ONNX Runtime** + quantization for CPU embedding serving (downstream LLM was GPU-hosted, managed separately).
-- Instrumented the stack with **Prometheus & Grafana** and a custom **Postgres-backed KPI tracker** (CTR, query quality, adoption, latency SLOs).
+- Instrumented the stack with **Prometheus & Grafana** and a custom **Postgres-backed KPI tracker** (CTR, query quality, adoption, latency).
 - Shipped a **Streamlit + React** interface for compliance owners generating regulator-ready reports.
 
 **LLM Applications & Internal Tooling**
@@ -197,9 +198,9 @@ export const resume = {
           name: "Machine Learning Engineer",
           date: "May 2022 – Aug 2023",
           info: "ML Team · Seoul, South Korea",
-          content: `**End-to-end document processing pipeline** (on-premise, no external internet)
+          content: `**End-to-end document processing pipeline** (on-premise)
 
-- Architected the production pipeline that processed **20,000 documents per hour** at **p95 end-to-end latency under 1 second**, deployed on-premise for enterprise financial and government clients.
+- Architected the production pipeline that processed **10,000 documents per hour** at **p95 end-to-end latency under 1 second**, deployed on-premise for enterprise financial and government clients.
 - Pipeline stages: **preprocessing** (document angle correction), **processing** (box detection → box recognition → document-understanding models for **key-value extraction** and **entity linking**), **post-processing** (client-specific business logic).
 - High-throughput Transformer serving layer on **NVIDIA Triton** with KV-caching and quantization, accelerating inference by **20%**.
 - Multi-modal **Table Extraction** for financial documents, improving **F1 by 15%**.
@@ -472,7 +473,8 @@ Full writeup [on Kaggle](https://www.kaggle.com/competitions/UBC-OCEAN/writeups/
       {
         slug: "bros",
         title: "BROS",
-        subtitle: "porting a document-understanding model into Hugging Face Transformers",
+        subtitle:
+          "porting a document-understanding model into Hugging Face Transformers",
         url: "https://github.com/huggingface/transformers/pull/23190",
         date: "Aug – Sep 2023",
         content: `I have a soft spot for [BROS (BERT Relying On Spatiality)](https://huggingface.co/docs/transformers/model_doc/bros) for reasons I'll keep to myself. The short version of the public story: I wanted to use it, it wasn't in [Hugging Face Transformers](https://github.com/huggingface/transformers), so I ported it from the [original author's repo](https://github.com/clovaai/bros) and upstreamed it as [PR #23190](https://github.com/huggingface/transformers/pull/23190).
@@ -550,7 +552,7 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
           "Getting more done, and making what I learn actually stick",
           "Active learning over read-and-forget, which is why I made [PrePrep](/side-projects/preprep)",
           "Heavy Emacs user for work and personal use, 7+ years",
-          "Love tiling window managers"
+          "Love tiling window managers",
         ],
       },
     ] as Interest[],
@@ -558,7 +560,7 @@ That meant the optimization target was 1×1, not depth-wise. I proposed a channe
       { name: "Emacs" },
       { name: "i3wm" },
       { name: "Ubuntu", detail: "desktop" },
-      { name: "MacBook Pro 16\" M3", detail: "personal laptop" },
+      { name: 'MacBook Pro 16" M3', detail: "personal laptop" },
     ] as Hobby[],
     hobbies: [
       { name: "Swimming" },
