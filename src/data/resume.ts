@@ -102,6 +102,7 @@ export const resume = {
       "A big part of how I work: I **listen to client requirements** and discuss tradeoffs openly. **Multiple iterative PoCs** help surface what the client actually needs versus what they first ask for. The translation from a fuzzy ask to concrete **application logic** and **AI workflows** is where most of the real design happens.",
       "One thing I'm known for: **fast prototyping**. I'd rather validate an idea with a working demo in days than theorize for weeks. It keeps iteration with clients tight, cheap, and grounded in what actually works.",
       "Currently at **Boeing**, I work on an agentic RAG system for regulated-industry document compliance. Before that, at **Lomin**, I architected an on-premise document processing pipeline serving 10,000 documents per hour for enterprise financial and government clients.",
+      "On the side, I run **[InitNode](https://initnode.ai/)**, a small AI studio I started in May 2026 to build AI demos, PoCs, and SaaS products. First two products: [Citely](https://citely.initnode.ai/) (a citation-first RAG app) and [ppuri](https://ppuri.app/) (a Korean genealogy SaaS).",
       "I graduated from Konkuk University in 2022 with a B.S. in Electrical and Electronics Engineering, and spent a semester on exchange at the University of Agder in Norway.",
       "Outside of work, I live in Seoul with my Norwegian wife and our two cats.",
     ],
@@ -342,8 +343,40 @@ Full approach in my [28th-place solution writeup](https://www.kaggle.com/competi
 
   sideProjects: {
     intro:
-      "Less work, more me. The apps I'm building for fun and the things I do off-screen.",
+      "Less work, more me. The apps I'm building, solo and under my studio, and the things I do off-screen.",
     projects: [
+      {
+        slug: "citely",
+        title: "Citely",
+        subtitle: "a citation-first RAG app I'm building under InitNode",
+        url: "https://citely.initnode.ai/",
+        date: "Started May 2026",
+        content: `Most "chat with your PDF" tools give you an answer and a vague feeling it came from the document somewhere. I wanted the opposite: every claim in the answer linked back to the exact source page, so you can verify before you trust.
+
+[Citely](https://citely.initnode.ai/) is the first product under [InitNode](https://initnode.ai/), the small AI studio I started in May 2026. Upload a PDF, ask it questions, get answers with inline citations. Click a citation and the source pane jumps to the right passage.
+
+**Stack.** Next.js 16 + TypeScript on the web, FastAPI + Python for retrieval and generation, Supabase (Postgres + pgvector) for storage and vector search, Auth0 for auth, OpenAI for embeddings and generation, Railway for hosting.
+
+**Why this exists.** I wanted InitNode to have one polished demo that says "we know how to ship RAG with citations done right" without needing a sales call. It also doubles as my own playground for retrieval ideas: hybrid search, chunking strategies, citation-faithful generation. Lessons from Citely tend to feed back into client work.
+
+[Try it](https://citely.initnode.ai/), free signup, no credit card.`,
+      },
+      {
+        slug: "ppuri",
+        title: "ppuri",
+        subtitle: "a Korean genealogy SaaS I'm building under InitNode (closed beta, Korean-only)",
+        url: "https://ppuri.app/",
+        date: "Started May 2026",
+        content: `Korean families have something called a *jokbo* (족보), a genealogy book tracing a clan back generations. The traditional ones are printed and physical, which means they age, fragment, and stop getting updated. [ppuri](https://ppuri.app/) (뿌리, "roots") is my attempt at the digital version.
+
+The core feature is a shared, editable family tree the whole clan can contribute to: who's married to whom, who descends from whom, who's still alive, where the family graves are. On top of that sit the things a family actually does together: a shared document space, group chat, a calendar for family events (제사, weddings, birthdays), and a record of grave-site locations and visits.
+
+**Stack.** Next.js 15 + TypeScript, Prisma + Postgres for data, Auth.js for sign-in, **React Flow + d3-hierarchy** for the tree layout, and a custom **Korean kinship + hangul logic layer** so the app handles Korean honorifics and relationship names correctly.
+
+**Why this is interesting.** The hardest part wasn't the tech, it was the kinship logic. Korean relationship names are positional (your father's older brother is *큰아버지*, his younger brother is *작은아버지*, your mother's brother is *외삼촌*, and so on). You can't just store "uncle", you have to derive the right term from the tree. That subsystem is the heart of the app and the part I'm most proud of.
+
+Closed beta, Korean-only for now. Second product under [InitNode](https://initnode.ai/).`,
+      },
       {
         slug: "freetoolspot",
         title: "FreeToolSpot",
