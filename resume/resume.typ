@@ -177,16 +177,7 @@ AI Application Engineer shipping production AI systems end-to-end: *Agentic RAG*
   [
     #skill("Languages", ("Python", "C++", "TypeScript"))
     #linebreak()
-    #skill("ML", ("PyTorch", "LangChain", "Transformers"))
-    #linebreak()
-    #skill("Inference", ("BentoML", "Triton", "OpenVINO", "ONNX Runtime", "Quantization"))
-    #linebreak()
-    #skill("LLM & Agents", ("Anthropic", "OpenAI"))
-  ],
-  [
     #skill("Databases", ("PostgreSQL", "Redis"))
-    #linebreak()
-    #skill("Vector DB", ("Qdrant",))
     #linebreak()
     #skill("Backend", ("FastAPI",))
     #linebreak()
@@ -195,5 +186,14 @@ AI Application Engineer shipping production AI systems end-to-end: *Agentic RAG*
     #skill("Infra & CI/CD", ("Kubernetes (Openshift)", "Helm", "Docker", "ArgoCD", "GitLab CI/CD", "Prefect"))
     #linebreak()
     #skill("Monitoring", ("Prometheus", "Grafana", "Langfuse"))
+  ],
+  [
+    #skill("ML", ("PyTorch", "LangChain", "Transformers"))
+    #linebreak()
+    #skill("Inference", ("BentoML", "Triton", "OpenVINO", "ONNX Runtime", "Quantization"))
+    #linebreak()
+    #skill("LLM & Agents", ("Anthropic", "OpenAI"))
+    #linebreak()
+    #skill("Vector DB", ("Qdrant",))
   ],
 )
