@@ -118,7 +118,7 @@ AI Application Engineer shipping production AI systems end-to-end: *Agentic RAG*
   *End-to-end document processing pipeline (on-premise):* Architected the production pipeline that processed *10,000 documents/hour* at *p95 end-to-end latency under 1 second* for enterprise financial and government clients.
 ]
 #bullet[
-  *Inference + extraction:* NVIDIA Triton with KV-caching and quantization for a *20% speedup*; multi-modal Table Extraction at *+15% F1*; Document Understanding framework with graph-based augmentation.
+  *Inference + extraction:* Triton with KV-caching and quantization for a *20% speedup*; multi-modal Table Extraction at *+15% F1*; Document Understanding framework with graph-based augmentation.
 ]
 #bullet[
   *Clients:* Kyobo Life, Lina Life, Shinhan Asset Trust, KIPO (production); Samsung Life, Hanwha Life, Samsung Fire & Marine, KB Insurance (PoCs).
@@ -179,7 +179,7 @@ AI Application Engineer shipping production AI systems end-to-end: *Agentic RAG*
     #linebreak()
     #skill("ML", ("PyTorch", "LangChain", "Transformers"))
     #linebreak()
-    #skill("Inference", ("BentoML", "NVIDIA Triton", "OpenVINO", "ONNX Runtime", "Quantization"))
+    #skill("Inference", ("BentoML", "Triton", "OpenVINO", "ONNX Runtime", "Quantization"))
     #linebreak()
     #skill("LLM & Agents", ("Anthropic", "OpenAI"))
   ],

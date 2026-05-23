@@ -121,7 +121,7 @@ export const resume = {
       },
       {
         label: "Hardware Optimization",
-        items: ["NVIDIA Triton", "OpenVINO", "ONNX Runtime", "Quantization"],
+        items: ["Triton", "OpenVINO", "ONNX Runtime", "Quantization"],
       },
       {
         label: "Backend & Application",
@@ -199,7 +199,7 @@ export const resume = {
           content: `**End-to-end document processing pipeline** (on-premise)
 
 - Architected the production pipeline that processed **10,000 documents per hour** at **p95 end-to-end latency under 1 second** for enterprise financial and government clients.
-- Optimized Transformer inference on **NVIDIA Triton** (KV-caching + quantization) for a **20% speedup**, and improved multi-modal **Table Extraction** F1 by **15%** on financial documents.
+- Optimized Transformer inference on **Triton** (KV-caching + quantization) for a **20% speedup**, and improved multi-modal **Table Extraction** F1 by **15%** on financial documents.
 - Built a **Document Understanding** framework with graph-based augmentation and dataset curation for per-client fine-tuning.
 
 **Clients:** Kyobo Life, Lina Life, Shinhan Asset Trust, KIPO (production); Samsung Life, Hanwha Life, Samsung Fire & Marine, KB Insurance (PoCs).`,
