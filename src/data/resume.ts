@@ -102,49 +102,34 @@ export const resume = {
       "A big part of how I work: I **listen to client requirements** and discuss tradeoffs openly. **Multiple iterative PoCs** help surface what the client actually needs versus what they first ask for. The translation from a fuzzy ask to concrete **application logic** and **AI workflows** is where most of the real design happens.",
       "One thing I'm known for: **fast prototyping**. I'd rather validate an idea with a working demo in days than theorize for weeks. It keeps iteration with clients tight, cheap, and grounded in what actually works.",
       "Currently at **Boeing**, I work on an agentic RAG system for regulated-industry document compliance. Before that, at **Lomin**, I architected an on-premise document processing pipeline serving 10,000 documents per hour for enterprise financial and government clients.",
-      "On the side, I run **[InitNode](https://initnode.ai/)**, a small AI studio I started in May 2026 to build AI demos, PoCs, and SaaS products. First two products: [Citely](https://citely.initnode.ai/) (a citation-first RAG app) and [ppuri](https://ppuri.app/) (a Korean genealogy SaaS).",
+      "On the side, I run **[InitNode](https://initnode.ai/)**, a small AI studio I started in May 2026, shipping AI systems from PoC to production. First two in-house products: [Citely](https://citely.initnode.ai/) (a citation-first RAG app) and [ppuri](https://ppuri.app/) (a Korean genealogy SaaS).",
       "I graduated from Konkuk University in 2022 with a B.S. in Electrical and Electronics Engineering, and spent a semester on exchange at the University of Agder in Norway.",
       "Outside of work, I live in Seoul with my Norwegian wife and our two cats.",
     ],
     skillGroups: [
       { label: "Languages", items: ["Python", "C++", "TypeScript"] },
+      { label: "Databases", items: ["PostgreSQL", "Redis"] },
+      { label: "Vector DB", items: ["Qdrant"] },
+      { label: "Backend", items: ["FastAPI"] },
+      { label: "Frontend", items: ["React", "Next.js", "Streamlit"] },
+      { label: "ML", items: ["PyTorch", "LangChain", "Transformers"] },
       {
-        label: "Databases",
-        items: ["PostgreSQL", "Qdrant", "Redis"],
+        label: "Inference",
+        items: ["BentoML", "Triton", "OpenVINO", "ONNX Runtime", "Quantization"],
       },
+      { label: "LLM & Agents", items: ["Anthropic", "OpenAI"] },
       {
-        label: "ML Frameworks",
-        items: ["PyTorch", "LangChain", "Transformers", "MLflow"],
-      },
-      {
-        label: "LLM & Agent Tooling",
-        items: ["Anthropic", "OpenAI", "MCP", "Langfuse"],
-      },
-      {
-        label: "Hardware Optimization",
-        items: ["Triton", "OpenVINO", "ONNX Runtime", "Quantization"],
-      },
-      {
-        label: "Backend & Application",
-        items: ["FastAPI", "Streamlit"],
-      },
-      {
-        label: "Infrastructure & Automation",
+        label: "Infra & CI/CD",
         items: [
-          "Prefect",
-          "Kubernetes",
-          "Docker",
+          "Kubernetes (OpenShift)",
           "Helm",
-          "GitLab CI/CD",
+          "Docker",
           "ArgoCD",
-          "Git",
-          "Linux",
+          "GitLab CI/CD",
+          "Prefect",
         ],
       },
-      {
-        label: "Observability & Metrics",
-        items: ["Grafana", "Prometheus", "KPI tracking"],
-      },
+      { label: "Monitoring", items: ["Prometheus", "Grafana", "Langfuse"] },
     ] as SkillGroup[],
     spokenLanguages: [
       { name: "Korean", level: "Native" },
@@ -357,7 +342,7 @@ Full approach in my [28th-place solution writeup](https://www.kaggle.com/competi
 
 **Stack.** Next.js 16 + TypeScript on the web, FastAPI + Python for retrieval and generation, Supabase (Postgres + pgvector) for storage and vector search, Auth0 for auth, OpenAI for embeddings and generation, Railway for hosting.
 
-**Why this exists.** I wanted InitNode to have one polished demo that says "we know how to ship RAG with citations done right" without needing a sales call. It also doubles as my own playground for retrieval ideas: hybrid search, chunking strategies, citation-faithful generation. Lessons from Citely tend to feed back into client work.
+**Why this exists.** I wanted InitNode to have one polished product that says "we know how to ship RAG with citations done right" without needing a sales call. It also doubles as my own playground for retrieval ideas: hybrid search, chunking strategies, citation-faithful generation. Lessons from Citely tend to feed back into client work.
 
 [Try it](https://citely.initnode.ai/), free signup, no credit card.`,
       },

@@ -81,7 +81,7 @@
 
 #v(4pt)
 
-AI Application Engineer shipping production AI systems end-to-end: *Agentic RAG*, *document processing pipelines*, and *MCP-based agent tooling*, with the MLOps to keep them running. Comfortable running iterative PoCs with clients and translating fuzzy asks into concrete application logic. Fluent with *Prefect*, *Kubernetes*, *GitOps*, and *FastAPI*. On the side, runs #link("https://initnode.ai/")[*InitNode*], a studio shipping AI systems from PoC to production.
+AI Application Engineer shipping production AI systems end-to-end: *Agentic RAG*, *document processing pipelines*, and *MCP-based agent tooling*, with the MLOps to keep them running. Comfortable running iterative PoCs with clients and translating fuzzy asks into concrete application logic. On the side, runs #link("https://initnode.ai/")[*InitNode*], a studio shipping AI systems from PoC to production.
 
 // ───────── experience ─────────
 #section("Experience")
@@ -100,7 +100,7 @@ AI Application Engineer shipping production AI systems end-to-end: *Agentic RAG*
   *Low-latency CPU retrieval:* Tuned Qdrant indexing and payload filtering to hold p95 retrieval latency under 1000 ms on CPU-only infrastructure; sustained embedding throughput with BentoML dynamic batching + ONNX Runtime + quantization.
 ]
 #bullet[
-  *Internal LLM tooling:* Shipped an internal code-review LLM bot, an MCP server exposing in-house tools to LLM agents, a few-shot (v)LLM PDF parser for RAG ingestion, and an internal ML artifact registry on GitLab.
+  *Internal ML/LLM tooling:* Shipped an internal code-review LLM bot, an MCP server exposing in-house tools to LLM agents, a few-shot (v)LLM PDF parser for RAG ingestion, and an internal ML artifact registry on GitLab.
 ]
 #bullet[
   *GitOps and observability:* Cut deploy cycles from 1h to 10min with ArgoCD on OpenShift; instrumented the stack with Prometheus, Grafana, and a Postgres-backed KPI tracker for CTR, query quality, adoption, and latency.
