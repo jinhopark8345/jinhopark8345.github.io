@@ -70,7 +70,7 @@
   [
     #text(size: 20pt, weight: "bold")[Jinho Park]
     #v(-4pt)
-    #text(size: 11pt, fill: gray.darken(20%))[#if vision [Machine Learning Engineer · Computer Vision & Edge Inference] else [Machine Learning Engineer]]
+    #text(size: 11pt, fill: gray.darken(20%))[Machine Learning Engineer]
     #v(-1pt)
     #text(size: 9.5pt, weight: "medium")[#if variant == "stavanger" or vision [Relocating to Stavanger — spouse is a Norwegian citizen from Stavanger] else [Relocating to Norway — spouse is a Norwegian citizen]]
   ],
