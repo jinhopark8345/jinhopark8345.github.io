@@ -11,7 +11,7 @@
   author: "Jinho Park",
 )
 #set page(
-  paper: "us-letter",
+  paper: "a4",
   margin: (x: 0.55in, y: 0.4in),
 )
 #set text(size: 9.5pt, font: ("Inter", "DejaVu Sans", "Liberation Sans"))
@@ -142,9 +142,6 @@ Machine Learning Engineer shipping production AI systems end-to-end: *Agentic RA
 ]
 #bullet[
   *Model optimization + accuracy:* Triton inference with KV-caching and quantization for a *20% speedup*; improved multi-modal Table Extraction by *+15% F1*; built a Document Understanding framework with graph-based augmentation.
-]
-#bullet[
-  *In production* at Kyobo Life, Lina Life, Shinhan Asset Trust, and KIPO.
 ]
 ] else [
 #bullet[
