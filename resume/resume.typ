@@ -105,7 +105,7 @@ Machine Learning Engineer shipping production AI systems end-to-end: *Agentic RA
 )
 #if vision [
 #bullet[
-  *Production AI for aviation document compliance:* Architected a high-precision retrieval system on Qdrant cross-referencing technical reports against regulatory frameworks; hybrid sparse + dense pipeline validated against dense-only on a 200-query MRR eval.
+  *Agentic RAG for aviation document compliance:* Architected an agentic retrieval system on Qdrant cross-referencing technical reports against regulatory frameworks, exposed as an MCP server; hybrid sparse + dense pipeline validated on a 200-query MRR eval.
 ]
 #bullet[
   *Inference optimization on CPU-only infrastructure:* Held p95 retrieval latency under 1000 ms via index and payload-filter tuning; served embedding models with ONNX Runtime + quantization + BentoML dynamic batching.
