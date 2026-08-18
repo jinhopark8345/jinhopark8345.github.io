@@ -88,9 +88,9 @@
 #v(4pt)
 
 #if vision [
-Machine Learning Engineer spanning *computer vision* and *inference optimization*: gigapixel medical-image classification (Kaggle silver, top 2%), real-time document AI pipelines in production, and model tuning for constrained hardware with *OpenVINO*, *ONNX Runtime*, *Triton*, and quantization. Currently shipping production AI at *Boeing* (aviation domain). Spent an exchange semester at the University of Agder, Norway, and moving back permanently.
+Machine Learning Engineer spanning *computer vision* and *inference optimization*: gigapixel medical-image classification (Kaggle silver, top 2%), real-time document AI pipelines in production, and model tuning for constrained hardware with *OpenVINO*, *ONNX Runtime*, *Triton*, and quantization. Currently shipping production AI at *Boeing* (aviation domain). Exchange semester at the University of Agder, Norway; moving back permanently.
 ] else [
-Machine Learning Engineer shipping production AI systems end-to-end: *Agentic RAG*, *document processing pipelines*, and *MCP-based agent tooling*, with the MLOps to keep them running. Comfortable running iterative PoCs with clients and translating fuzzy asks into concrete application logic. Spent an exchange semester at the University of Agder, Norway, and moving back permanently. On the side, runs #link("https://initnode.ai/")[*InitNode*], a studio shipping AI systems from PoC to production.
+Machine Learning Engineer shipping production AI systems end-to-end: *Agentic RAG*, *document processing pipelines*, and *MCP-based agent tooling*, with the MLOps to keep them running. Comfortable running iterative PoCs with clients and translating fuzzy asks into concrete application logic. Exchange semester at the University of Agder, Norway; moving back permanently. On the side, runs #link("https://initnode.ai/")[*InitNode*], a studio shipping AI systems from PoC to production.
 ]
 
 // ───────── experience ─────────
