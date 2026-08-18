@@ -88,9 +88,9 @@
 #v(4pt)
 
 #if vision [
-Machine Learning Engineer with production experience across *computer vision*, *model optimization for constrained hardware*, and *agentic AI*. Kaggle silver medalist (top 2%) in medical imaging; currently building *agentic RAG* systems at *Boeing*. Exchange semester at the University of Agder, Norway; moving back permanently.
+Machine Learning Engineer with production experience across *computer vision*, *model optimization for constrained hardware*, and *agentic AI*. Kaggle silver medalist (top 2%) in medical imaging; currently building *agentic RAG* systems at *Boeing*. Exchange semester at the University of Agder, Norway; now relocating permanently.
 ] else [
-Machine Learning Engineer shipping production AI systems end-to-end: *Agentic RAG*, *document processing pipelines*, and *MCP-based agent tooling*, with the MLOps to keep them running. Comfortable running iterative PoCs with clients and translating fuzzy asks into concrete application logic. Exchange semester at the University of Agder, Norway; moving back permanently. On the side, runs #link("https://initnode.ai/")[*InitNode*], a studio shipping AI systems from PoC to production.
+Machine Learning Engineer shipping production AI systems end-to-end: *Agentic RAG*, *document processing pipelines*, and *MCP-based agent tooling*, with the MLOps to keep them running. Comfortable running iterative PoCs with clients and translating fuzzy asks into concrete application logic. Exchange semester at the University of Agder, Norway; now relocating permanently. On the side, runs #link("https://initnode.ai/")[*InitNode*], a studio shipping AI systems from PoC to production.
 ]
 
 // ───────── experience ─────────
