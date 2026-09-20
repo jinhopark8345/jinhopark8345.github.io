@@ -2,8 +2,10 @@
 // Compile: typst compile resume/resume.typ public/resume.pdf
 // Stavanger variant: typst compile --input variant=stavanger resume/resume.typ resume/resume-stavanger.pdf
 // Vision variant (computer vision / robotics roles): typst compile --input variant=vision resume/resume.typ resume/resume-vision.pdf
+// Agentic variant (agentic AI / LLM platform roles): typst compile --input variant=agentic resume/resume.typ resume/resume-dnv.pdf
 #let variant = sys.inputs.at("variant", default: "general")
 #let vision = variant == "vision"
+#let agentic = variant == "agentic"
 #import "@preview/fontawesome:0.5.0": *
 
 #set document(
@@ -19,14 +21,14 @@
 
 // ───────── helpers ─────────
 #let section(title) = {
-  v(if vision { 4pt } else { 6pt })
+  v(if vision or agentic { 4pt } else { 6pt })
   box(
     width: 100%,
     inset: (bottom: 2pt),
     stroke: (bottom: 0.6pt + black),
     text(size: 10.5pt, weight: "bold")[#upper(title)],
   )
-  v(if vision { 2pt } else { 3pt })
+  v(if vision or agentic { 2pt } else { 3pt })
 }
 
 #let role(
@@ -87,7 +89,9 @@
 
 #v(4pt)
 
-#if vision [
+#if agentic [
+Machine Learning Engineer building *production agentic AI*: tool-using LLM agents on *MCP*, agentic RAG over regulated technical documentation, and the *evaluation* and *observability* harnesses that keep them trustworthy in production. Ships the whole path from PoC to Kubernetes (CKA), including self-hosted model serving on constrained infrastructure. Exchange semester at the University of Agder, Norway; now relocating permanently. On the side, runs #link("https://initnode.ai/")[*InitNode*], a studio shipping AI systems from PoC to production.
+] else if vision [
 Machine Learning Engineer with production experience across *computer vision*, *model optimization for constrained hardware*, and *agentic AI*. Kaggle silver medalist (top 2%) in medical imaging; currently building *agentic RAG* systems at *Boeing*. Exchange semester at the University of Agder, Norway; now relocating permanently.
 ] else [
 Machine Learning Engineer shipping production AI systems end-to-end: *Agentic RAG*, *document processing pipelines*, and *MCP-based agent tooling*, with the MLOps to keep them running. Comfortable running iterative PoCs with clients and translating fuzzy asks into concrete application logic. Exchange semester at the University of Agder, Norway; now relocating permanently. On the side, runs #link("https://initnode.ai/")[*InitNode*], a studio shipping AI systems from PoC to production.
@@ -103,7 +107,20 @@ Machine Learning Engineer shipping production AI systems end-to-end: *Agentic RA
   location: "AI Team · Seoul, South Korea",
   date: "Jan 2024 – Present",
 )
-#if vision [
+#if agentic [
+#bullet[
+  *Agentic RAG for regulated-industry document compliance:* Architected a high-precision retrieval system on Qdrant, exposed as an *MCP server* with the generation application as MCP client; hybrid sparse + dense pipeline outperformed dense-only on a *200-query MRR evaluation*.
+]
+#bullet[
+  *Agent tooling and tool-boundary design:* Built the MCP server exposing in-house tools to LLM agents, an internal code-review LLM bot, and a few-shot vision-LLM PDF parser for RAG ingestion, so agents select and compose tools instead of following hard-coded chains.
+]
+#bullet[
+  *Evaluation and observability:* Ran retrieval evaluation harnesses against labelled query sets; instrumented the stack with *Langfuse*, Prometheus, and Grafana plus a Postgres-backed KPI tracker for query quality, adoption, latency, and user feedback.
+]
+#bullet[
+  *Production deployment:* GitOps with ArgoCD on OpenShift cut release cycles from 1h to 10min; held *p95 retrieval latency under 1000 ms* on CPU-only infrastructure with BentoML dynamic batching, ONNX Runtime, and quantization.
+]
+] else if vision [
 #bullet[
   *Agentic RAG for aviation document compliance:* Architected an agentic retrieval system on Qdrant cross-referencing technical reports against regulatory frameworks, exposed as an MCP server; hybrid sparse + dense pipeline validated on a 200-query MRR eval.
 ]
@@ -223,7 +240,33 @@ Machine Learning Engineer shipping production AI systems end-to-end: *Agentic RA
   *#label* #h(4pt) #text(fill: gray.darken(20%), items.join(" · "))
 ]
 
-#if vision [
+#if agentic [
+#grid(
+  columns: (1fr, 1fr),
+  column-gutter: 16pt,
+  row-gutter: 4pt,
+  [
+    #skill("Agentic & LLM", ("MCP", "LangChain", "Anthropic API", "OpenAI API", "Prompt engineering"))
+    #linebreak()
+    #skill("RAG & Retrieval", ("Qdrant", "Hybrid sparse + dense", "Embeddings"))
+    #linebreak()
+    #skill("Eval & Observability", ("Langfuse", "Prometheus", "Grafana"))
+    #linebreak()
+    #skill("Languages", ("Python", "C++", "TypeScript"))
+    #linebreak()
+    #skill("Frontend", ("React", "Next.js", "Streamlit"))
+  ],
+  [
+    #skill("Backend & Data", ("FastAPI", "PostgreSQL", "Redis"))
+    #linebreak()
+    #skill("Model serving", ("BentoML", "Triton", "ONNX Runtime", "Quantization"))
+    #linebreak()
+    #skill("Infra & CI/CD", ("Kubernetes (Openshift)", "Helm", "Docker", "ArgoCD", "GitLab CI/CD", "Prefect"))
+    #linebreak()
+    #skill("Spoken", ("Korean (native)", "English (fluent)", "Norwegian (beginner)"))
+  ],
+)
+] else if vision [
 #grid(
   columns: (1fr, 1fr),
   column-gutter: 16pt,
